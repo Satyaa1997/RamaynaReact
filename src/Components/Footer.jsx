@@ -180,7 +180,7 @@ const Footer = () => {
       <footer
         className="text-dark"
         style={{
-          backgroundColor: "#A7802E",
+          backgroundColor: "#C8A22C",
         }}
       >
         {/* ================= MAIN FOOTER ================= */}
