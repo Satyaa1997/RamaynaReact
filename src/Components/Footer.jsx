@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/Logo _02.png";
+import logo from "../assets/logo1.png";
 import reraImage from "../assets/RERA Ramayana.png";
 
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
             font-size: 13px !important;
             font-weight: 700 !important;
             letter-spacing: 0.5px;
-            color: #000000 !important;
+            color: #D0B15B !important;
           }
 
           /* ================= FOOTER LINKS ================= */
@@ -99,10 +99,13 @@ const Footer = () => {
           /* ================= LOGO ================= */
 
           footer img {
-            width: 120px !important;
-            max-height: 48px !important;
-            object-fit: contain;
-          }
+                width: 160px !important;
+                max-width: 160px !important;
+                max-height: 65px !important;
+                height: auto !important;
+                object-fit: contain !important;
+                margin-left: -20px !important;
+              }
 
           /* ================= SOCIAL BUTTONS ================= */
 
@@ -183,7 +186,7 @@ const Footer = () => {
             padding-left: 0 !important;
 
             /* RERA ko aur left shift */
-            margin-left: -30px !important;
+            margin-left: -15px !important;
 
             /* Text ke liye extra width */
             width: 570px !important;
