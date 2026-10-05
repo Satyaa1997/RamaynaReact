@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Logo _02.png";
+import reraImage from "../assets/RERA Ramayana.png";
 
 const Footer = () => {
   return (
@@ -130,8 +131,60 @@ const Footer = () => {
             opacity: 0.5 !important;
           }
 
-          /* ================= COPYRIGHT ================= */ footer .footer-copyright { font-size: 11px !important; font-weight: 600 !important; color: #000000 !important; } /* ================= AUCTECH LINK ================= */ footer .footer-developer-link { color: #ffffff !important; font-size: 11px !important; font-weight: 700 !important; text-decoration: none !important; transition: opacity 0.25s ease; } footer .footer-developer-link:hover { color: #ffffff !important; opacity: 0.8; }
+          /* ================= COPYRIGHT ================= */
+
+          footer .footer-copyright {
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            color: #000000 !important;
+          }
+
+          /* ================= AUCTECH LINK ================= */
+
+          footer .footer-developer-link {
+            color: #ffffff !important;
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            transition: opacity 0.25s ease;
+          }
+
+          footer .footer-developer-link:hover {
+            color: #ffffff !important;
+            opacity: 0.8;
+          }
+
+          /* ================= RERA ================= */
+
+          footer .rera-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 0 !important;
+          }
+
+          footer .rera-image {
+            width: 200px !important;
+            height: auto !important;
+            max-height: 230px !important;
+            object-fit: contain !important;
+            object-position: left center !important;
+            margin: 0 !important;
+            transition: transform 0.3s ease;
+          }
+
+          footer .rera-image:hover {
+            transform: translateY(-4px);
+          }
+
           /* ================= MOBILE ================= */
+
+          @media (max-width: 991px) {
+            footer .rera-image {
+              width: 190px !important;
+              max-height: 220px !important;
+            }
+          }
 
           @media (max-width: 767px) {
 
@@ -173,6 +226,11 @@ const Footer = () => {
               height: 32px !important;
               font-size: 12px !important;
             }
+
+            footer .rera-image {
+              width: 180px !important;
+              max-height: 210px !important;
+            }
           }
         `}
       </style>
@@ -184,7 +242,7 @@ const Footer = () => {
         }}
       >
         {/* ================= MAIN FOOTER ================= */}
-        <div className="container pt-4 pb-3">
+        <div className="container pt-5 pb-5">
           <div className="row g-4">
 
             {/* ================= BRAND ================= */}
@@ -269,7 +327,7 @@ const Footer = () => {
                   { name: "Gallery", to: "/gallery" },
                   { name: "Contact", to: "/contact" },
                 ].map((link, idx) => (
-                  <li className="mb-0" key={idx}>
+                  <li className="mb-1" key={idx}>
                     <Link
                       to={link.to}
                       className="footer-link text-decoration-none d-inline-flex align-items-center"
@@ -296,7 +354,7 @@ const Footer = () => {
                   { name: "Sitemap", to: "/sitemap" },
                   { name: "RERA Details", to: "/rera" },
                 ].map((link, idx) => (
-                  <li className="mb-0" key={idx}>
+                  <li className="mb-1" key={idx}>
                     <Link
                       to={link.to}
                       className="footer-link text-decoration-none d-inline-flex align-items-center"
@@ -310,7 +368,7 @@ const Footer = () => {
             </div>
 
             {/* ================= CONTACT ================= */}
-            <div className="col-12 col-md-6 col-lg-4">
+            <div className="col-12 col-md-6 col-lg-2">
               <h6 className="text-uppercase mb-3">
                 Contact Us
               </h6>
@@ -374,43 +432,57 @@ const Footer = () => {
 
               </div>
             </div>
+
+            {/* ================= RERA ================= */}
+            <div className="col-12 col-md-6 col-lg-2">
+              <div className="rera-section">
+
+                <h6 className="text-uppercase mb-3">
+                  RERA
+                </h6>
+
+                <img
+                  src={reraImage}
+                  alt="RERA Ramayana"
+                  className="rera-image"
+                />
+
+              </div>
+            </div>
+
           </div>
         </div>
 
         {/* ================= COPYRIGHT ================= */}
-     
-{/* ================= COPYRIGHT ================= */}
-<div className="border-top border-dark border-opacity-25 py-2">
-  <div className="container">
-    <div className="row align-items-center g-2">
+        <div className="border-top border-dark border-opacity-25 py-2">
+          <div className="container">
+            <div className="row align-items-center g-2">
 
-      {/* Copyright */}
-      <div className="col-12 col-lg-6 text-center text-lg-start">
-        <p className="footer-copyright mb-0">
-          © 2026 Ramayana City. All Rights Reserved.
-        </p>
-      </div>
+              {/* Copyright */}
+              <div className="col-12 col-lg-6 text-center text-lg-start">
+                <p className="footer-copyright mb-0">
+                  © 2026 Ramayana City. All Rights Reserved.
+                </p>
+              </div>
 
-      {/* Developed By */}
-      <div className="col-12 col-lg-6 text-center text-lg-end">
-        <p className="footer-copyright mb-0">
-          Developed by{" "}
-          <a
-            href="https://auctechitsolutions.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-developer-link"
-          >
-            AucTech
-          </a>
-        </p>
-      </div>
+              {/* Developed By */}
+              <div className="col-12 col-lg-6 text-center text-lg-end">
+                <p className="footer-copyright mb-0">
+                  Developed by{" "}
+                  <a
+                    href="https://auctechitsolutions.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-developer-link"
+                  >
+                    AucTech
+                  </a>
+                </p>
+              </div>
 
-    </div>
-  </div>
-</div>
-
-
+            </div>
+          </div>
+        </div>
 
       </footer>
     </>
