@@ -161,21 +161,23 @@ const Footer = () => {
             max-width: 100% !important;
           }
 
-          footer .rera-content {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 10px !important;
-            width: 100% !important;
-            max-width: 100% !important;
-          }
+        footer .rera-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
 
           footer .rera-image {
-            width: 85px !important;
-            height: 85px !important;
-            object-fit: contain !important;
-            flex-shrink: 0 !important;
-          }
+  width: 85px !important;
+  height: 85px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
 
           footer .rera-details {
             font-size: 8.5px !important;
