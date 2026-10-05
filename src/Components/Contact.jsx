@@ -1,14 +1,22 @@
+
 import React from "react";
-import { 
-  FaEnvelope, 
-  FaPhoneAlt, 
-  FaMapMarkerAlt, 
-  FaHome, 
-  FaClock, 
-  FaCar, 
-  FaCheckCircle, 
-  FaArrowRight 
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaHome,
+  FaClock,
+  FaCar,
+  FaCheckCircle,
+  FaArrowRight,
 } from "react-icons/fa";
+
+// =====================================================
+// IMAGE IMPORTS
+// =====================================================
+
+import heroImage from "../assets/Ramayana_city (3).png";
+import siteVisitImage from "../assets/Ramayana_city (4).png";
 
 const Contact = () => {
   const gold = "#D0B15B";
@@ -22,14 +30,19 @@ const Contact = () => {
         style={{
           minHeight: "380px",
           marginTop: "70px",
-          background:
-            "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./src/assets/Ramayana_city (3).png') center/cover no-repeat",
+          background: `
+            linear-gradient(
+              rgba(0,0,0,0.4),
+              rgba(0,0,0,0.4)
+            ),
+            url(${heroImage}) center/cover no-repeat
+          `,
         }}
       >
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <div 
+              <div
                 className="p-3 p-md-4"
                 style={{
                   background: "rgba(20, 20, 20, 0.25)",
@@ -37,7 +50,7 @@ const Contact = () => {
                   WebkitBackdropFilter: "blur(4px)",
                   borderRadius: "10px",
                   border: "1px solid rgba(255, 255, 255, 0.2)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.2)"
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.2)",
                 }}
               >
                 <span
@@ -184,7 +197,10 @@ const Contact = () => {
 
                 <h6
                   className="fw-bold mt-1 mb-2"
-                  style={{ color: dark, fontSize: "14px" }}
+                  style={{
+                    color: dark,
+                    fontSize: "14px",
+                  }}
                 >
                   +91-8882125125
                 </h6>
@@ -192,7 +208,10 @@ const Contact = () => {
                 <a
                   href="tel:+918882125125"
                   className="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1"
-                  style={{ color: dark, fontSize: "12px" }}
+                  style={{
+                    color: dark,
+                    fontSize: "12px",
+                  }}
                 >
                   Call Now <FaArrowRight size={9} />
                 </a>
@@ -251,7 +270,10 @@ const Contact = () => {
                 <a
                   href="#mapSection"
                   className="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1"
-                  style={{ color: dark, fontSize: "12px" }}
+                  style={{
+                    color: dark,
+                    fontSize: "12px",
+                  }}
                 >
                   View Map <FaArrowRight size={9} />
                 </a>
@@ -312,7 +334,10 @@ const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1"
-                  style={{ color: dark, fontSize: "12px" }}
+                  style={{
+                    color: dark,
+                    fontSize: "12px",
+                  }}
                 >
                   Get Directions <FaArrowRight size={9} />
                 </a>
@@ -331,6 +356,7 @@ const Contact = () => {
       >
         <div className="container">
           <div className="row align-items-center g-4">
+
             {/* IMAGE */}
             <div className="col-lg-6">
               <div
@@ -341,7 +367,7 @@ const Contact = () => {
                 }}
               >
                 <img
-                  src="./src/assets/Ramayana_city (4).png"
+                  src={siteVisitImage}
                   alt="Ramayana City Site Visit"
                   className="w-100 h-100"
                   style={{
@@ -411,6 +437,7 @@ const Contact = () => {
               </p>
 
               <div className="d-flex flex-column gap-2 mb-3">
+
                 {/* HOURS */}
                 <div className="d-flex align-items-center gap-3">
                   <div
@@ -426,9 +453,21 @@ const Contact = () => {
                   >
                     <FaClock />
                   </div>
+
                   <div>
-                    <h6 className="fw-bold mb-0" style={{ fontSize: "14px" }}>Office & Site Hours</h6>
-                    <p className="text-secondary mb-0" style={{ fontSize: "12px" }}>Monday – Sunday: 9:00 AM – 7:00 PM (365 Days)</p>
+                    <h6
+                      className="fw-bold mb-0"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Office & Site Hours
+                    </h6>
+
+                    <p
+                      className="text-secondary mb-0"
+                      style={{ fontSize: "12px" }}
+                    >
+                      Monday – Sunday: 9:00 AM – 7:00 PM (365 Days)
+                    </p>
                   </div>
                 </div>
 
@@ -447,9 +486,21 @@ const Contact = () => {
                   >
                     <FaCar />
                   </div>
+
                   <div>
-                    <h6 className="fw-bold mb-0" style={{ fontSize: "14px" }}>Complimentary Site Visit</h6>
-                    <p className="text-secondary mb-0" style={{ fontSize: "12px" }}>Free pick-and-drop service available across Lucknow.</p>
+                    <h6
+                      className="fw-bold mb-0"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Complimentary Site Visit
+                    </h6>
+
+                    <p
+                      className="text-secondary mb-0"
+                      style={{ fontSize: "12px" }}
+                    >
+                      Free pick-and-drop service available across Lucknow.
+                    </p>
                   </div>
                 </div>
 
@@ -468,24 +519,40 @@ const Contact = () => {
                   >
                     <FaCheckCircle />
                   </div>
+
                   <div>
-                    <h6 className="fw-bold mb-0" style={{ fontSize: "14px" }}>Instant Layout Guidance</h6>
-                    <p className="text-secondary mb-0" style={{ fontSize: "12px" }}>Get master plan maps and registry assistance on-site.</p>
+                    <h6
+                      className="fw-bold mb-0"
+                      style={{ fontSize: "14px" }}
+                    >
+                      Instant Layout Guidance
+                    </h6>
+
+                    <p
+                      className="text-secondary mb-0"
+                      style={{ fontSize: "12px" }}
+                    >
+                      Get master plan maps and registry assistance on-site.
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* HOTLINE */}
               <div
-                className="p-2.5 px-3"
+                className="px-3 py-2"
                 style={{
                   backgroundColor: "#ffffff",
                   borderLeft: `3px solid ${gold}`,
                 }}
               >
-                <small className="text-secondary d-block" style={{ fontSize: "11px" }}>
+                <small
+                  className="text-secondary d-block"
+                  style={{ fontSize: "11px" }}
+                >
                   Sales & Inquiry Hotline
                 </small>
+
                 <a
                   href="tel:+918882125125"
                   className="text-decoration-none fw-bold"
@@ -512,6 +579,7 @@ const Contact = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-9">
+
               <div className="text-center mb-3">
                 <span
                   className="text-uppercase fw-semibold"
@@ -557,75 +625,131 @@ const Contact = () => {
               >
                 <form>
                   <div className="row g-3">
+
                     {/* NAME */}
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold" style={{ fontSize: "13px" }}>
+                      <label
+                        className="form-label fw-semibold"
+                        style={{ fontSize: "13px" }}
+                      >
                         Full Name
                       </label>
+
                       <input
                         type="text"
                         className="form-control form-control-sm"
                         placeholder="Enter your name"
-                        style={{ minHeight: "40px", borderRadius: "4px" }}
+                        style={{
+                          minHeight: "40px",
+                          borderRadius: "4px",
+                        }}
                       />
                     </div>
 
                     {/* PHONE */}
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold" style={{ fontSize: "13px" }}>
+                      <label
+                        className="form-label fw-semibold"
+                        style={{ fontSize: "13px" }}
+                      >
                         Phone Number
                       </label>
+
                       <input
                         type="tel"
                         className="form-control form-control-sm"
                         placeholder="Enter phone number"
-                        style={{ minHeight: "40px", borderRadius: "4px" }}
+                        style={{
+                          minHeight: "40px",
+                          borderRadius: "4px",
+                        }}
                       />
                     </div>
 
                     {/* EMAIL */}
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold" style={{ fontSize: "13px" }}>
+                      <label
+                        className="form-label fw-semibold"
+                        style={{ fontSize: "13px" }}
+                      >
                         Email Address
                       </label>
+
                       <input
                         type="email"
                         className="form-control form-control-sm"
                         placeholder="Enter your email"
-                        style={{ minHeight: "40px", borderRadius: "4px" }}
+                        style={{
+                          minHeight: "40px",
+                          borderRadius: "4px",
+                        }}
                       />
                     </div>
 
                     {/* PLOT TYPE */}
                     <div className="col-md-6">
-                      <label className="form-label fw-semibold" style={{ fontSize: "13px" }}>
+                      <label
+                        className="form-label fw-semibold"
+                        style={{ fontSize: "13px" }}
+                      >
                         Select Plot Size / Type
                       </label>
+
                       <select
                         className="form-select form-select-sm"
                         defaultValue=""
-                        style={{ minHeight: "40px", borderRadius: "4px" }}
+                        style={{
+                          minHeight: "40px",
+                          borderRadius: "4px",
+                        }}
                       >
-                        <option value="" disabled>Select Plot Size / Type</option>
-                        <option value="1000">1000 Sq. Ft. Residential Plot</option>
-                        <option value="1250">1250 Sq. Ft. Residential Plot</option>
-                        <option value="1500">1500 Sq. Ft. Premium Plot</option>
-                        <option value="2000">2000 Sq. Ft. Villa Plot</option>
-                        <option value="commercial">Commercial Corner Space</option>
-                        <option value="site-visit">Only Book Site Visit</option>
+                        <option value="" disabled>
+                          Select Plot Size / Type
+                        </option>
+
+                        <option value="1000">
+                          1000 Sq. Ft. Residential Plot
+                        </option>
+
+                        <option value="1250">
+                          1250 Sq. Ft. Residential Plot
+                        </option>
+
+                        <option value="1500">
+                          1500 Sq. Ft. Premium Plot
+                        </option>
+
+                        <option value="2000">
+                          2000 Sq. Ft. Villa Plot
+                        </option>
+
+                        <option value="commercial">
+                          Commercial Corner Space
+                        </option>
+
+                        <option value="site-visit">
+                          Only Book Site Visit
+                        </option>
                       </select>
                     </div>
 
                     {/* MESSAGE */}
                     <div className="col-12">
-                      <label className="form-label fw-semibold" style={{ fontSize: "13px" }}>
+                      <label
+                        className="form-label fw-semibold"
+                        style={{ fontSize: "13px" }}
+                      >
                         Your Message
                       </label>
+
                       <textarea
                         className="form-control form-control-sm"
                         rows="3"
                         placeholder="Tell us how we can help you..."
-                        style={{ borderRadius: "4px", resize: "vertical" }}
+                        style={{
+                          borderRadius: "4px",
+                          resize: "vertical",
+                        }}
                       ></textarea>
                     </div>
 
@@ -641,7 +765,8 @@ const Contact = () => {
                           fontSize: "14px",
                         }}
                       >
-                        Submit Enquiry & Book Visit <FaArrowRight size={12} />
+                        Submit Enquiry & Book Visit
+                        <FaArrowRight size={12} />
                       </button>
 
                       <p
@@ -651,6 +776,7 @@ const Contact = () => {
                         ✓ 100% Confidential & Spam Free Assurance
                       </p>
                     </div>
+
                   </div>
                 </form>
               </div>
@@ -668,6 +794,7 @@ const Contact = () => {
         }}
       >
         <div className="container">
+
           <div className="text-center mb-3">
             <span
               className="text-uppercase fw-semibold"
@@ -690,7 +817,10 @@ const Contact = () => {
               Locate Ramayana City
             </h3>
 
-            <p className="text-secondary mb-0" style={{ fontSize: "13px" }}>
+            <p
+              className="text-secondary mb-0"
+              style={{ fontSize: "13px" }}
+            >
               NH-56B, Khatola Village, Sarojini Nagar, Lucknow, U.P.
             </p>
           </div>
@@ -728,6 +858,7 @@ const Contact = () => {
         }}
       >
         <div className="container text-center">
+
           <h3
             className="text-white fw-bold mb-2"
             style={{
@@ -748,6 +879,7 @@ const Contact = () => {
           </p>
 
           <div className="d-flex justify-content-center flex-wrap gap-2">
+
             <a
               href="tel:+918882125125"
               className="btn fw-semibold px-4 py-2"
@@ -775,6 +907,7 @@ const Contact = () => {
             >
               Send Email
             </a>
+
           </div>
         </div>
       </section>
@@ -783,3 +916,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
