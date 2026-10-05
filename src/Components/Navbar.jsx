@@ -5,7 +5,6 @@ import logo from "../assets/logo1.png";
 const navigation = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
- 
   { label: "Why Choose", to: "/whychoose" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },
@@ -24,10 +23,15 @@ export default function Navbar() {
   const handleNavClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
-    // Agar mobile view me menu open hai toh click ke baad use band (collapse) karne ke liye
+    // Mobile view me menu open hone par click ke baad use band (collapse) karne ke liye
     const navbarCollapse = document.getElementById("mainNavbar");
     if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-      navbarCollapse.classList.remove("show");
+      const bsCollapse = window.bootstrap?.Collapse.getInstance(navbarCollapse);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      } else {
+        navbarCollapse.classList.remove("show");
+      }
     }
   };
 
