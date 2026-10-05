@@ -25,17 +25,16 @@ const GOLD = "#D0B15B";
 const DARK = "#111111";
 const DARK2 = "#181818";
 const WHITE = "#FFFFFF";
-const LIGHT = "#F7F7F5";
 
 // =====================================================
-// STAT COUNTER COMPONENT (For animated numbers)
+// STAT COUNTER COMPONENT
 // =====================================================
 const StatCounter = ({ endValue }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     const numericMatch = endValue.match(/(\d+)/);
-    
+
     if (!numericMatch) {
       setCount(endValue);
       return;
@@ -49,6 +48,7 @@ const StatCounter = ({ endValue }) => {
 
     const timer = setInterval(() => {
       current += increment;
+
       if (current >= target) {
         setCount(target);
         clearInterval(timer);
@@ -60,15 +60,16 @@ const StatCounter = ({ endValue }) => {
     return () => clearInterval(timer);
   }, [endValue]);
 
-  const formattedValue = typeof count === "number" 
-    ? `${count}${endValue.replace(/\d+/g, "")}` 
-    : count;
+  const formattedValue =
+    typeof count === "number"
+      ? `${count}${endValue.replace(/\d+/g, "")}`
+      : count;
 
   return <span>{formattedValue}</span>;
 };
 
 // =====================================================
-// DECORATIVE GEOMETRIC BACKGROUND (For other sections)
+// DECORATIVE GEOMETRIC BACKGROUND
 // =====================================================
 const GeometricBackground = ({ dark = false }) => {
   return (
@@ -82,28 +83,19 @@ const GeometricBackground = ({ dark = false }) => {
         zIndex: 0,
       }}
     >
-      {/* Grid */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           opacity: dark ? 0.028 : 0.035,
           backgroundImage: `
-            linear-gradient(
-              rgba(208,177,91,0.7) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              90deg,
-              rgba(208,177,91,0.7) 1px,
-              transparent 1px
-            )
+            linear-gradient(rgba(208,177,91,0.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(208,177,91,0.7) 1px, transparent 1px)
           `,
           backgroundSize: "70px 70px",
         }}
       />
 
-      {/* Large Circle */}
       <div
         style={{
           position: "absolute",
@@ -116,7 +108,6 @@ const GeometricBackground = ({ dark = false }) => {
         }}
       />
 
-      {/* Inner Circle */}
       <div
         style={{
           position: "absolute",
@@ -129,7 +120,6 @@ const GeometricBackground = ({ dark = false }) => {
         }}
       />
 
-      {/* Rotated Square */}
       <div
         style={{
           position: "absolute",
@@ -142,7 +132,6 @@ const GeometricBackground = ({ dark = false }) => {
         }}
       />
 
-      {/* Small Diamond */}
       <div
         style={{
           position: "absolute",
@@ -155,7 +144,6 @@ const GeometricBackground = ({ dark = false }) => {
         }}
       />
 
-      {/* Diagonal Line */}
       <div
         style={{
           position: "absolute",
@@ -168,7 +156,6 @@ const GeometricBackground = ({ dark = false }) => {
         }}
       />
 
-      {/* Glow */}
       <div
         style={{
           position: "absolute",
@@ -284,7 +271,6 @@ const PremiumCard = ({
           "transform .4s ease, box-shadow .4s ease, border-color .4s ease",
       }}
     >
-      {/* IMAGE */}
       <div
         style={{
           position: "relative",
@@ -305,7 +291,6 @@ const PremiumCard = ({
           }}
         />
 
-        {/* IMAGE OVERLAY */}
         <div
           style={{
             position: "absolute",
@@ -315,7 +300,6 @@ const PremiumCard = ({
           }}
         />
 
-        {/* IMAGE TITLE */}
         <div
           style={{
             position: "absolute",
@@ -347,7 +331,6 @@ const PremiumCard = ({
         </div>
       </div>
 
-      {/* CONTENT */}
       <div
         className="home-premium-card-content"
         style={{
@@ -357,9 +340,7 @@ const PremiumCard = ({
       >
         <p
           style={{
-            color: dark
-              ? "rgba(255,255,255,.68)"
-              : "#666",
+            color: dark ? "rgba(255,255,255,.68)" : "#666",
             fontSize: "14px",
             lineHeight: 1.75,
             margin: "0 0 18px",
@@ -478,8 +459,11 @@ const Home = () => {
 
   return (
     <main style={{ overflowX: "hidden" }}>
-
       <style>{`
+        /* =====================================================
+            PREMIUM CARD HOVER
+        ===================================================== */
+
         .home-premium-card:hover {
           transform: translateY(-10px);
           box-shadow: 0 25px 55px rgba(0,0,0,.40) !important;
@@ -498,6 +482,10 @@ const Home = () => {
           transform: translateX(5px);
         }
 
+        /* =====================================================
+            AMENITY HOVER
+        ===================================================== */
+
         .amenity-card:hover {
           transform: translateY(-5px);
           border-color: rgba(208,177,91,.48) !important;
@@ -507,13 +495,23 @@ const Home = () => {
           transform: scale(1.07);
         }
 
+        /* =====================================================
+            LOCATION HOVER
+        ===================================================== */
+
         .location-card:hover {
           transform: translateY(-4px);
           border-color: rgba(208,177,91,.38) !important;
         }
 
+        /* =====================================================
+            STAT CARD HOVER
+        ===================================================== */
+
         .ramayana-stat-card {
-          transition: transform .3s ease, box-shadow .3s ease,
+          transition:
+            transform .3s ease,
+            box-shadow .3s ease,
             border-color .3s ease;
         }
 
@@ -523,6 +521,10 @@ const Home = () => {
           box-shadow: 0 15px 35px rgba(0,0,0,.08) !important;
         }
 
+        /* =====================================================
+            ABOUT IMAGE HOVER
+        ===================================================== */
+
         .ramayana-about-image {
           transition: transform .6s ease;
         }
@@ -531,7 +533,27 @@ const Home = () => {
           transform: scale(1.03);
         }
 
+        /* =====================================================
+            SITE VISIT RESPONSIVE RULES
+            
+            DESKTOP & TABLET (78px and above):
+            - Image and Form display side by side.
+            
+            MOBILE (Below 768px):
+            - Image column is hidden completely.
+            - Form column takes 100% full width.
+        ===================================================== */
+
+        .site-visit-image {
+          display: block !important;
+        }
+
+        .site-visit-form {
+          display: block !important;
+        }
+
         @media (max-width: 767px) {
+
           .home-premium-card > div:first-child {
             height: 235px !important;
           }
@@ -544,12 +566,69 @@ const Home = () => {
             padding-top: 50px !important;
             padding-bottom: 50px !important;
           }
+
+          /* ===============================================
+             SITE VISIT IMAGE - HIDE ON MOBILE
+          =============================================== */
+          .site-visit-image {
+            display: none !important;
+          }
+
+          /* ===============================================
+             SITE VISIT FORM - FULL WIDTH ON MOBILE
+          =============================================== */
+          .site-visit-form {
+            display: block !important;
+            width: 100% !important;
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+          }
+
+          .site-visit-form > div {
+            width: 100% !important;
+            padding: 25px 18px !important;
+          }
+
+          .site-visit-form .row {
+            --bs-gutter-x: 0.6rem;
+            --bs-gutter-y: 0.6rem;
+          }
+
+          .site-visit-form h2 {
+            font-size: 29px !important;
+          }
+
+          .site-visit-form input,
+          .site-visit-form select,
+          .site-visit-form textarea {
+            font-size: 13px !important;
+          }
+        }
+
+        @media (max-width: 575px) {
+          .site-visit-form > div {
+            padding: 23px 15px !important;
+          }
+
+          .site-visit-form h2 {
+            font-size: 27px !important;
+          }
+
+          .site-visit-form input,
+          .site-visit-form select {
+            min-height: 44px !important;
+          }
+
+          .site-visit-form textarea {
+            height: 65px !important;
+          }
         }
       `}</style>
 
       {/* =====================================================
           SECTION 01 - HERO
       ====================================================== */}
+
       <section
         id="home"
         className="position-relative"
@@ -593,7 +672,8 @@ const Home = () => {
               maxWidth: "600px",
               opacity: showHeroText ? 1 : 0,
               visibility: showHeroText ? "visible" : "hidden",
-              transition: "opacity 0.8s ease, visibility 0.8s ease",
+              transition:
+                "opacity 0.8s ease, visibility 0.8s ease",
             }}
           >
             <div
@@ -613,6 +693,7 @@ const Home = () => {
                   background: GOLD,
                 }}
               />
+
               Premium Residential Township · Lucknow
             </div>
 
@@ -624,7 +705,9 @@ const Home = () => {
               }}
             >
               Welcome to{" "}
-              <span style={{ color: GOLD }}>Ramayana City</span>
+              <span style={{ color: GOLD }}>
+                Ramayana City
+              </span>
             </h1>
 
             <p
@@ -657,9 +740,11 @@ const Home = () => {
                 className="btn px-3 py-1.5 fw-semibold"
                 style={{
                   color: WHITE,
-                  border: "1px solid rgba(255,255,255,.45)",
+                  border:
+                    "1px solid rgba(255,255,255,.45)",
                   borderRadius: "4px",
-                  background: "rgba(255,255,255,.05)",
+                  background:
+                    "rgba(255,255,255,.05)",
                   fontSize: "12px",
                 }}
               >
@@ -673,6 +758,7 @@ const Home = () => {
       {/* =====================================================
           SECTION 02 - ABOUT
       ====================================================== */}
+
       <section
         id="about"
         className="position-relative ramayana-section"
@@ -696,7 +782,8 @@ const Home = () => {
                   position: "relative",
                   borderRadius: "20px",
                   overflow: "hidden",
-                  boxShadow: "0 20px 45px rgba(0,0,0,.10)",
+                  boxShadow:
+                    "0 20px 45px rgba(0,0,0,.10)",
                 }}
               >
                 <img
@@ -704,7 +791,8 @@ const Home = () => {
                   alt="Ramayana City Township"
                   className="img-fluid w-100 ramayana-about-image"
                   style={{
-                    height: "clamp(320px, 42vw, 420px)",
+                    height:
+                      "clamp(320px, 42vw, 420px)",
                     objectFit: "cover",
                   }}
                 />
@@ -714,7 +802,8 @@ const Home = () => {
                     position: "absolute",
                     left: "18px",
                     bottom: "18px",
-                    background: "rgba(17,17,17,.92)",
+                    background:
+                      "rgba(17,17,17,.92)",
                     color: WHITE,
                     padding: "13px 18px",
                     borderLeft: `3px solid ${GOLD}`,
@@ -759,6 +848,7 @@ const Home = () => {
                       background: GOLD,
                     }}
                   />
+
                   <span>ABOUT RAMAYANA CITY</span>
                 </div>
 
@@ -766,11 +856,13 @@ const Home = () => {
                   className="fw-bold mb-3"
                   style={{
                     color: "#171717",
-                    fontSize: "clamp(26px, 3.2vw, 38px)",
+                    fontSize:
+                      "clamp(26px, 3.2vw, 38px)",
                     lineHeight: 1.15,
                   }}
                 >
-                  Modern Living Rooted in Timeless Values
+                  Modern Living Rooted in Timeless
+                  Values
                 </h2>
 
                 <p
@@ -781,7 +873,10 @@ const Home = () => {
                     lineHeight: 1.7,
                   }}
                 >
-                  A thoughtfully planned residential township combining modern infrastructure, greenery, connectivity and spiritual values.
+                  A thoughtfully planned residential
+                  township combining modern
+                  infrastructure, greenery,
+                  connectivity and spiritual values.
                 </p>
               </div>
 
@@ -792,7 +887,14 @@ const Home = () => {
                   fontSize: "14px",
                 }}
               >
-                Ramayana City is a premier gated township created for modern living while remaining rooted in timeless spiritual values. Located on NH-56B in Khatola Village, Sarojini Nagar, Lucknow, the township brings together modern connectivity and peaceful residential living.
+                Ramayana City is a premier gated
+                township created for modern living
+                while remaining rooted in timeless
+                spiritual values. Located on NH-56B
+                in Khatola Village, Sarojini Nagar,
+                Lucknow, the township brings together
+                modern connectivity and peaceful
+                residential living.
               </p>
 
               <p
@@ -802,7 +904,12 @@ const Home = () => {
                   fontSize: "14px",
                 }}
               >
-                With a thoughtful environment inspired by the legacy of Lord Rama, the township aims to create a harmonious lifestyle where community, greenery and contemporary infrastructure come together.
+                With a thoughtful environment
+                inspired by the legacy of Lord Rama,
+                the township aims to create a
+                harmonious lifestyle where community,
+                greenery and contemporary
+                infrastructure come together.
               </p>
 
               <div
@@ -843,7 +950,8 @@ const Home = () => {
                       fontSize: "12px",
                     }}
                   >
-                    Spiritual values · Sustainable development · Modern living
+                    Spiritual values · Sustainable
+                    development · Modern living
                   </small>
                 </div>
               </div>
@@ -855,6 +963,7 @@ const Home = () => {
       {/* =====================================================
           SECTION 03 - WHY CHOOSE
       ====================================================== */}
+
       <section
         id="why-choose"
         className="position-relative ramayana-section"
@@ -895,8 +1004,9 @@ const Home = () => {
       </section>
 
       {/* =====================================================
-          SECTION 04 - PROJECT OVERVIEW (With Animated Counters)
+          SECTION 04 - PROJECT OVERVIEW
       ====================================================== */}
+
       <section
         id="project-overview"
         className="position-relative ramayana-section"
@@ -969,6 +1079,7 @@ const Home = () => {
       {/* =====================================================
           SECTION 05 - PREMIUM AMENITIES
       ====================================================== */}
+
       <section
         id="amenities"
         className="position-relative ramayana-section"
@@ -1087,6 +1198,7 @@ const Home = () => {
       {/* =====================================================
           SECTION 06 - DIVINE LIFESTYLE
       ====================================================== */}
+
       <section
         id="lifestyle"
         className="position-relative ramayana-section"
@@ -1117,11 +1229,13 @@ const Home = () => {
                   fontSize: "14px",
                 }}
               >
-                Ramayana City is envisioned as more than
-                just a residential address. It is a thoughtfully
-                planned community where serenity, greenery,
-                spiritual values and modern infrastructure
-                create an elevated lifestyle.
+                Ramayana City is envisioned as
+                more than just a residential
+                address. It is a thoughtfully planned
+                community where serenity, greenery,
+                spiritual values and modern
+                infrastructure create an elevated
+                lifestyle.
               </p>
 
               <div className="row g-2 mt-3">
@@ -1170,8 +1284,7 @@ const Home = () => {
                   style={{
                     background: GOLD,
                     color: WHITE,
-                    border:
-                      `1px solid ${GOLD}`,
+                    border: `1px solid ${GOLD}`,
                     fontSize: "13px",
                   }}
                 >
@@ -1203,8 +1316,7 @@ const Home = () => {
                   style={{
                     position: "absolute",
                     inset: 0,
-                    border:
-                      `1px solid ${GOLD}`,
+                    border: `1px solid ${GOLD}`,
                     borderRadius: "20px",
                     transform: "rotate(2.5deg)",
                     opacity: 0.32,
@@ -1233,125 +1345,15 @@ const Home = () => {
       </section>
 
       {/* =====================================================
-          SECTION 07 - STRATEGIC LOCATION
-      ====================================================== */}
-      <section
-        id="location"
-        className="position-relative ramayana-section"
-        style={{
-          background: DARK,
-          padding: "65px 0",
-          overflow: "hidden",
-        }}
-      >
-        <GeometricBackground dark />
-
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
-          <SectionTitle
-            dark
-            eyebrow="STRATEGIC LOCATION"
-            title="Connected to the Future"
-            description="A strategically positioned address designed around accessibility, connectivity and the growth of Lucknow."
-          />
-
-          <div className="row g-3 mt-1">
-            {[
-              [
-                "01",
-                "NH-56B",
-                "Prime highway connectivity.",
-              ],
-              [
-                "02",
-                "Airport",
-                "Easy access to Chaudhary Charan Singh International Airport.",
-              ],
-              [
-                "03",
-                "Expressways",
-                "Convenient access to major expressway corridors.",
-              ],
-              [
-                "04",
-                "Education",
-                "Schools and colleges within convenient reach.",
-              ],
-              [
-                "05",
-                "Healthcare",
-                "Hospitals and healthcare facilities nearby.",
-              ],
-              [
-                "06",
-                "Markets",
-                "Shopping and everyday conveniences nearby.",
-              ],
-            ].map(([num, title, text]) => (
-              <div
-                className="col-md-6 col-lg-4"
-                key={num}
-              >
-                <div
-                  className="location-card p-3 h-100"
-                  style={{
-                    background:
-                      "rgba(255,255,255,.025)",
-                    border:
-                      "1px solid rgba(255,255,255,.09)",
-                    borderRadius: "15px",
-                    transition:
-                      "transform .3s ease, border-color .3s ease",
-                  }}
-                >
-                  <div
-                    style={{
-                      color: GOLD,
-                      fontSize: "10px",
-                      fontWeight: 700,
-                      letterSpacing: "1px",
-                      marginBottom: "12px",
-                    }}
-                  >
-                    {num}
-                  </div>
-
-                  <h4
-                    className="fw-bold text-white mb-1"
-                    style={{ fontSize: "18px" }}
-                  >
-                    {title}
-                  </h4>
-
-                  <p
-                    className="mb-0"
-                    style={{
-                      color:
-                        "rgba(255,255,255,.54)",
-                      lineHeight: 1.6,
-                      fontSize: "13px",
-                    }}
-                  >
-                    {text}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
           SECTION 08 - BOOK YOUR FREE SITE VISIT
       ====================================================== */}
+
       <section
         id="site-visit"
         className="position-relative ramayana-section"
         style={{
           background: WHITE,
-          padding: "70px 0",
+          padding: "10px 0",
           overflow: "hidden",
         }}
       >
@@ -1376,7 +1378,10 @@ const Home = () => {
                 "0 20px 55px rgba(0,0,0,.13)",
             }}
           >
-            <div className="col-lg-5">
+            {/* =================================================
+                IMAGE COLUMN (Visible on Desktop/Tablet, Hidden on Mobile via CSS)
+            ================================================== */}
+            <div className="col-12 col-md-5 col-lg-5 site-visit-image">
               <div
                 className="h-100 position-relative"
                 style={{
@@ -1469,8 +1474,8 @@ const Home = () => {
                   >
                     Discover a thoughtfully planned
                     residential township where modern
-                    infrastructure meets timeless spiritual
-                    values.
+                    infrastructure meets timeless
+                    spiritual values.
                   </p>
 
                   <div className="d-flex flex-wrap gap-2 mt-3">
@@ -1500,7 +1505,10 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-lg-7">
+            {/* =================================================
+                FORM COLUMN (Side-by-side on desktop/tablet, Full width on mobile)
+            ================================================== */}
+            <div className="col-12 col-md-7 col-lg-7 site-visit-form">
               <div
                 className="h-100"
                 style={{
@@ -1537,10 +1545,9 @@ const Home = () => {
                         lineHeight: 1.1,
                       }}
                     >
-                      Plan Your
-
+                      Plan Your{" "}
                       <span style={{ color: GOLD }}>
-                        {" "}Visit
+                        Visit
                       </span>
                     </h2>
 
@@ -1631,10 +1638,7 @@ const Home = () => {
                             colorScheme: "dark",
                           }}
                         >
-                          <option
-                            value=""
-                            disabled
-                          >
+                          <option value="" disabled>
                             Select plot type
                           </option>
 
@@ -1672,10 +1676,7 @@ const Home = () => {
                             colorScheme: "dark",
                           }}
                         >
-                          <option
-                            value=""
-                            disabled
-                          >
+                          <option value="" disabled>
                             Select budget
                           </option>
 
@@ -1742,8 +1743,7 @@ const Home = () => {
                           style={{
                             background: GOLD,
                             color: WHITE,
-                            border:
-                              `1px solid ${GOLD}`,
+                            border: `1px solid ${GOLD}`,
                             borderRadius: "5px",
                             minHeight: "46px",
                             fontSize: "13px",
@@ -1780,7 +1780,8 @@ const Home = () => {
 
       {/* =====================================================
           SECTION 09 - FINAL CTA
-      ====================================================== */}
+      ===================================================== */}
+
       <section
         id="contact-cta"
         className="position-relative text-center ramayana-section"
@@ -1815,10 +1816,9 @@ const Home = () => {
               lineHeight: 1.1,
             }}
           >
-            Your Premium Address
-
+            Your Premium Address{" "}
             <span style={{ color: GOLD }}>
-              {" "}Awaits.
+              Awaits.
             </span>
           </h2>
 
@@ -1832,9 +1832,10 @@ const Home = () => {
               fontSize: "13px",
             }}
           >
-            Experience a thoughtfully planned township
-            where modern infrastructure, greenery,
-            connectivity and timeless values come together.
+            Experience a thoughtfully planned
+            township where modern infrastructure,
+            greenery, connectivity and timeless
+            values come together.
           </p>
 
           <div className="d-flex justify-content-center flex-wrap gap-2">
@@ -1844,8 +1845,7 @@ const Home = () => {
               style={{
                 background: GOLD,
                 color: WHITE,
-                border:
-                  `1px solid ${GOLD}`,
+                border: `1px solid ${GOLD}`,
                 fontSize: "13px",
               }}
             >
@@ -1874,6 +1874,7 @@ const Home = () => {
 // =====================================================
 // INPUT STYLES
 // =====================================================
+
 const inputStyle = {
   background: "#1b1b1b",
   border: "1px solid rgba(255,255,255,.13)",

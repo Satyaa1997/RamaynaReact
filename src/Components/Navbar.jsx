@@ -47,7 +47,8 @@ export default function Navbar() {
         paddingBottom: "7px",
       }}
     >
-      <div className="container-fluid px-3 px-lg-5">
+      {/* Footer ke container ke sath match karne ke liye yahan container class ka use kiya gaya hai */}
+      <div className="container">
 
         {/* ================= LOGO ================= */}
         <Link
