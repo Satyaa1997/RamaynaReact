@@ -418,42 +418,42 @@ const Home = () => {
     { 
       image: highwayImage, 
       title: "NH-56B Frontage", 
-      text: "Prime highway-front location at Khatola Village, Sarojini Nagar.", 
+      
     }, 
     { 
       image: airportImage, 
       title: "Airport Connectivity", 
-      text: "Convenient connectivity to Chaudhary Charan Singh International Airport.", 
+      
     }, 
     { 
       image: agraExpresswayImage, 
       title: "Agra Expressway", 
-      text: "Excellent access to one of the key expressway corridors.", 
+     
     }, 
     { 
       image: purvanchalExpresswayImage, 
       title: "Purvanchal Expressway", 
-      text: "Strategic connectivity towards major destinations across Uttar Pradesh.", 
+     
     }, 
     { 
       image: railwayImage, 
       title: "Railway Station", 
-      text: "Convenient access to Lucknow Railway Station and city connectivity.", 
+      
     }, 
     { 
       image: hospitalImage, 
       title: "Hospitals Nearby", 
-      text: "Healthcare facilities within convenient reach of the township.", 
+      
     }, 
     { 
       image: schoolImage, 
       title: "Schools & Colleges", 
-      text: "Educational institutions available across the surrounding areas.", 
+      
     }, 
     { 
       image: marketImage, 
       title: "Shopping & Markets", 
-      text: "Daily conveniences, markets and shopping destinations nearby.", 
+       
     }, 
   ]; 
  
