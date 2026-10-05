@@ -1266,29 +1266,7 @@ const Project = () => {
         <section className="project-cta">
   <div className="project-cta-container">
 
-    {/* CTA TEXT */}
-    <div className="project-cta-content">
-      <span className="project-cta-label">
-        YOUR DREAM PLOT AWAITS
-      </span>
-
-      <h2>
-        Find Your Perfect Plot at{" "}
-        <span>Ramayna City</span>
-      </h2>
-
-      <p>
-        Get project details, availability & pricing information from our team.
-      </p>
-    </div>
-
-    {/* CTA BUTTON */}
-    <div className="project-cta-action">
-      <a href="/contact" className="project-cta-btn">
-        Contact Us
-        <FaArrowRight />
-      </a>
-    </div>
+   
 
   </div>
 </section>

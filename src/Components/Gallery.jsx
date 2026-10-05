@@ -5,74 +5,58 @@ const galleryItems = [
     id: 1,
     title: "Ramayna City",
     category: "Project",
-    image: "/assets/gallery-1.jpg",
+    image: "./src/assets/gallerydp.png",
   },
   {
     id: 2,
     title: "Project View",
     category: "Project",
-    image: "/assets/gallery-2.jpg",
+    image: "./src/assets/Ramayana_city (4).png",
   },
   {
     id: 3,
     title: "Green Landscape",
     category: "Lifestyle",
-    image: "/assets/gallery-3.jpg",
+    image: "./src/assets/park.jpg",
   },
   {
     id: 4,
     title: "Entrance",
     category: "Project",
-    image: "/assets/gallery-4.jpg",
+    image: "./src/assets/Ramayana_city (3).png",
   },
   {
     id: 5,
     title: "Beautiful Surroundings",
     category: "Lifestyle",
-    image: "/assets/gallery-5.jpg",
+    image: "./src/assets/WhatsApp Image 2026-10-02 at 11.20.54.jpeg",
   },
   {
     id: 6,
     title: "Modern Amenities",
     category: "Amenities",
-    image: "/assets/gallery-6.jpg",
+    image: "./src/assets/security.jpg",
   },
   {
     id: 7,
     title: "Planned Development",
     category: "Project",
-    image: "/assets/gallery-7.jpg",
+    image: "./src/assets/project-map.jpg",
   },
   {
     id: 8,
     title: "Green Environment",
     category: "Lifestyle",
-    image: "/assets/gallery-8.jpg",
+    image: "./src/assets/gallery2.jpg",
   },
-  {
-    id: 9,
-    title: "Location",
-    category: "Location",
-    image: "/assets/gallery-9.jpg",
-  },
+ 
   {
     id: 10,
     title: "Connectivity",
     category: "Location",
-    image: "/assets/gallery-10.jpg",
+    image: "./src/assets/highway.jpg",
   },
-  {
-    id: 11,
-    title: "Project Landscape",
-    category: "Project",
-    image: "/assets/gallery-11.jpg",
-  },
-  {
-    id: 12,
-    title: "Lifestyle",
-    category: "Lifestyle",
-    image: "/assets/gallery-12.jpg",
-  },
+  
 ];
 
 const categories = [
@@ -98,16 +82,30 @@ const Gallery = () => {
     <>
       {/* ================= GALLERY HERO ================= */}
       <section
-        className="position-relative d-flex align-items-center"
+        className="position-relative d-flex align-items-center justify-content-center text-center"
         style={{
-          minHeight: "430px",
+          minHeight: "450px",
           marginTop: "70px",
-          background:
-            "linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url('/assets/gallery-banner.jpg') center/cover no-repeat",
+          backgroundImage: "url('./src/assets/gallerydp.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container">
-          <div className="row">
+        {/* Blur & Dark Overlay (Blur value kam karke 3px kar diya hai) */}
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.45)",
+            backdropFilter: "blur(3px)",
+            WebkitBackdropFilter: "blur(3px)",
+            zIndex: 1,
+          }}
+        ></div>
+
+        {/* Content */}
+        <div className="container position-relative" style={{ zIndex: 2 }}>
+          <div className="row justify-content-center">
             <div className="col-lg-8">
               <span
                 className="d-inline-block text-uppercase fw-semibold mb-3"
@@ -131,7 +129,7 @@ const Gallery = () => {
               </h1>
 
               <p
-                className="text-white mb-0"
+                className="text-white mb-0 mx-auto"
                 style={{
                   maxWidth: "650px",
                   fontSize: "17px",

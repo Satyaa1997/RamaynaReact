@@ -105,14 +105,14 @@ const Project = () => {
              HERO
           ========================================= */
 
-         .hero-project {
-  position: relative;
-  min-height: 570px;
-  overflow: hidden;
-  background-color: #171717;
-  display: flex;
-  align-items: flex-end;
-}
+          .hero-project {
+            position: relative;
+            min-height: 570px;
+            overflow: hidden;
+            background-color: #171717;
+            display: flex;
+            align-items: flex-end; /* Tekst rykket til bunnen */
+          }
 
           .hero-project-bg {
             position: absolute;
@@ -131,21 +131,10 @@ const Project = () => {
             z-index: 1;
           }
 
-         
-.hero-project-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding-bottom: 3.5rem;
-}
-  .hero-project-content .row {
-  justify-content: flex-start;
-}
-
-.hero-project-content .col-lg-8 {
-  text-align: left;
-  margin-right: auto;
-}
+          .hero-project-content {
+            position: relative;
+            z-index: 2;
+          }
 
           /* =========================================
              CARDS
@@ -298,10 +287,20 @@ const Project = () => {
           <div className="hero-project-overlay"></div>
 
           {/* HERO CONTENT */}
-          <div className="container hero-project-content">
-            <div className="row">
+          <div className="container py-5 hero-project-content">
+            <div className="row align-items-center">
               <div className="col-lg-8">
-                
+                <span
+                  className="d-inline-block px-3 py-2 mb-3 rounded-pill fw-semibold"
+                  style={{
+                    backgroundColor: GOLD,
+                    color: "#fff",
+                    fontSize: "12px",
+                    letterSpacing: "0.8px",
+                  }}
+                >
+                  PREMIUM RESIDENTIAL PROJECT
+                </span>
 
                 <h1
                   className="display-3 fw-bold text-white mb-3"
@@ -935,26 +934,28 @@ const Project = () => {
         </section>
 
         {/* ==================================================
-            CTA — WHITE
+            CTA — DARK (Ændret til mørk baggrund)
         ================================================== */}
 
         <section
           className="project-section py-5"
           style={{
-            backgroundColor: WHITE,
+            backgroundColor: DARK,
+            color: WHITE,
+            borderTop: `1px solid rgba(255, 255, 255, 0.1)`,
           }}
         >
           <div className="container py-4">
             <div className="row align-items-center">
               <div className="col-lg-8">
-                <h2 className="fw-bold mb-2">
+                <h2 className="fw-bold mb-2 text-white">
                   Find Your Perfect Plot at{" "}
                   <span style={{ color: GOLD }}>
                     Ramayna City
                   </span>
                 </h2>
 
-                <p className="text-muted mb-0">
+                <p className="text-white-50 mb-0">
                   Get complete project details, plot availability and pricing
                   information from our team.
                 </p>
@@ -965,9 +966,9 @@ const Project = () => {
                   href="/contact"
                   className="btn px-4 py-2 fw-bold project-button"
                   style={{
-                    backgroundColor: DARK,
+                    backgroundColor: GOLD,
                     color: "#fff",
-                    border: `1px solid ${DARK}`,
+                    border: `1px solid ${GOLD}`,
                   }}
                 >
                   Contact Us
