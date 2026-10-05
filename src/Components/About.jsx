@@ -698,20 +698,6 @@ const About = () => {
       >
         <div className="container text-center py-2">
 
-          <span
-            className="badge px-3 py-2 mb-2 text-uppercase tracking-wider"
-            style={{
-              background: "rgba(200, 162, 44, 0.2)",
-              color: "#C8A22C",
-              border: "1px solid #C8A22C",
-              fontWeight: 600,
-              letterSpacing: "2px",
-              fontSize: "11px",
-            }}
-          >
-            Welcome To Ramayana City
-          </span>
-
           <h1
             className="display-5 fw-bold mb-2"
             style={{
