@@ -1,63 +1,84 @@
+
 import React, { useState } from "react";
+
+// =====================================================
+// IMAGE IMPORTS
+// =====================================================
+
+import gallerydp from "../assets/gallerydp.png";
+import projectView from "../assets/Ramayana_city (4).png";
+import park from "../assets/park.jpg";
+import entrance from "../assets/Ramayana_city (3).png";
+import surroundings from "../assets/WhatsApp Image 2026-10-02 at 11.20.54.jpeg";
+import security from "../assets/security.jpg";
+import projectMap from "../assets/project-map.jpg";
+import gallery2 from "../assets/gallery2.jpg";
+import highway from "../assets/highway.jpg";
+
+// =====================================================
+// GALLERY DATA
+// =====================================================
 
 const galleryItems = [
   {
     id: 1,
     title: "Ramayna City",
     category: "Project",
-    image: "../assets/gallerydp.png",
+    image: gallerydp,
   },
   {
     id: 2,
     title: "Project View",
     category: "Project",
-    image: "../assets/Ramayana_city (4).png",
+    image: projectView,
   },
   {
     id: 3,
     title: "Green Landscape",
     category: "Lifestyle",
-    image: "../assets/park.jpg",
+    image: park,
   },
   {
     id: 4,
     title: "Entrance",
     category: "Project",
-    image: "../assets/Ramayana_city (3).png",
+    image: entrance,
   },
   {
     id: 5,
     title: "Beautiful Surroundings",
     category: "Lifestyle",
-    image: "../assets/WhatsApp Image 2026-10-02 at 11.20.54.jpeg",
+    image: surroundings,
   },
   {
     id: 6,
     title: "Modern Amenities",
     category: "Amenities",
-    image: "../assets/security.jpg",
+    image: security,
   },
   {
     id: 7,
     title: "Planned Development",
     category: "Project",
-    image: "../assets/project-map.jpg",
+    image: projectMap,
   },
   {
     id: 8,
     title: "Green Environment",
     category: "Lifestyle",
-    image: "../assets/gallery2.jpg",
+    image: gallery2,
   },
- 
   {
     id: 10,
     title: "Connectivity",
     category: "Location",
-    image: "../assets/highway.jpg",
+    image: highway,
   },
-  
 ];
+
+// =====================================================
+// CATEGORIES
+// =====================================================
 
 const categories = [
   "All",
@@ -67,10 +88,15 @@ const categories = [
   "Location",
 ];
 
+// =====================================================
+// GALLERY COMPONENT
+// =====================================================
+
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Filter images
   const filteredImages =
     activeCategory === "All"
       ? galleryItems
@@ -80,19 +106,25 @@ const Gallery = () => {
 
   return (
     <>
-      {/* ================= GALLERY HERO ================= */}
+      {/* =====================================================
+          GALLERY HERO
+      ===================================================== */}
+
       <section
         className="position-relative d-flex align-items-center justify-content-center text-center"
         style={{
           minHeight: "450px",
           marginTop: "70px",
-          backgroundImage: "url('./src/assets/gallerydp.png')",
+
+          // Correct imported image
+          backgroundImage: `url(${gallerydp})`,
+
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Blur & Dark Overlay (Blur value kam karke 3px kar diya hai) */}
+        {/* Dark + Blur Overlay */}
         <div
           className="position-absolute top-0 start-0 w-100 h-100"
           style={{
@@ -101,12 +133,16 @@ const Gallery = () => {
             WebkitBackdropFilter: "blur(3px)",
             zIndex: 1,
           }}
-        ></div>
+        />
 
-        {/* Content */}
-        <div className="container position-relative" style={{ zIndex: 2 }}>
+        {/* Hero Content */}
+        <div
+          className="container position-relative"
+          style={{ zIndex: 2 }}
+        >
           <div className="row justify-content-center">
             <div className="col-lg-8">
+
               <span
                 className="d-inline-block text-uppercase fw-semibold mb-3"
                 style={{
@@ -141,12 +177,16 @@ const Gallery = () => {
                 that make Ramayna City a thoughtfully planned
                 destination for modern living.
               </p>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= INTRO ================= */}
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
       <section
         className="py-5"
         style={{
@@ -156,6 +196,7 @@ const Gallery = () => {
         <div className="container py-lg-4">
           <div className="row justify-content-center text-center">
             <div className="col-lg-8">
+
               <span
                 className="text-uppercase fw-semibold"
                 style={{
@@ -187,12 +228,16 @@ const Gallery = () => {
                 Take a closer look at the spaces, surroundings,
                 planning and lifestyle envisioned for Ramayna City.
               </p>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= FILTERS ================= */}
+      {/* =====================================================
+          FILTERS
+      ===================================================== */}
+
       <section
         className="pb-4"
         style={{
@@ -201,6 +246,7 @@ const Gallery = () => {
       >
         <div className="container">
           <div className="d-flex justify-content-center flex-wrap gap-2">
+
             {categories.map((category) => (
               <button
                 key={category}
@@ -211,29 +257,37 @@ const Gallery = () => {
                   borderRadius: "3px",
                   padding: "10px 22px",
                   fontSize: "14px",
+
                   backgroundColor:
                     activeCategory === category
                       ? "#D0B15B"
                       : "#ffffff",
+
                   color:
                     activeCategory === category
                       ? "#ffffff"
                       : "#333333",
+
                   border:
                     activeCategory === category
                       ? "1px solid #D0B15B"
                       : "1px solid #dddddd",
+
                   transition: "all 0.3s ease",
                 }}
               >
                 {category}
               </button>
             ))}
+
           </div>
         </div>
       </section>
 
-      {/* ================= GALLERY ================= */}
+      {/* =====================================================
+          GALLERY GRID
+      ===================================================== */}
+
       <section
         className="pb-5"
         style={{
@@ -241,7 +295,9 @@ const Gallery = () => {
         }}
       >
         <div className="container">
+
           <div className="row g-3 g-md-4">
+
             {filteredImages.map((item) => (
               <div
                 className="col-12 col-sm-6 col-lg-4"
@@ -257,6 +313,8 @@ const Gallery = () => {
                     backgroundColor: "#f2f2f2",
                   }}
                 >
+
+                  {/* Image */}
                   <img
                     src={item.image}
                     alt={item.title}
@@ -264,8 +322,7 @@ const Gallery = () => {
                     loading="lazy"
                     style={{
                       objectFit: "cover",
-                      transition:
-                        "transform 0.6s ease",
+                      transition: "transform 0.6s ease",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform =
@@ -277,7 +334,7 @@ const Gallery = () => {
                     }}
                   />
 
-                  {/* Overlay */}
+                  {/* Bottom Overlay */}
                   <div
                     className="position-absolute bottom-0 start-0 w-100"
                     style={{
@@ -318,11 +375,14 @@ const Gallery = () => {
                   >
                     ↗
                   </div>
+
                 </div>
               </div>
             ))}
+
           </div>
 
+          {/* No Images */}
           {filteredImages.length === 0 && (
             <div className="text-center py-5">
               <p className="text-secondary mb-0">
@@ -330,10 +390,14 @@ const Gallery = () => {
               </p>
             </div>
           )}
+
         </div>
       </section>
 
-      {/* ================= GALLERY BANNER ================= */}
+      {/* =====================================================
+          GALLERY BANNER
+      ===================================================== */}
+
       <section
         className="py-5"
         style={{
@@ -341,8 +405,11 @@ const Gallery = () => {
         }}
       >
         <div className="container py-lg-4">
+
           <div className="row align-items-center g-4">
+
             <div className="col-lg-8">
+
               <span
                 className="text-uppercase fw-semibold"
                 style={{
@@ -375,9 +442,11 @@ const Gallery = () => {
                 explore what makes it a distinctive destination
                 for future-focused living.
               </p>
+
             </div>
 
             <div className="col-lg-4 text-lg-end">
+
               <a
                 href="/contact"
                 className="btn text-white fw-semibold px-4 py-3"
@@ -389,12 +458,18 @@ const Gallery = () => {
               >
                 Enquire Now →
               </a>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* ================= IMAGE MODAL ================= */}
+      {/* =====================================================
+          IMAGE MODAL
+      ===================================================== */}
+
       {selectedImage && (
         <div
           className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
@@ -405,6 +480,8 @@ const Gallery = () => {
             padding: "20px",
           }}
         >
+
+          {/* Close Button */}
           <button
             type="button"
             onClick={() => setSelectedImage(null)}
@@ -419,6 +496,7 @@ const Gallery = () => {
             ×
           </button>
 
+          {/* Modal Content */}
           <div
             className="position-relative text-center"
             onClick={(e) => e.stopPropagation()}
@@ -427,6 +505,7 @@ const Gallery = () => {
               width: "100%",
             }}
           >
+
             <img
               src={selectedImage.image}
               alt={selectedImage.title}
@@ -441,6 +520,7 @@ const Gallery = () => {
             />
 
             <div className="mt-3">
+
               <span
                 className="text-uppercase"
                 style={{
@@ -456,8 +536,11 @@ const Gallery = () => {
               <h5 className="text-white mt-1 mb-0">
                 {selectedImage.title}
               </h5>
+
             </div>
+
           </div>
+
         </div>
       )}
     </>
@@ -465,3 +548,4 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
