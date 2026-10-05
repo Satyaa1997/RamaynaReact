@@ -534,14 +534,11 @@ const Home = () => {
         }
 
         /* =====================================================
-            SITE VISIT RESPONSIVE RULES
+            SITE VISIT BASE
             
-            DESKTOP & TABLET (78px and above):
-            - Image and Form display side by side.
-            
-            MOBILE (Below 768px):
-            - Image column is hidden completely.
-            - Form column takes 100% full width.
+            DESKTOP  : IMAGE + FORM
+            TABLET   : IMAGE + FORM
+            MOBILE   : IMAGE HIDDEN + FORM FULL WIDTH
         ===================================================== */
 
         .site-visit-image {
@@ -550,7 +547,28 @@ const Home = () => {
 
         .site-visit-form {
           display: block !important;
+          width: auto;
         }
+
+        /* =====================================================
+            TABLET + DESKTOP
+            768px AND ABOVE
+        ===================================================== */
+
+        @media (min-width: 768px) {
+          .site-visit-image {
+            display: block !important;
+          }
+
+          .site-visit-form {
+            display: block !important;
+          }
+        }
+
+        /* =====================================================
+            ONLY MOBILE
+            BELOW 768px
+        ===================================================== */
 
         @media (max-width: 767px) {
 
@@ -567,16 +585,10 @@ const Home = () => {
             padding-bottom: 50px !important;
           }
 
-          /* ===============================================
-             SITE VISIT IMAGE - HIDE ON MOBILE
-          =============================================== */
           .site-visit-image {
             display: none !important;
           }
 
-          /* ===============================================
-             SITE VISIT FORM - FULL WIDTH ON MOBILE
-          =============================================== */
           .site-visit-form {
             display: block !important;
             width: 100% !important;
@@ -1214,14 +1226,53 @@ const Home = () => {
           className="container position-relative"
           style={{ zIndex: 2 }}
         >
-          <SectionTitle
-            eyebrow="DIVINE LIFESTYLE"
-            title="A Lifestyle Inspired by Peace & Purpose"
-            description="A harmonious community where serenity, greenery, spiritual values and modern infrastructure come together."
-          />
-
-          <div className="row align-items-center g-4 mt-2">
+          <div className="row align-items-center g-4">
+            {/* Left Column: Heading, Description & Details */}
             <div className="col-lg-6 order-2 order-lg-1">
+              <div className="mb-3">
+                <div
+                  className="d-inline-flex align-items-center justify-content-start gap-2 mb-2"
+                  style={{
+                    color: GOLD,
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "28px",
+                      height: "1px",
+                      background: GOLD,
+                    }}
+                  />
+                  <span>DIVINE LIFESTYLE</span>
+                </div>
+
+                <h2
+                  className="fw-bold mb-3"
+                  style={{
+                    color: "#171717",
+                    fontSize: "clamp(26px, 3.2vw, 38px)",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  A Lifestyle Inspired by Peace & Purpose
+                </h2>
+
+                <p
+                  className="mb-3"
+                  style={{
+                    color: "#666",
+                    fontSize: "14px",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  A harmonious community where serenity, greenery, spiritual values and modern infrastructure come together.
+                </p>
+              </div>
+
               <p
                 style={{
                   color: "#666",
@@ -1305,6 +1356,7 @@ const Home = () => {
               </div>
             </div>
 
+            {/* Right Column: Image */}
             <div className="col-lg-6 order-1 order-lg-2">
               <div
                 style={{
@@ -1345,6 +1397,114 @@ const Home = () => {
       </section>
 
       {/* =====================================================
+          SECTION 07 - STRATEGIC LOCATION
+      ====================================================== */}
+
+      <section
+        id="location"
+        className="position-relative ramayana-section"
+        style={{
+          background: DARK,
+          padding: "65px 0",
+          overflow: "hidden",
+        }}
+      >
+        <GeometricBackground dark />
+
+        <div
+          className="container position-relative"
+          style={{ zIndex: 2 }}
+        >
+          <SectionTitle
+            dark
+            eyebrow="STRATEGIC LOCATION"
+            title="Connected to the Future"
+            description="A strategically positioned address designed around accessibility, connectivity and the growth of Lucknow."
+          />
+
+          <div className="row g-3 mt-1">
+            {[
+              ["01", "NH-56B", "Prime highway connectivity."],
+              [
+                "02",
+                "Airport",
+                "Easy access to Chaudhary Charan Singh International Airport.",
+              ],
+              [
+                "03",
+                "Expressways",
+                "Convenient access to major expressway corridors.",
+              ],
+              [
+                "04",
+                "Education",
+                "Schools and colleges within convenient reach.",
+              ],
+              [
+                "05",
+                "Healthcare",
+                "Hospitals and healthcare facilities nearby.",
+              ],
+              [
+                "06",
+                "Markets",
+                "Shopping and everyday conveniences nearby.",
+              ],
+            ].map(([num, title, text]) => (
+              <div
+                className="col-md-6 col-lg-4"
+                key={num}
+              >
+                <div
+                  className="location-card p-3 h-100"
+                  style={{
+                    background:
+                      "rgba(255,255,255,.025)",
+                    border:
+                      "1px solid rgba(255,255,255,.09)",
+                    borderRadius: "15px",
+                    transition:
+                      "transform .3s ease, border-color .3s ease",
+                  }}
+                >
+                  <div
+                    style={{
+                      color: GOLD,
+                      fontSize: "10px",
+                      fontWeight: 700,
+                      letterSpacing: "1px",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {num}
+                  </div>
+
+                  <h4
+                    className="fw-bold text-white mb-1"
+                    style={{ fontSize: "18px" }}
+                  >
+                    {title}
+                  </h4>
+
+                  <p
+                    className="mb-0"
+                    style={{
+                      color:
+                        "rgba(255,255,255,.54)",
+                      lineHeight: 1.6,
+                      fontSize: "13px",
+                    }}
+                  >
+                    {text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           SECTION 08 - BOOK YOUR FREE SITE VISIT
       ====================================================== */}
 
@@ -1353,7 +1513,7 @@ const Home = () => {
         className="position-relative ramayana-section"
         style={{
           background: WHITE,
-          padding: "10px 0",
+          padding: "70px 0",
           overflow: "hidden",
         }}
       >
@@ -1379,8 +1539,9 @@ const Home = () => {
             }}
           >
             {/* =================================================
-                IMAGE COLUMN (Visible on Desktop/Tablet, Hidden on Mobile via CSS)
+                IMAGE COLUMN
             ================================================== */}
+
             <div className="col-12 col-md-5 col-lg-5 site-visit-image">
               <div
                 className="h-100 position-relative"
@@ -1506,8 +1667,9 @@ const Home = () => {
             </div>
 
             {/* =================================================
-                FORM COLUMN (Side-by-side on desktop/tablet, Full width on mobile)
+                FORM COLUMN
             ================================================== */}
+
             <div className="col-12 col-md-7 col-lg-7 site-visit-form">
               <div
                 className="h-100"
@@ -1780,7 +1942,7 @@ const Home = () => {
 
       {/* =====================================================
           SECTION 09 - FINAL CTA
-      ===================================================== */}
+      ====================================================== */}
 
       <section
         id="contact-cta"
