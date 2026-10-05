@@ -155,7 +155,7 @@ const Footer = () => {
           /* ================= AUCTECH LINK ================= */
 
           footer .footer-developer-link {
-            color: #ffffff !important;
+            color: #0000000 !important;
             font-size: 11px !important;
             font-weight: 700 !important;
             text-decoration: none !important;
