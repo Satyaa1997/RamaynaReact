@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import {
@@ -111,7 +112,7 @@ const Project = () => {
             overflow: hidden;
             background-color: #171717;
             display: flex;
-            align-items: flex-end; /* Tekst rykket til bunnen */
+            align-items: flex-end;
           }
 
           .hero-project-bg {
@@ -220,6 +221,20 @@ const Project = () => {
           }
 
           /* =========================================
+             QUICK STATS
+          ========================================= */
+
+          .quick-stats-box {
+            margin-left: 12px;
+            margin-right: 12px;
+            padding: 24px !important;
+          }
+
+          .quick-stat-item {
+            padding: 8px 10px;
+          }
+
+          /* =========================================
              MOBILE
           ========================================= */
 
@@ -260,6 +275,16 @@ const Project = () => {
               min-width: 46px;
               font-size: 18px;
             }
+
+            .quick-stats-box {
+              margin-left: 8px;
+              margin-right: 8px;
+              padding: 20px !important;
+            }
+
+            .quick-stat-item {
+              padding: 8px 4px;
+            }
           }
         `}
       </style>
@@ -276,17 +301,14 @@ const Project = () => {
         ================================================== */}
 
         <section className="hero-project">
-          {/* REAL HERO IMAGE */}
           <img
             src={PROJECT_IMAGES.hero}
             alt="Ramayna City"
             className="hero-project-bg"
           />
 
-          {/* DARK OVERLAY */}
           <div className="hero-project-overlay"></div>
 
-          {/* HERO CONTENT */}
           <div className="container py-5 hero-project-content">
             <div className="row align-items-center">
               <div className="col-lg-8">
@@ -366,66 +388,82 @@ const Project = () => {
           className="project-section"
           style={{
             backgroundColor: WHITE,
-            marginTop: "-45px",
+            marginTop: "-25px",
             position: "relative",
             zIndex: 3,
+            paddingTop: "20px",
+            paddingBottom: "20px",
           }}
         >
           <div className="container">
             <div
-              className="bg-white rounded-3 shadow p-3"
+              className="bg-white rounded-3 shadow quick-stats-box"
               style={{
                 borderTop: `3px solid ${GOLD}`,
               }}
             >
-              <div className="row g-3 text-center">
-                <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    Ramayna City
-                  </h5>
+              <div className="row g-4 text-center align-items-center">
 
-                  <small className="text-muted">Project</small>
+                <div className="col-6 col-lg-3">
+                  <div className="quick-stat-item">
+                    <h5
+                      className="fw-bold mb-1"
+                      style={{ color: GOLD }}
+                    >
+                      Ramayna City
+                    </h5>
+
+                    <small className="text-muted">
+                      Project
+                    </small>
+                  </div>
                 </div>
 
                 <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    Residential
-                  </h5>
+                  <div className="quick-stat-item">
+                    <h5
+                      className="fw-bold mb-1"
+                      style={{ color: GOLD }}
+                    >
+                      Residential
+                    </h5>
 
-                  <small className="text-muted">Development</small>
+                    <small className="text-muted">
+                      Development
+                    </small>
+                  </div>
                 </div>
 
                 <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    9+
-                  </h5>
+                  <div className="quick-stat-item">
+                    <h5
+                      className="fw-bold mb-1"
+                      style={{ color: GOLD }}
+                    >
+                      9+
+                    </h5>
 
-                  <small className="text-muted">
-                    Plot Configurations
-                  </small>
+                    <small className="text-muted">
+                      Plot Configurations
+                    </small>
+                  </div>
                 </div>
 
                 <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    Lucknow
-                  </h5>
+                  <div className="quick-stat-item">
+                    <h5
+                      className="fw-bold mb-1"
+                      style={{ color: GOLD }}
+                    >
+                      Lucknow
+                    </h5>
 
-                  <small className="text-muted">
-                    Uttar Pradesh
-                  </small>
+                    <small className="text-muted">
+                      Uttar Pradesh
+                    </small>
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -445,6 +483,7 @@ const Project = () => {
         >
           <div className="container py-lg-4">
             <div className="row align-items-center g-4">
+
               <div className="col-lg-6">
                 <img
                   src={PROJECT_IMAGES.overview}
@@ -548,6 +587,7 @@ const Project = () => {
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -563,6 +603,7 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="text-center mb-4">
               <span
                 className="fw-semibold text-uppercase"
@@ -604,6 +645,7 @@ const Project = () => {
                     }}
                   >
                     <div className="d-flex align-items-start gap-3">
+
                       <div className="icon-box">
                         {item.icon}
                       </div>
@@ -623,11 +665,13 @@ const Project = () => {
                           {item.text}
                         </p>
                       </div>
+
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
@@ -642,7 +686,9 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="row align-items-center g-4">
+
               <div className="col-lg-5">
                 <span
                   className="fw-semibold text-uppercase"
@@ -673,6 +719,7 @@ const Project = () => {
 
               <div className="col-lg-7">
                 <div className="row g-2">
+
                   {amenities.map((amenity, index) => (
                     <div
                       className="col-md-6"
@@ -712,8 +759,10 @@ const Project = () => {
                       </div>
                     </div>
                   ))}
+
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -729,6 +778,7 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="text-center mb-4">
               <span
                 className="fw-semibold text-uppercase"
@@ -758,6 +808,7 @@ const Project = () => {
             </div>
 
             <div className="row g-3">
+
               <div className="col-lg-5">
                 <div
                   className="h-100 rounded-4 p-4 project-card"
@@ -819,6 +870,7 @@ const Project = () => {
                       </p>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -843,6 +895,7 @@ const Project = () => {
                   ></iframe>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -858,7 +911,9 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="row align-items-center g-4">
+
               <div className="col-lg-6">
                 <div
                   className="rounded-4 overflow-hidden"
@@ -929,12 +984,13 @@ const Project = () => {
                   <FaArrowRight className="ms-2" />
                 </a>
               </div>
+
             </div>
           </div>
         </section>
 
         {/* ==================================================
-            CTA — DARK (Ændret til mørk baggrund)
+            CTA — DARK
         ================================================== */}
 
         <section
@@ -946,7 +1002,9 @@ const Project = () => {
           }}
         >
           <div className="container py-4">
+
             <div className="row align-items-center">
+
               <div className="col-lg-8">
                 <h2 className="fw-bold mb-2 text-white">
                   Find Your Perfect Plot at{" "}
@@ -975,6 +1033,7 @@ const Project = () => {
                   <FaArrowRight className="ms-2" />
                 </a>
               </div>
+
             </div>
           </div>
         </section>
@@ -984,3 +1043,4 @@ const Project = () => {
 };
 
 export default Project;
+
