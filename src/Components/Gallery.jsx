@@ -77,32 +77,11 @@ const galleryItems = [
 ];
 
 // =====================================================
-// CATEGORIES
-// =====================================================
-
-const categories = [
-  "All",
-  "Project",
-  "Amenities",
-  "Lifestyle",
-  "Location",
-];
-
-// =====================================================
 // GALLERY COMPONENT
 // =====================================================
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null);
-
-  // Filter images
-  const filteredImages =
-    activeCategory === "All"
-      ? galleryItems
-      : galleryItems.filter(
-          (item) => item.category === activeCategory
-        );
 
   return (
     <>
@@ -116,9 +95,7 @@ const Gallery = () => {
           minHeight: "450px",
           marginTop: "70px",
 
-          // Correct imported image
           backgroundImage: `url(${gallerydp})`,
-
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -235,56 +212,6 @@ const Gallery = () => {
       </section>
 
       {/* =====================================================
-          FILTERS
-      ===================================================== */}
-
-      <section
-        className="pb-4"
-        style={{
-          backgroundColor: "#ffffff",
-        }}
-      >
-        <div className="container">
-          <div className="d-flex justify-content-center flex-wrap gap-2">
-
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className="btn fw-semibold"
-                style={{
-                  borderRadius: "3px",
-                  padding: "10px 22px",
-                  fontSize: "14px",
-
-                  backgroundColor:
-                    activeCategory === category
-                      ? "#D0B15B"
-                      : "#ffffff",
-
-                  color:
-                    activeCategory === category
-                      ? "#ffffff"
-                      : "#333333",
-
-                  border:
-                    activeCategory === category
-                      ? "1px solid #D0B15B"
-                      : "1px solid #dddddd",
-
-                  transition: "all 0.3s ease",
-                }}
-              >
-                {category}
-              </button>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
           GALLERY GRID
       ===================================================== */}
 
@@ -298,7 +225,7 @@ const Gallery = () => {
 
           <div className="row g-3 g-md-4">
 
-            {filteredImages.map((item) => (
+            {galleryItems.map((item) => (
               <div
                 className="col-12 col-sm-6 col-lg-4"
                 key={item.id}
@@ -325,12 +252,10 @@ const Gallery = () => {
                       transition: "transform 0.6s ease",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.transform =
-                        "scale(1.08)";
+                      e.currentTarget.style.transform = "scale(1.08)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.transform =
-                        "scale(1)";
+                      e.currentTarget.style.transform = "scale(1)";
                     }}
                   />
 
@@ -367,8 +292,7 @@ const Gallery = () => {
                       width: "42px",
                       height: "42px",
                       borderRadius: "50%",
-                      backgroundColor:
-                        "rgba(255,255,255,0.92)",
+                      backgroundColor: "rgba(255,255,255,0.92)",
                       color: "#202020",
                       fontSize: "18px",
                     }}
@@ -381,15 +305,6 @@ const Gallery = () => {
             ))}
 
           </div>
-
-          {/* No Images */}
-          {filteredImages.length === 0 && (
-            <div className="text-center py-5">
-              <p className="text-secondary mb-0">
-                No images available in this category.
-              </p>
-            </div>
-          )}
 
         </div>
       </section>
@@ -548,4 +463,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
