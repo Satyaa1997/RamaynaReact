@@ -28,16 +28,16 @@ const Contact = () => {
       <section
         className="position-relative d-flex align-items-center justify-content-center text-center"
         style={{
-          minHeight: "380px",
-          marginTop: "70px",
-          background: `
-            linear-gradient(
-              rgba(0,0,0,0.4),
-              rgba(0,0,0,0.4)
-            ),
-            url(${heroImage}) center/cover no-repeat
-          `,
-        }}
+  minHeight: "380px",
+  marginTop: "70px",
+  backgroundImage: `linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  ), url("${heroImage}")`,
+  backgroundPosition: "center center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+}}
       >
         <div className="container py-4">
           <div className="row justify-content-center">
