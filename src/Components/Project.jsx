@@ -129,9 +129,61 @@ const Project = () => {
             z-index: 1;
           }
 
+          /* =========================================
+             HERO CONTENT - LEFT + BOTTOM
+          ========================================= */
+
           .hero-project-content {
-            position: relative;
+            position: absolute;
             z-index: 2;
+            left: 0;
+            right: 0;
+            bottom: 42px;
+            width: 100%;
+          }
+
+          .hero-project-content .col-lg-8 {
+            max-width: 650px;
+          }
+
+          /* Small Premium Badge */
+
+          .hero-project-content .hero-badge {
+            font-size: 10px !important;
+            padding: 6px 12px !important;
+            margin-bottom: 10px !important;
+            letter-spacing: 0.8px;
+          }
+
+          /* Smaller Hero Heading */
+
+          .hero-project-content h1 {
+            font-size: 3rem !important;
+            line-height: 1.1;
+            margin-bottom: 10px !important;
+          }
+
+          /* Smaller Description */
+
+          .hero-project-content .hero-description {
+            font-size: 15px !important;
+            line-height: 1.5 !important;
+            max-width: 560px !important;
+            margin-bottom: 10px !important;
+          }
+
+          /* Location */
+
+          .hero-project-content .hero-location {
+            font-size: 14px !important;
+            margin-bottom: 16px !important;
+          }
+
+          /* Hero Buttons */
+
+          .hero-project-content .project-button {
+            font-size: 13px;
+            padding: 8px 18px !important;
           }
 
           /* =========================================
@@ -222,12 +274,55 @@ const Project = () => {
           ========================================= */
 
           @media (max-width: 767px) {
+
             .hero-project {
               min-height: 540px;
             }
 
-            .hero-project h1 {
-              font-size: 2.5rem !important;
+            /* Mobile Hero Bottom Position */
+
+            .hero-project-content {
+              bottom: 28px;
+            }
+
+            .hero-project-content .col-lg-8 {
+              max-width: 100%;
+            }
+
+            /* Mobile Badge */
+
+            .hero-project-content .hero-badge {
+              font-size: 9px !important;
+              padding: 5px 10px !important;
+            }
+
+            /* Mobile Heading */
+
+            .hero-project-content h1 {
+              font-size: 2.1rem !important;
+              line-height: 1.1;
+            }
+
+            /* Mobile Description */
+
+            .hero-project-content .hero-description {
+              font-size: 13px !important;
+              line-height: 1.45 !important;
+              max-width: 100% !important;
+            }
+
+            /* Mobile Location */
+
+            .hero-project-content .hero-location {
+              font-size: 13px !important;
+              margin-bottom: 14px !important;
+            }
+
+            /* Mobile Buttons */
+
+            .hero-project-content .project-button {
+              font-size: 12px;
+              padding: 7px 14px !important;
             }
 
             .hero-project-bg {
@@ -259,6 +354,119 @@ const Project = () => {
               font-size: 18px;
             }
           }
+            .project-cta {
+  background: #171717;
+  padding: 32px 0;
+  width: 100%;
+}
+
+.project-cta-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.project-cta-content {
+  flex: 1;
+}
+
+.project-cta-label {
+  display: block;
+  color: #d0b15b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.project-cta-content h2 {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+
+.project-cta-content h2 span {
+  color: #d0b15b;
+}
+
+.project-cta-content p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.project-cta-action {
+  flex-shrink: 0;
+}
+
+.project-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  background: #d0b15b;
+  color: #171717;
+
+  padding: 10px 20px;
+  border: 1px solid #d0b15b;
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.project-cta-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #171717;
+}
+
+.project-cta-btn svg {
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.project-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+  .project-cta {
+    padding: 26px 0;
+  }
+
+  .project-cta-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .project-cta-content h2 {
+    font-size: 21px;
+  }
+
+  .project-cta-content p {
+    font-size: 12px;
+  }
+
+  .project-cta-btn {
+    padding: 9px 18px;
+    font-size: 12px;
+  }
+}
         `}
       </style>
 
@@ -274,7 +482,9 @@ const Project = () => {
         ================================================== */}
 
         <section className="hero-project">
+
           {/* REAL HERO IMAGE */}
+
           <img
             src={PROJECT_IMAGES.hero}
             alt="Ramayna City"
@@ -282,26 +492,33 @@ const Project = () => {
           />
 
           {/* DARK OVERLAY */}
+
           <div className="hero-project-overlay"></div>
 
-          {/* HERO CONTENT */}
-          <div className="container py-5 hero-project-content">
-            <div className="row align-items-center">
+          {/* HERO CONTENT - LEFT + BOTTOM */}
+
+          <div className="container hero-project-content">
+
+            <div className="row">
+
               <div className="col-lg-8">
+
+                {/* BADGE */}
+
                 <span
-                  className="d-inline-block px-3 py-2 mb-3 rounded-pill fw-semibold"
+                  className="d-inline-block rounded-pill fw-semibold hero-badge"
                   style={{
                     backgroundColor: GOLD,
                     color: "#fff",
-                    fontSize: "12px",
-                    letterSpacing: "0.8px",
                   }}
                 >
                   PREMIUM RESIDENTIAL PROJECT
                 </span>
 
+                {/* TITLE */}
+
                 <h1
-                  className="display-3 fw-bold text-white mb-3"
+                  className="fw-bold text-white"
                   style={{
                     letterSpacing: "0.5px",
                   }}
@@ -309,18 +526,18 @@ const Project = () => {
                   Ramayna City
                 </h1>
 
+                {/* DESCRIPTION */}
+
                 <p
-                  className="text-white fs-5 mb-3"
-                  style={{
-                    maxWidth: "680px",
-                    lineHeight: "1.6",
-                  }}
+                  className="text-white hero-description"
                 >
                   A thoughtfully planned residential destination designed for
                   modern living, peaceful surroundings and long-term value.
                 </p>
 
-                <p className="text-white mb-4">
+                {/* LOCATION */}
+
+                <p className="text-white hero-location">
                   <FaLocationDot
                     className="me-2"
                     style={{
@@ -330,10 +547,13 @@ const Project = () => {
                   Lucknow, Uttar Pradesh
                 </p>
 
-                <div className="d-flex flex-wrap gap-3">
+                {/* BUTTONS */}
+
+                <div className="d-flex flex-wrap gap-2">
+
                   <a
                     href="/contact"
-                    className="btn px-4 py-2 fw-semibold project-button"
+                    className="btn fw-semibold project-button"
                     style={{
                       backgroundColor: GOLD,
                       color: "#fff",
@@ -346,13 +566,17 @@ const Project = () => {
 
                   <a
                     href="#overview"
-                    className="btn btn-outline-light px-4 py-2 fw-semibold project-button"
+                    className="btn btn-outline-light fw-semibold project-button"
                   >
                     Explore Project
                   </a>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
         </section>
 
@@ -360,74 +584,88 @@ const Project = () => {
             QUICK STATS
         ================================================== */}
 
-        <section
-          className="project-section"
-          style={{
-            backgroundColor: WHITE,
-            marginTop: "-45px",
-            position: "relative",
-            zIndex: 3,
-          }}
-        >
-          <div className="container">
-            <div
-              className="bg-white rounded-3 shadow p-3"
-              style={{
-                borderTop: `3px solid ${GOLD}`,
-              }}
-            >
-              <div className="row g-3 text-center">
-                <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    Ramayna City
-                  </h5>
+       <section
+  className="project-section"
+  style={{
+    backgroundColor: WHITE,
+    marginTop: "-45px",
+    position: "relative",
+    zIndex: 3,
+  }}
+>
+  <div className="container">
 
-                  <small className="text-muted">Project</small>
-                </div>
+    <div
+      className="bg-white rounded-3 shadow"
+      style={{
+        borderTop: `3px solid ${GOLD}`,
+        padding: "28px 20px",
+        minHeight: "125px",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
 
-                <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    Residential
-                  </h5>
+      <div className="row g-4 text-center w-100">
 
-                  <small className="text-muted">Development</small>
-                </div>
+        <div className="col-6 col-lg-3">
+          <h5
+            className="fw-bold mb-2"
+            style={{ color: GOLD }}
+          >
+            Ramayna City
+          </h5>
 
-                <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    9+
-                  </h5>
+          <small className="text-muted">
+            Project
+          </small>
+        </div>
 
-                  <small className="text-muted">
-                    Plot Configurations
-                  </small>
-                </div>
+        <div className="col-6 col-lg-3">
+          <h5
+            className="fw-bold mb-2"
+            style={{ color: GOLD }}
+          >
+            Residential
+          </h5>
 
-                <div className="col-6 col-lg-3">
-                  <h5
-                    className="fw-bold mb-1"
-                    style={{ color: GOLD }}
-                  >
-                    Lucknow
-                  </h5>
+          <small className="text-muted">
+            Development
+          </small>
+        </div>
 
-                  <small className="text-muted">
-                    Uttar Pradesh
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="col-6 col-lg-3">
+          <h5
+            className="fw-bold mb-2"
+            style={{ color: GOLD }}
+          >
+            9+
+          </h5>
+
+          <small className="text-muted">
+            Plot Configurations
+          </small>
+        </div>
+
+        <div className="col-6 col-lg-3">
+          <h5
+            className="fw-bold mb-2"
+            style={{ color: GOLD }}
+          >
+            Lucknow
+          </h5>
+
+          <small className="text-muted">
+            Uttar Pradesh
+          </small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         {/* ==================================================
             OVERVIEW — DARK
@@ -442,8 +680,11 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="row align-items-center g-4">
+
               <div className="col-lg-6">
+
                 <img
                   src={PROJECT_IMAGES.overview}
                   alt="Ramayna City"
@@ -452,9 +693,11 @@ const Project = () => {
                     height: "390px",
                   }}
                 />
+
               </div>
 
               <div className="col-lg-6">
+
                 <span
                   className="fw-semibold text-uppercase"
                   style={{
@@ -467,10 +710,13 @@ const Project = () => {
                 </span>
 
                 <h2 className="fw-bold mt-2 mb-3">
+
                   Welcome to{" "}
+
                   <span style={{ color: GOLD }}>
                     Ramayna City
                   </span>
+
                 </h2>
 
                 <p
@@ -497,13 +743,16 @@ const Project = () => {
                 </p>
 
                 <div className="row g-3 mt-2">
+
                   <div className="col-sm-6">
+
                     <div
                       className="p-3 rounded-3 dark-card"
                       style={{
                         borderLeft: `3px solid ${GOLD}`,
                       }}
                     >
+
                       <FaHouse
                         className="mb-2"
                         style={{
@@ -518,16 +767,20 @@ const Project = () => {
                       <small className="text-white-50">
                         Planned for comfortable living
                       </small>
+
                     </div>
+
                   </div>
 
                   <div className="col-sm-6">
+
                     <div
                       className="p-3 rounded-3 dark-card"
                       style={{
                         borderLeft: `3px solid ${GOLD}`,
                       }}
                     >
+
                       <FaLocationDot
                         className="mb-2"
                         style={{
@@ -542,11 +795,17 @@ const Project = () => {
                       <small className="text-white-50">
                         Convenient connectivity
                       </small>
+
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
         </section>
 
@@ -561,7 +820,9 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="text-center mb-4">
+
               <span
                 className="fw-semibold text-uppercase"
                 style={{
@@ -587,26 +848,33 @@ const Project = () => {
                 A balanced combination of location, infrastructure and
                 lifestyle.
               </p>
+
             </div>
 
             <div className="row g-3">
+
               {highlights.map((item, index) => (
+
                 <div
                   className="col-md-6 col-lg-4"
                   key={index}
                 >
+
                   <div
                     className="project-card bg-white rounded-4 p-3 h-100 shadow-sm"
                     style={{
                       border: "1px solid #eeeeee",
                     }}
                   >
+
                     <div className="d-flex align-items-start gap-3">
+
                       <div className="icon-box">
                         {item.icon}
                       </div>
 
                       <div>
+
                         <h6 className="fw-bold mb-2">
                           {item.title}
                         </h6>
@@ -620,12 +888,19 @@ const Project = () => {
                         >
                           {item.text}
                         </p>
+
                       </div>
+
                     </div>
+
                   </div>
+
                 </div>
+
               ))}
+
             </div>
+
           </div>
         </section>
 
@@ -640,8 +915,11 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="row align-items-center g-4">
+
               <div className="col-lg-5">
+
                 <span
                   className="fw-semibold text-uppercase"
                   style={{
@@ -667,15 +945,20 @@ const Project = () => {
                   From internal roads to planned open spaces, every element is
                   focused on creating a comfortable residential environment.
                 </p>
+
               </div>
 
               <div className="col-lg-7">
+
                 <div className="row g-2">
+
                   {amenities.map((amenity, index) => (
+
                     <div
                       className="col-md-6"
                       key={index}
                     >
+
                       <div
                         className="amenity-item d-flex align-items-center p-2 rounded-3"
                         style={{
@@ -685,6 +968,7 @@ const Project = () => {
                             "1px solid rgba(255,255,255,0.10)",
                         }}
                       >
+
                         <span
                           className="d-flex align-items-center justify-content-center rounded-circle me-2"
                           style={{
@@ -707,12 +991,19 @@ const Project = () => {
                         >
                           {amenity}
                         </span>
+
                       </div>
+
                     </div>
+
                   ))}
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
         </section>
 
@@ -727,7 +1018,9 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="text-center mb-4">
+
               <span
                 className="fw-semibold text-uppercase"
                 style={{
@@ -753,10 +1046,13 @@ const Project = () => {
                 A location that keeps your everyday destinations within
                 convenient reach.
               </p>
+
             </div>
 
             <div className="row g-3">
+
               <div className="col-lg-5">
+
                 <div
                   className="h-100 rounded-4 p-4 project-card"
                   style={{
@@ -764,16 +1060,19 @@ const Project = () => {
                     border: "1px solid #eeeeee",
                   }}
                 >
+
                   <h5 className="fw-bold mb-3">
                     Ramayna City Location
                   </h5>
 
                   <div className="d-flex gap-3 mb-3">
+
                     <div className="icon-box">
                       <FaLocationDot />
                     </div>
 
                     <div>
+
                       <h6 className="fw-bold mb-1">
                         Address
                       </h6>
@@ -781,15 +1080,19 @@ const Project = () => {
                       <p className="text-muted mb-0 small">
                         Lucknow, Uttar Pradesh, India
                       </p>
+
                     </div>
+
                   </div>
 
                   <div className="d-flex gap-3 mb-3">
+
                     <div className="icon-box">
                       <FaCar />
                     </div>
 
                     <div>
+
                       <h6 className="fw-bold mb-1">
                         Connectivity
                       </h6>
@@ -798,15 +1101,19 @@ const Project = () => {
                         Convenient access to major roads and important
                         destinations.
                       </p>
+
                     </div>
+
                   </div>
 
                   <div className="d-flex gap-3">
+
                     <div className="icon-box">
                       <FaCity />
                     </div>
 
                     <div>
+
                       <h6 className="fw-bold mb-1">
                         Nearby Development
                       </h6>
@@ -815,18 +1122,24 @@ const Project = () => {
                         Located in a developing residential and investment
                         corridor.
                       </p>
+
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
 
               <div className="col-lg-7">
+
                 <div
                   className="rounded-4 overflow-hidden shadow-sm"
                   style={{
                     minHeight: "390px",
                   }}
                 >
+
                   <iframe
                     title="Ramayna City Location"
                     src="https://www.google.com/maps?q=Lucknow%20Uttar%20Pradesh&output=embed"
@@ -839,9 +1152,13 @@ const Project = () => {
                     loading="lazy"
                     allowFullScreen
                   ></iframe>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
         </section>
 
@@ -856,14 +1173,18 @@ const Project = () => {
           }}
         >
           <div className="container py-lg-4">
+
             <div className="row align-items-center g-4">
+
               <div className="col-lg-6">
+
                 <div
                   className="rounded-4 overflow-hidden"
                   style={{
                     backgroundColor: "#fff",
                   }}
                 >
+
                   <img
                     src={PROJECT_IMAGES.masterPlan}
                     alt="Ramayna City Master Plan"
@@ -872,10 +1193,13 @@ const Project = () => {
                       maxHeight: "480px",
                     }}
                   />
+
                 </div>
+
               </div>
 
               <div className="col-lg-6">
+
                 <span
                   className="fw-semibold text-uppercase"
                   style={{
@@ -926,8 +1250,11 @@ const Project = () => {
                   Enquire About Availability
                   <FaArrowRight className="ms-2" />
                 </a>
+
               </div>
+
             </div>
+
           </div>
         </section>
 
@@ -935,45 +1262,37 @@ const Project = () => {
             CTA — WHITE
         ================================================== */}
 
-        <section
-          className="project-section py-5"
-          style={{
-            backgroundColor: WHITE,
-          }}
-        >
-          <div className="container py-4">
-            <div className="row align-items-center">
-              <div className="col-lg-8">
-                <h2 className="fw-bold mb-2">
-                  Find Your Perfect Plot at{" "}
-                  <span style={{ color: GOLD }}>
-                    Ramayna City
-                  </span>
-                </h2>
+        
+        <section className="project-cta">
+  <div className="project-cta-container">
 
-                <p className="text-muted mb-0">
-                  Get complete project details, plot availability and pricing
-                  information from our team.
-                </p>
-              </div>
+    {/* CTA TEXT */}
+    <div className="project-cta-content">
+      <span className="project-cta-label">
+        YOUR DREAM PLOT AWAITS
+      </span>
 
-              <div className="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                <a
-                  href="/contact"
-                  className="btn px-4 py-2 fw-bold project-button"
-                  style={{
-                    backgroundColor: DARK,
-                    color: "#fff",
-                    border: `1px solid ${DARK}`,
-                  }}
-                >
-                  Contact Us
-                  <FaArrowRight className="ms-2" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+      <h2>
+        Find Your Perfect Plot at{" "}
+        <span>Ramayna City</span>
+      </h2>
+
+      <p>
+        Get project details, availability & pricing information from our team.
+      </p>
+    </div>
+
+    {/* CTA BUTTON */}
+    <div className="project-cta-action">
+      <a href="/contact" className="project-cta-btn">
+        Contact Us
+        <FaArrowRight />
+      </a>
+    </div>
+
+  </div>
+</section>
+
       </div>
     </>
   );

@@ -138,88 +138,97 @@ const WhyChoose = () => {
       <section
         className="position-relative overflow-hidden"
         style={{
-          minHeight: "480px",
+          minHeight: "520px",
           backgroundColor: DARK,
         }}
       >
-        {/* Hero Image */}
+        {/* HERO IMAGE */}
         <div
-          className="position-absolute top-0 end-0 h-100"
+          className="position-absolute top-0 start-0 w-100 h-100"
           style={{
-            width: "55%",
-            backgroundImage: `linear-gradient(
-              90deg,
-              ${DARK} 0%,
-              rgba(32,32,32,0.82) 18%,
-              rgba(32,32,32,0.25) 100%
-            ), url("${heroImage}")`,
+            backgroundImage: `url("${heroImage}")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
 
-        {/* Gold Overlay Line */}
+        {/* BLUR OVERLAY & DARK TINT */}
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.45)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            zIndex: 1,
+          }}
+        />
+
+        {/* GOLD VERTICAL LINE - LEFT BOTTOM */}
         <div
           className="position-absolute"
           style={{
-            width: "5px",
-            height: "120px",
+            width: "4px",
+            height: "75px",
             left: "0",
-            top: "50%",
-            transform: "translateY(-50%)",
+            bottom: "15px",
             backgroundColor: GOLD,
+            zIndex: 3,
           }}
         />
 
         {/* =================================================
-            HERO CONTENT - LEFT + DOWN
+            HERO CONTENT - CENTERED & PUSHED FURTHER DOWN
         ================================================== */}
 
         <div
           className="container position-relative h-100"
           style={{
-            zIndex: 2,
-            minHeight: "480px",
+            zIndex: 3,
+            minHeight: "520px",
           }}
         >
           <div
-            className="row h-100 align-items-end"
+            className="row h-100 align-items-start justify-content-center text-center"
             style={{
-              paddingBottom: "20px",
+              paddingTop: "180px", // Yahan padding aur badha di hai taaki text aur neeche aaye
             }}
           >
-            <div className="col-12 col-lg-7 ps-lg-0">
+            <div className="col-12 col-lg-8">
+              {/* LABEL */}
               <span
-                className="d-inline-block px-3 py-2 rounded-pill fw-semibold mb-3"
+                className="d-inline-block px-2 py-1 rounded-pill fw-semibold mb-2"
                 style={{
                   backgroundColor: GOLD,
                   color: "#ffffff",
-                  fontSize: "11px",
-                  letterSpacing: "1.5px",
+                  fontSize: "10px",
+                  letterSpacing: "1.2px",
                 }}
               >
                 WHY RAMAYNA CITY
               </span>
 
+              {/* HEADING */}
               <h1
-                className="fw-bold text-white mb-3"
+                className="fw-bold text-white mb-2 mx-auto"
                 style={{
-                  fontSize: "clamp(32px, 5vw, 52px)",
-                  lineHeight: "1.1",
-                  marginBottom: "12px",
+                  fontSize: "clamp(24px, 3.5vw, 38px)",
+                  lineHeight: "1.2",
+                  maxWidth: "600px",
+                  textShadow: "0 2px 6px rgba(0,0,0,0.5)",
                 }}
               >
-                A Place Chosen for
-                <br />
+                A Place Chosen for{" "}
                 <span style={{ color: GOLD }}>Better Living</span>
               </h1>
 
+              {/* DESCRIPTION */}
               <p
-                className="text-white-50 mb-0"
+                className="text-white mb-0 mx-auto"
                 style={{
-                  maxWidth: "600px",
-                  fontSize: "16px",
-                  lineHeight: "1.6",
+                  maxWidth: "520px",
+                  fontSize: "13px",
+                  lineHeight: "1.5",
+                  textShadow: "0 1px 4px rgba(0,0,0,0.6)",
                 }}
               >
                 Discover a thoughtfully planned residential destination designed

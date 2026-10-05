@@ -1,1361 +1,985 @@
-import React, { useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React from "react";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 import {
-  Navigation,
-  Pagination,
-  Autoplay,
-  EffectCoverflow,
-} from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-
-// =====================================================
-// IMAGES IMPORTS
-// =====================================================
-import aboutImage from "../assets/mandir2.png";
-import grandEntrance from "../assets/Grand Entrence.jpeg";
-import mandir from "../assets/mandir2.png";
-import lordRama from "../assets/lord-rama.jpg";
-import greenBelt from "../assets/green-belt.png";
-import security from "../assets/security.jpg";
-import park from "../assets/green-belt.png";
-import agraExpressway from "../assets/AgraExpressway.jpg";
+  FaLocationDot,
+  FaHouse,
+  FaRoad,
+  FaTree,
+  FaBuilding,
+  FaChartLine,
+  FaCheck,
+  FaCar,
+  FaCity,
+  FaArrowRight,
+} from "react-icons/fa6";
 
 // =====================================================
-// STATIC DATA
+// IMAGE IMPORTS
 // =====================================================
-const WHY_CHOOSE_DATA = [
-  {
-    number: "01",
-    tag: "Divine Legacy",
-    title: "Spiritual Sanctuary",
-    description:
-      "Featuring a magnificent Ram Temple and statue of Lord Rama at the core of the community.",
-    image: mandir,
-    buttonText: "Explore More",
-    action: "about",
-  },
-  {
-    number: "02",
-    tag: "Nature & Peace",
-    title: "Botanical Green Living",
-    description:
-      "Expansive landscaped parks and lush green belts offering a tranquil, pollution-free atmosphere.",
-    image: park,
-    buttonText: "View Amenities",
-    action: "amenities",
-  },
-  {
-    number: "03",
-    tag: "Peace of Mind",
-    title: "Secure Gated Community",
-    description:
-      "Multi-tier 24/7 security systems designed to ensure a safe, protected environment for your family.",
-    image: security,
-    buttonText: "View Location",
-    action: "location",
-  },
-];
 
-const AMENITIES_DATA = [
-  {
-    image: mandir,
-    title: "Ram Temple",
-    icon: "fa-solid fa-gopuram",
-  },
-  {
-    image: lordRama,
-    title: "Lord Rama Statue",
-    icon: "fa-solid fa-star",
-  },
-  {
-    image: greenBelt,
-    title: "17 Meter Green Belt",
-    icon: "fa-solid fa-leaf",
-  },
-  {
-    image: security,
-    title: "Gated Community & Security",
-    icon: "fa-solid fa-shield-halved",
-  },
-  {
-    image: park,
-    title: "Landscaped Parks",
-    icon: "fa-solid fa-tree",
-  },
-  {
-    image: agraExpressway,
-    title: "Prime NH-56B Connectivity",
-    icon: "fa-solid fa-location-dot",
-  },
-  {
-    image: grandEntrance,
-    title: "Grand Entrance Gate",
-    icon: "fa-solid fa-archway",
-  },
-];
+import heroImage from "../assets/Ramayana_city (3).png";
+import overviewImage from "../assets/Ramayana_city (3).png";
+import masterPlanImage from "../assets/project-map.jpg";
 
-// =====================================================
-// ABOUT PAGE COMPONENT
-// =====================================================
-const About = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const amenitiesRef = useRef(null);
+const Project = () => {
+  const GOLD = "#D0B15B";
+  const DARK = "#171717";
+  const WHITE = "#ffffff";
 
   // =====================================================
-  // HANDLE HASH SCROLL & PAGE TOP SCROLL
+  // PROJECT IMAGES
   // =====================================================
-  useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
 
-      const timer = setTimeout(() => {
-        const element = document.getElementById(id);
-
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      }, 150);
-
-      return () => clearTimeout(timer);
-    }
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [location.pathname, location.hash]);
-
-  // =====================================================
-  // NAVIGATE TO HOME SECTION
-  // =====================================================
-  const goToHomeSection = (sectionId) => {
-    navigate(`/#${sectionId}`);
+  const PROJECT_IMAGES = {
+    hero: heroImage,
+    overview: overviewImage,
+    masterPlan: masterPlanImage,
   };
 
   // =====================================================
-  // HANDLE WHY CHOOSE ACTION
+  // PROJECT HIGHLIGHTS
   // =====================================================
-  const handleWhyChooseAction = (action) => {
-    if (action === "about") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-      return;
-    }
 
-    if (action === "amenities") {
-      amenitiesRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      return;
-    }
+  const highlights = [
+    {
+      icon: <FaLocationDot />,
+      title: "Prime Location",
+      text: "Strategically located with convenient connectivity to major roads and important destinations.",
+    },
+    {
+      icon: <FaHouse />,
+      title: "Residential Plots",
+      text: "Well-planned residential plots designed for comfortable living and future growth.",
+    },
+    {
+      icon: <FaRoad />,
+      title: "Excellent Connectivity",
+      text: "Easy access to nearby roads, markets, schools and other essential facilities.",
+    },
+    {
+      icon: <FaTree />,
+      title: "Green Environment",
+      text: "Planned surroundings with open spaces and a peaceful residential atmosphere.",
+    },
+    {
+      icon: <FaBuilding />,
+      title: "Planned Development",
+      text: "A thoughtfully planned development focused on better infrastructure and living experience.",
+    },
+    {
+      icon: <FaChartLine />,
+      title: "Investment Potential",
+      text: "A residential destination suitable for both end users and long-term investment.",
+    },
+  ];
 
-    if (action === "location") {
-      goToHomeSection("location");
-    }
-  };
+  // =====================================================
+  // AMENITIES
+  // =====================================================
+
+  const amenities = [
+    "Wide Internal Roads",
+    "Green & Open Spaces",
+    "Street Lighting",
+    "Planned Drainage",
+    "Residential Development",
+    "Easy Road Connectivity",
+    "Peaceful Environment",
+    "Essential Infrastructure",
+  ];
 
   return (
-    <main className="ramayana-about-page">
-
-      {/* =====================================================
-          PREMIUM PAGE STYLING
-      ===================================================== */}
+    <>
       <style>
         {`
-          /* =====================================================
-              GLOBAL ABOUT PAGE
-          ===================================================== */
+          /* =========================================
+             GLOBAL
+          ========================================= */
 
-          .ramayana-about-page {
-            --dark-bg: #171512;
-            --dark-bg-2: #211d18;
-            --gold: #C8A22C;
-            --light-bg: #ffffff;
-            --light-bg-2: #f7f7f5;
-            --dark-text: #1A1815;
-            --light-text: #ffffff;
-
-            overflow: hidden;
-          }
-
-
-          /* =====================================================
-              HERO SECTION (COMPACTED HEIGHT)
-          ===================================================== */
-
-          .page-hero-section {
-            min-height: 420px !important;
-            height: 420px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
+          .project-section {
             position: relative;
             overflow: hidden;
-
-            border-bottom: 4px solid var(--gold);
           }
 
-          /* Hero geometric pattern */
-          .page-hero-section::before {
-            content: "";
+          /* =========================================
+             HERO
+          ========================================= */
+
+         .hero-project {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+  background-color: #171717;
+  display: flex;
+  align-items: flex-end;
+}
+
+          .hero-project-bg {
             position: absolute;
             inset: 0;
-
-            background:
-              linear-gradient(
-                135deg,
-                transparent 0%,
-                rgba(200, 162, 44, 0.08) 35%,
-                transparent 36%,
-                transparent 65%,
-                rgba(200, 162, 44, 0.06) 66%,
-                transparent 67%
-              );
-
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 0;
           }
 
-          /* Hero diamond */
-          .page-hero-section::after {
-            content: "";
-
+          .hero-project-overlay {
             position: absolute;
-
-            width: 320px;
-            height: 320px;
-
-            border: 1px solid rgba(200, 162, 44, 0.25);
-
-            transform: rotate(45deg);
-
-            right: -140px;
-            bottom: -160px;
-
-            pointer-events: none;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.58);
+            z-index: 1;
           }
 
-          .page-hero-section .container {
-            position: relative;
-            z-index: 5;
-          }
-
-          .page-hero-section h1 {
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-          }
-
-
-          /* =====================================================
-              ABOUT SECTION - WHITE
-          ===================================================== */
-
-          .ramayana-about-page #about {
-            position: relative;
-
-            background:
-              linear-gradient(
-                135deg,
-                #ffffff 0%,
-                #ffffff 65%,
-                #f7f7f5 100%
-              ) !important;
-
-            overflow: hidden;
-          }
-
-          /* Large diamond */
-          .ramayana-about-page #about::before {
-            content: "";
-
-            position: absolute;
-
-            width: 300px;
-            height: 300px;
-
-            border: 1px solid rgba(200, 162, 44, 0.18);
-
-            transform: rotate(45deg);
-
-            right: -160px;
-            top: 80px;
-
-            pointer-events: none;
-          }
-
-          /* Small diamond */
-          .ramayana-about-page #about::after {
-            content: "";
-
-            position: absolute;
-
-            width: 180px;
-            height: 180px;
-
-            border: 1px solid rgba(26, 24, 21, 0.08);
-
-            transform: rotate(45deg);
-
-            left: -100px;
-            bottom: 70px;
-
-            pointer-events: none;
-          }
-
-          .ramayana-about-page #about > .container {
-            position: relative;
-            z-index: 2;
-          }
-
-
-          /* =====================================================
-              ABOUT IMAGE
-          ===================================================== */
-
-          .ramayana-about-page .about-img-showcase {
-            transition:
-              transform 0.35s ease,
-              box-shadow 0.35s ease;
-          }
-
-          .ramayana-about-page .about-img-showcase:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-              0 22px 45px rgba(0, 0, 0, 0.18) !important;
-          }
-
-
-          /* =====================================================
-              WHY CHOOSE - DARK
-          ===================================================== */
-
-          .ramayana-about-page #why-choose {
-            position: relative;
-
-            background:
-              linear-gradient(
-                135deg,
-                #171512 0%,
-                #211d18 55%,
-                #14120f 100%
-              ) !important;
-
-            color: #ffffff;
-
-            overflow: hidden;
-          }
-
-          /* Left geometric pattern */
-          .ramayana-about-page #why-choose::before {
-            content: "";
-
-            position: absolute;
-
-            width: 480px;
-            height: 480px;
-
-            border: 1px solid rgba(200, 162, 44, 0.20);
-
-            transform: rotate(45deg);
-
-            left: -250px;
-            top: 80px;
-
-            box-shadow:
-              0 0 0 45px rgba(200, 162, 44, 0.025),
-              0 0 0 90px rgba(200, 162, 44, 0.018);
-
-            pointer-events: none;
-          }
-
-          /* Right geometric pattern */
-          .ramayana-about-page #why-choose::after {
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
-            transform: rotate(45deg);
-
-            right: -180px;
-            bottom: -180px;
-
-            pointer-events: none;
-          }
-
-          .ramayana-about-page #why-choose > .container {
-            position: relative;
-            z-index: 3;
-          }
-
-
-          /* =====================================================
-              WHY CHOOSE HEADINGS
-          ===================================================== */
-
-          .ramayana-about-page #why-choose h2 {
-            color: #ffffff !important;
-          }
-
-          .ramayana-about-page #why-choose .text-muted {
-            color: rgba(255, 255, 255, 0.70) !important;
-          }
-
-          .ramayana-about-page #why-choose .wcp-tag {
-            color: #C8A22C !important;
-          }
-
-
-          /* =====================================================
-              WHY CHOOSE CARDS
-          ===================================================== */
-
-          .ramayana-about-page .wcp-panel {
-            border: 1px solid rgba(200, 162, 44, 0.25) !important;
-
-            transition:
-              transform 0.35s ease,
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
-          }
-
-          .ramayana-about-page .wcp-panel:hover {
-            transform: translateY(-5px);
-
-            border-color: rgba(200, 162, 44, 0.70) !important;
-
-            box-shadow:
-              0 15px 35px rgba(0, 0, 0, 0.3) !important;
-          }
-
-
-          /* =====================================================
-              AMENITIES - WHITE
-          ===================================================== */
-
-          .ramayana-about-page #amenities {
-            position: relative;
-
-            background:
-              linear-gradient(
-                135deg,
-                #ffffff 0%,
-                #ffffff 70%,
-                #f5f5f3 100%
-              ) !important;
-
-            overflow: hidden;
-          }
-
-          /* Left diamond */
-          .ramayana-about-page #amenities::before {
-            content: "";
-
-            position: absolute;
-
-            width: 420px;
-            height: 420px;
-
-            border: 1px solid rgba(200, 162, 44, 0.16);
-
-            transform: rotate(45deg);
-
-            left: -220px;
-            bottom: -180px;
-
-            pointer-events: none;
-          }
-
-          /* Right diamond */
-          .ramayana-about-page #amenities::after {
-            content: "";
-
-            position: absolute;
-
-            width: 250px;
-            height: 250px;
-
-            border: 1px solid rgba(26, 24, 21, 0.07);
-
-            transform: rotate(45deg);
-
-            right: -120px;
-            top: 100px;
-
-            pointer-events: none;
-          }
-
-          .ramayana-about-page #amenities > .container,
-          .ramayana-about-page #amenities > .amenities-slider-wrapper {
-            position: relative;
-            z-index: 3;
-          }
-
-
-          /* =====================================================
-              AMENITIES CARDS
-          ===================================================== */
-
-          .ramayana-about-page .amenity-image-wrapper {
-            border: 1px solid rgba(200, 162, 44, 0.25);
-
-            transition:
-              transform 0.35s ease,
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
-          }
-
-          .ramayana-about-page .amenity-image-wrapper:hover {
-            transform: translateY(-6px);
-
-            border-color: rgba(200, 162, 44, 0.75);
-
-            box-shadow:
-              0 18px 40px rgba(0, 0, 0, 0.18) !important;
-          }
-
-
-          /* =====================================================
-              AMENITY NAVIGATION BUTTONS (DYNAMIC COLORS)
-          ===================================================== */
-
-          .ramayana-about-page .amenity-prev,
-          .ramayana-about-page .amenity-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            /* Golden Background */
-            background: #C8A22C !important;
-            border: 2px solid #C8A22C !important;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+         
+.hero-project-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 3.5rem;
+}
+  .hero-project-content .row {
+  justify-content: flex-start;
+}
+
+.hero-project-content .col-lg-8 {
+  text-align: left;
+  margin-right: auto;
+}
+
+          /* =========================================
+             CARDS
+          ========================================= */
+
+          .project-card {
             transition: all 0.3s ease;
           }
 
-          .ramayana-about-page .amenity-prev {
-            left: 20px;
+          .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10) !important;
           }
 
-          .ramayana-about-page .amenity-next {
-            right: 20px;
+          .dark-card {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
           }
 
-          /* Normal state: Black arrow on Golden background */
-          .ramayana-about-page .amenity-prev i,
-          .ramayana-about-page .amenity-next i {
-            color: #171512 !important;
-            font-size: 18px;
-            font-weight: 900;
-            transition: color 0.3s ease;
+          .dark-card:hover {
+            border-color: rgba(208, 177, 91, 0.45);
+            transform: translateY(-2px);
           }
 
-          /* Hover state: Black background with Golden/White arrow */
-          .ramayana-about-page .amenity-prev:hover,
-          .ramayana-about-page .amenity-next:hover {
-            background: #171512 !important;
-            transform: translateY(-50%) scale(1.1);
-            border-color: #C8A22C !important;
+          /* =========================================
+             ICON BOX
+          ========================================= */
+
+          .icon-box {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: ${GOLD};
+            background: rgba(208, 177, 91, 0.12);
+            font-size: 21px;
           }
 
-          .ramayana-about-page .amenity-prev:hover i,
-          .ramayana-about-page .amenity-next:hover i {
-            color: #ffffff !important;
+          /* =========================================
+             AMENITIES
+          ========================================= */
+
+          .amenity-item {
+            transition: all 0.3s ease;
           }
+
+          .amenity-item:hover {
+            transform: translateX(4px);
+            border-color: rgba(208, 177, 91, 0.45) !important;
+          }
+
+          /* =========================================
+             BUTTONS
+          ========================================= */
+
+          .project-button {
+            transition: all 0.3s ease;
+          }
+
+          .project-button:hover {
+            transform: translateY(-2px);
+          }
+
+          /* =========================================
+             IMAGES
+          ========================================= */
+
+          .project-image {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+          }
+
+          .master-plan-image {
+            width: 100%;
+            display: block;
+            object-fit: contain;
+            background: #ffffff;
+          }
+
+          /* =========================================
+             MOBILE
+          ========================================= */
 
           @media (max-width: 767px) {
-            .ramayana-about-page .amenity-prev {
-              left: 5px;
-              width: 40px;
-              height: 40px;
-            }
-            .ramayana-about-page .amenity-next {
-              right: 5px;
-              width: 40px;
-              height: 40px;
-            }
-          }
-
-
-          /* =====================================================
-              EXPLORE BUTTON
-          ===================================================== */
-
-          .ramayana-about-page .vl-btn1 {
-            transition:
-              transform 0.3s ease,
-              box-shadow 0.3s ease;
-          }
-
-          .ramayana-about-page .vl-btn1:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-              0 10px 25px rgba(0, 0, 0, 0.15);
-          }
-
-
-          /* =====================================================
-              MOBILE
-          ===================================================== */
-
-          @media (max-width: 767px) {
-
-            /* Hero */
-            .page-hero-section {
-              min-height: 360px !important;
-              height: 360px;
-
-              padding-top: 50px !important;
-              padding-bottom: 50px !important;
+            .hero-project {
+              min-height: 540px;
             }
 
-            .page-hero-section h1 {
-              font-size: 28px !important;
+            .hero-project h1 {
+              font-size: 2.5rem !important;
             }
 
-            .page-hero-section .badge {
-              font-size: 10px !important;
-              letter-spacing: 1.5px !important;
+            .hero-project-bg {
+              object-position: center center;
             }
 
-            /* Reduce geometric shapes on mobile */
-            .ramayana-about-page #about::before,
-            .ramayana-about-page #about::after,
-            .ramayana-about-page #why-choose::before,
-            .ramayana-about-page #why-choose::after,
-            .ramayana-about-page #amenities::before,
-            .ramayana-about-page #amenities::after {
-              opacity: 0.45;
+            .project-section {
+              padding-top: 3rem !important;
+              padding-bottom: 3rem !important;
             }
 
-            /* About image */
-            .ramayana-about-page .about-img-showcase {
-              min-height: 380px !important;
-            }
-          }
-
-
-          /* =====================================================
-              TABLET
-          ===================================================== */
-
-          @media (min-width: 768px) and (max-width: 991px) {
-
-            .page-hero-section {
-              min-height: 400px !important;
-              height: 400px;
+            .project-section .container {
+              padding-top: 0 !important;
+              padding-bottom: 0 !important;
             }
 
+            .project-image {
+              height: 300px !important;
+            }
+
+            .master-plan-image {
+              max-height: 350px !important;
+            }
+
+            .icon-box {
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              font-size: 18px;
+            }
           }
         `}
       </style>
 
-
-      {/* =====================================================
-          HERO / BREADCRUMB SECTION
-      ===================================================== */}
-      <section
-        className="page-hero-section position-relative py-4 text-white"
+      <div
         style={{
-          background: `
-            linear-gradient(
-              rgba(26, 24, 21, 0.75),
-              rgba(26, 24, 21, 0.85)
-            ),
-            url(${aboutImage}) center/cover no-repeat
-          `,
-          paddingTop: "60px",
-          paddingBottom: "60px",
-          borderBottom: "4px solid #C8A22C",
+          backgroundColor: WHITE,
+          color: DARK,
+          overflowX: "hidden",
         }}
       >
-        <div className="container text-center py-2">
+        {/* ==================================================
+            HERO
+        ================================================== */}
 
-          <h1
-            className="display-5 fw-bold mb-2"
-            style={{
-              color: "#ffffff",
-              fontFamily: "inherit",
-            }}
-          >
-            About Our Township
-          </h1>
+        <section className="hero-project">
+          {/* REAL HERO IMAGE */}
+          <img
+            src={PROJECT_IMAGES.hero}
+            alt="Ramayna City"
+            className="hero-project-bg"
+          />
 
-          <nav aria-label="breadcrumb">
-            <ol
-              className="breadcrumb justify-content-center mb-0"
-              style={{
-                fontSize: "14px",
-              }}
-            >
-              <li className="breadcrumb-item">
-                <Link
-                  to="/"
-                  className="text-decoration-none"
+          {/* DARK OVERLAY */}
+          <div className="hero-project-overlay"></div>
+
+          {/* HERO CONTENT */}
+          <div className="container hero-project-content">
+            <div className="row">
+              <div className="col-lg-8">
+                
+
+                <h1
+                  className="display-3 fw-bold text-white mb-3"
                   style={{
-                    color: "#C8A22C",
+                    letterSpacing: "0.5px",
                   }}
                 >
-                  Home
-                </Link>
-              </li>
+                  Ramayna City
+                </h1>
 
-              <li
-                className="breadcrumb-item active text-light"
-                aria-current="page"
-              >
-                About Us
-              </li>
-            </ol>
-          </nav>
-
-        </div>
-      </section>
-
-
-      {/* =====================================================
-          ABOUT SECTION - WHITE
-      ===================================================== */}
-      <section
-        id="about"
-        className="about2 sp1 py-5"
-        style={{
-          background: "#ffffff",
-        }}
-      >
-        <div className="container">
-
-          <div className="row align-items-stretch g-4 g-lg-5">
-
-            {/* Image Showcase */}
-            <div className="col-lg-5 d-flex">
-
-              <div
-                className="about-img-showcase"
-                style={{
-                  width: "100%",
-                  borderRadius: "18px",
-                  overflow: "hidden",
-                  boxShadow: "0 15px 35px rgba(0,0,0,0.12)",
-                  border: "2px solid #C8A22C",
-                  minHeight: "520px",
-                  display: "flex",
-                }}
-              >
-                <img
-                  src={aboutImage}
-                  alt="Ramayana City Township"
-                  loading="lazy"
+                <p
+                  className="text-white fs-5 mb-3"
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
+                    maxWidth: "680px",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  A thoughtfully planned residential destination designed for
+                  modern living, peaceful surroundings and long-term value.
+                </p>
+
+                <p className="text-white mb-4">
+                  <FaLocationDot
+                    className="me-2"
+                    style={{
+                      color: GOLD,
+                    }}
+                  />
+                  Lucknow, Uttar Pradesh
+                </p>
+
+                <div className="d-flex flex-wrap gap-3">
+                  <a
+                    href="/contact"
+                    className="btn px-4 py-2 fw-semibold project-button"
+                    style={{
+                      backgroundColor: GOLD,
+                      color: "#fff",
+                      border: `1px solid ${GOLD}`,
+                    }}
+                  >
+                    Enquire Now
+                    <FaArrowRight className="ms-2" />
+                  </a>
+
+                  <a
+                    href="#overview"
+                    className="btn btn-outline-light px-4 py-2 fw-semibold project-button"
+                  >
+                    Explore Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================================================
+            QUICK STATS
+        ================================================== */}
+
+        <section
+          className="project-section"
+          style={{
+            backgroundColor: WHITE,
+            marginTop: "-45px",
+            position: "relative",
+            zIndex: 3,
+          }}
+        >
+          <div className="container">
+            <div
+              className="bg-white rounded-3 shadow p-3"
+              style={{
+                borderTop: `3px solid ${GOLD}`,
+              }}
+            >
+              <div className="row g-3 text-center">
+                <div className="col-6 col-lg-3">
+                  <h5
+                    className="fw-bold mb-1"
+                    style={{ color: GOLD }}
+                  >
+                    Ramayna City
+                  </h5>
+
+                  <small className="text-muted">Project</small>
+                </div>
+
+                <div className="col-6 col-lg-3">
+                  <h5
+                    className="fw-bold mb-1"
+                    style={{ color: GOLD }}
+                  >
+                    Residential
+                  </h5>
+
+                  <small className="text-muted">Development</small>
+                </div>
+
+                <div className="col-6 col-lg-3">
+                  <h5
+                    className="fw-bold mb-1"
+                    style={{ color: GOLD }}
+                  >
+                    9+
+                  </h5>
+
+                  <small className="text-muted">
+                    Plot Configurations
+                  </small>
+                </div>
+
+                <div className="col-6 col-lg-3">
+                  <h5
+                    className="fw-bold mb-1"
+                    style={{ color: GOLD }}
+                  >
+                    Lucknow
+                  </h5>
+
+                  <small className="text-muted">
+                    Uttar Pradesh
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================================================
+            OVERVIEW — DARK
+        ================================================== */}
+
+        <section
+          id="overview"
+          className="project-section py-5"
+          style={{
+            backgroundColor: DARK,
+            color: "#fff",
+          }}
+        >
+          <div className="container py-lg-4">
+            <div className="row align-items-center g-4">
+              <div className="col-lg-6">
+                <img
+                  src={PROJECT_IMAGES.overview}
+                  alt="Ramayna City"
+                  className="project-image img-fluid rounded-4 shadow w-100"
+                  style={{
+                    height: "390px",
                   }}
                 />
               </div>
 
-            </div>
-
-
-            {/* Content Info */}
-            <div className="col-lg-7 d-flex flex-column justify-content-center">
-
-              <div className="heading1 ps-lg-3">
-
+              <div className="col-lg-6">
                 <span
+                  className="fw-semibold text-uppercase"
                   style={{
-                    color: "#C8A22C",
-                    fontWeight: 700,
-                    letterSpacing: "3px",
-                    textTransform: "uppercase",
-                    fontSize: "13px",
-                    display: "block",
-                    marginBottom: "10px",
+                    color: GOLD,
+                    letterSpacing: "2px",
+                    fontSize: "12px",
                   }}
                 >
                   About The Project
                 </span>
 
-
-                <h2
-                  className="text-anime-style-3"
-                  style={{
-                    fontSize: "34px",
-                    lineHeight: 1.3,
-                    marginBottom: "18px",
-                    color: "#1A1815",
-                  }}
-                >
-                  Modern Living Rooted in Timeless Spiritual Values
+                <h2 className="fw-bold mt-2 mb-3">
+                  Welcome to{" "}
+                  <span style={{ color: GOLD }}>
+                    Ramayna City
+                  </span>
                 </h2>
 
-
                 <p
+                  className="text-white-50 mb-3"
                   style={{
-                    color: "#3D3831",
-                    fontSize: "15.5px",
-                    lineHeight: 1.8,
-                    marginBottom: "16px",
+                    lineHeight: "1.7",
+                    fontSize: "15px",
                   }}
                 >
-                  Welcome to <strong>Ramayana City</strong>—a premier
-                  gated township designed for modern living rooted in
-                  timeless spiritual values. Located on NH56B in Khatola
-                  Village, Sarojini Nagar, Lucknow, Ramayana City offers
-                  the perfect harmony between modern urban connectivity
-                  and peaceful residential living.
+                  Ramayna City is a thoughtfully planned residential project
+                  created for people looking for a peaceful and well-connected
+                  place to build their dream home.
                 </p>
 
-
                 <p
+                  className="text-white-50 mb-3"
                   style={{
-                    color: "#3D3831",
-                    fontSize: "15.5px",
-                    lineHeight: 1.8,
-                    marginBottom: "20px",
+                    lineHeight: "1.7",
+                    fontSize: "15px",
                   }}
                 >
-                  At the heart of our community stands a serene
-                  <strong> Ram Temple</strong> and a magnificent
-                  <strong> statue of Lord Rama</strong>, creating a
-                  tranquil haven away from the city's hustle.
+                  The project combines residential planning, convenient
+                  connectivity and a comfortable environment.
                 </p>
 
+                <div className="row g-3 mt-2">
+                  <div className="col-sm-6">
+                    <div
+                      className="p-3 rounded-3 dark-card"
+                      style={{
+                        borderLeft: `3px solid ${GOLD}`,
+                      }}
+                    >
+                      <FaHouse
+                        className="mb-2"
+                        style={{
+                          color: GOLD,
+                        }}
+                      />
 
-                {/* Vision Box */}
-                <div
-                  className="p-4 rounded-3 mb-4"
-                  style={{
-                    background: "rgba(200, 162, 44, 0.08)",
-                    borderLeft: "4px solid #C8A22C",
-                  }}
-                >
-                  <h3
-                    style={{
-                      color: "#1A1815",
-                      fontSize: "18px",
-                      fontWeight: 700,
-                      marginBottom: "8px",
-                    }}
-                  >
-                    Our Vision
-                  </h3>
+                      <div className="fw-semibold">
+                        Residential Plots
+                      </div>
 
-                  <p
-                    style={{
-                      color: "#3D3831",
-                      fontSize: "14.5px",
-                      lineHeight: 1.7,
-                      margin: 0,
-                    }}
-                  >
-                    To create a landmark township where spiritual values,
-                    sustainable development, and modern urban living come
-                    together, offering an exceptional lifestyle and a
-                    valuable investment opportunity for generations to come.
-                  </p>
+                      <small className="text-white-50">
+                        Planned for comfortable living
+                      </small>
+                    </div>
+                  </div>
+
+                  <div className="col-sm-6">
+                    <div
+                      className="p-3 rounded-3 dark-card"
+                      style={{
+                        borderLeft: `3px solid ${GOLD}`,
+                      }}
+                    >
+                      <FaLocationDot
+                        className="mb-2"
+                        style={{
+                          color: GOLD,
+                        }}
+                      />
+
+                      <div className="fw-semibold">
+                        Strategic Location
+                      </div>
+
+                      <small className="text-white-50">
+                        Convenient connectivity
+                      </small>
+                    </div>
+                  </div>
                 </div>
-
-
-                {/* Explore Button */}
-                <div className="btn-area1">
-                  <Link
-                    to="/"
-                    className="vl-btn1"
-                  >
-                    Explore More
-
-                    <span className="arrow1">
-                      <i className="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                  </Link>
-                </div>
-
               </div>
             </div>
-
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* ==================================================
+            HIGHLIGHTS — WHITE
+        ================================================== */}
 
-      {/* =====================================================
-          WHY CHOOSE SECTION - DARK
-      ===================================================== */}
-      <section
-        id="why-choose"
-        className="why-choose-premium py-5"
-        style={{
-          background: "#171512",
-        }}
-      >
-        <div className="container">
-
-          {/* Heading */}
-          <div className="wcp-heading-wrap text-center mb-5">
-
-            <div className="wcp-heading-inner">
-
+        <section
+          className="project-section py-5"
+          style={{
+            backgroundColor: WHITE,
+          }}
+        >
+          <div className="container py-lg-4">
+            <div className="text-center mb-4">
               <span
-                className="wcp-tag"
+                className="fw-semibold text-uppercase"
                 style={{
-                  color: "#C8A22C",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  fontSize: "13px",
+                  color: GOLD,
                   letterSpacing: "2px",
+                  fontSize: "12px",
                 }}
               >
-                Township Highlights
+                Project Highlights
               </span>
 
-              <h2
-                className="fw-bold mt-2"
-                style={{
-                  color: "#ffffff",
-                }}
-              >
-                Why Choose{" "}
-                <span
-                  style={{
-                    color: "#C8A22C",
-                  }}
-                >
-                  Ramayana City
-                </span>
+              <h2 className="fw-bold mt-2 mb-2">
+                Everything You Need for a Better Tomorrow
               </h2>
 
               <p
-                className="text-muted mx-auto mt-2"
+                className="text-muted mx-auto mb-0"
                 style={{
-                  maxWidth: "700px",
+                  maxWidth: "650px",
+                  fontSize: "14px",
                 }}
               >
-                Discover what makes our gated community a truly exceptional
-                setting for peaceful family living and enduring value.
+                A balanced combination of location, infrastructure and
+                lifestyle.
               </p>
+            </div>
 
+            <div className="row g-3">
+              {highlights.map((item, index) => (
+                <div
+                  className="col-md-6 col-lg-4"
+                  key={index}
+                >
+                  <div
+                    className="project-card bg-white rounded-4 p-3 h-100 shadow-sm"
+                    style={{
+                      border: "1px solid #eeeeee",
+                    }}
+                  >
+                    <div className="d-flex align-items-start gap-3">
+                      <div className="icon-box">
+                        {item.icon}
+                      </div>
+
+                      <div>
+                        <h6 className="fw-bold mb-2">
+                          {item.title}
+                        </h6>
+
+                        <p
+                          className="text-muted mb-0"
+                          style={{
+                            lineHeight: "1.55",
+                            fontSize: "13px",
+                          }}
+                        >
+                          {item.text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        </section>
 
+        {/* ==================================================
+            AMENITIES — DARK
+        ================================================== */}
 
-          {/* Why Choose Cards */}
-          <div className="wcp-panels row g-4">
-
-            {WHY_CHOOSE_DATA.map((item) => (
-
-              <div
-                className="col-lg-4 col-md-6"
-                key={item.number}
-              >
-
-                <article
-                  className="
-                    wcp-panel
-                    card
-                    h-100
-                    border-0
-                    shadow-sm
-                  "
+        <section
+          className="project-section py-5"
+          style={{
+            backgroundColor: DARK,
+          }}
+        >
+          <div className="container py-lg-4">
+            <div className="row align-items-center g-4">
+              <div className="col-lg-5">
+                <span
+                  className="fw-semibold text-uppercase"
                   style={{
-                    overflow: "hidden",
-                    borderRadius: "12px",
-                    position: "relative",
-                    minHeight: "320px",
+                    color: GOLD,
+                    letterSpacing: "2px",
+                    fontSize: "12px",
                   }}
                 >
+                  Amenities & Infrastructure
+                </span>
 
-                  {/* Image */}
-                  <div
-                    className="
-                      wcp-panel-img
-                      position-absolute
-                      w-100
-                      h-100
-                    "
-                    style={{
-                      backgroundImage: `url("${item.image}")`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      zIndex: 1,
-                    }}
-                  ></div>
+                <h2 className="text-white fw-bold mt-2 mb-3">
+                  Designed Around Your Lifestyle
+                </h2>
 
-
-                  {/* Overlay */}
-                  <div
-                    className="
-                      wcp-panel-overlay
-                      position-absolute
-                      w-100
-                      h-100
-                    "
-                    style={{
-                      background:
-                        "linear-gradient(to top, rgba(26,24,21,0.95), rgba(26,24,21,0.4))",
-                      zIndex: 2,
-                    }}
-                  ></div>
-
-
-                  {/* Content */}
-                  <div
-                    className="
-                      wcp-panel-content
-                      position-relative
-                      p-3
-                      d-flex
-                      flex-column
-                      h-100
-                      justify-content-end
-                      text-white
-                    "
-                    style={{
-                      zIndex: 3,
-                      minHeight: "320px",
-                    }}
-                  >
-
-                    <div
-                      className="
-                        wcp-panel-num
-                        fw-bold
-                        fs-5
-                        text-warning
-                        mb-1
-                      "
-                    >
-                      {item.number}
-                    </div>
-
-
-                    <div
-                      className="
-                        wcp-panel-tag
-                        small
-                        text-uppercase
-                        tracking-wider
-                        text-light
-                        opacity-75
-                        mb-1
-                      "
-                      style={{ fontSize: "11px" }}
-                    >
-                      {item.tag}
-                    </div>
-
-
-                    <h3
-                      className="
-                        h5
-                        fw-bold
-                        text-white
-                        mb-2
-                      "
-                    >
-                      {item.title}
-                    </h3>
-
-
-                    <p
-                      className="
-                        small
-                        text-light
-                        mb-3
-                        opacity-90
-                      "
-                      style={{ fontSize: "13px" }}
-                    >
-                      {item.description}
-                    </p>
-
-
-                    <button
-                      type="button"
-                      className="
-                        wcp-btn
-                        btn
-                        btn-outline-light
-                        btn-sm
-                        align-self-start
-                        mt-auto
-                        px-3
-                        py-1
-                      "
-                      onClick={() =>
-                        handleWhyChooseAction(item.action)
-                      }
-                      style={{
-                        borderColor: "#C8A22C",
-                        color: "#ffffff",
-                        background:
-                          "rgba(200, 162, 44, 0.3)",
-                        fontSize: "12px",
-                      }}
-                    >
-                      {item.buttonText}
-
-                      <i className="fa-solid fa-arrow-right ms-2"></i>
-                    </button>
-
-                  </div>
-
-                </article>
-
+                <p
+                  className="text-white-50 mb-0"
+                  style={{
+                    lineHeight: "1.7",
+                    fontSize: "14px",
+                  }}
+                >
+                  From internal roads to planned open spaces, every element is
+                  focused on creating a comfortable residential environment.
+                </p>
               </div>
 
-            ))}
+              <div className="col-lg-7">
+                <div className="row g-2">
+                  {amenities.map((amenity, index) => (
+                    <div
+                      className="col-md-6"
+                      key={index}
+                    >
+                      <div
+                        className="amenity-item d-flex align-items-center p-2 rounded-3"
+                        style={{
+                          backgroundColor:
+                            "rgba(255,255,255,0.055)",
+                          border:
+                            "1px solid rgba(255,255,255,0.10)",
+                        }}
+                      >
+                        <span
+                          className="d-flex align-items-center justify-content-center rounded-circle me-2"
+                          style={{
+                            width: "32px",
+                            height: "32px",
+                            minWidth: "32px",
+                            backgroundColor: GOLD,
+                            color: "#fff",
+                            fontSize: "12px",
+                          }}
+                        >
+                          <FaCheck />
+                        </span>
 
+                        <span
+                          className="text-white fw-semibold"
+                          style={{
+                            fontSize: "13px",
+                          }}
+                        >
+                          {amenity}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
 
-        </div>
-      </section>
+        {/* ==================================================
+            LOCATION — WHITE
+        ================================================== */}
 
-
-      {/* =====================================================
-          AMENITIES SECTION - WHITE
-      ===================================================== */}
-      <section
-        id="amenities"
-        className="amenities-slider-section py-5"
-        ref={amenitiesRef}
-        style={{
-          background: "#ffffff",
-        }}
-      >
-
-        <div className="container">
-
-          <div className="amenities-heading text-center mb-5">
-
-            <span
-              className="amenities-tag"
-              style={{
-                color: "#C8A22C",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                fontSize: "13px",
-                letterSpacing: "2px",
-              }}
-            >
-              Premium Amenities
-            </span>
-
-            <h2
-              className="fw-bold mt-2"
-              style={{
-                color: "#1A1815",
-              }}
-            >
-              Amenities at{" "}
+        <section
+          className="project-section py-5"
+          style={{
+            backgroundColor: WHITE,
+          }}
+        >
+          <div className="container py-lg-4">
+            <div className="text-center mb-4">
               <span
+                className="fw-semibold text-uppercase"
                 style={{
-                  color: "#C8A22C",
+                  color: GOLD,
+                  letterSpacing: "2px",
+                  fontSize: "12px",
                 }}
               >
-                Ramayana City
+                Strategic Location
               </span>
-            </h2>
 
-          </div>
+              <h2 className="fw-bold mt-2 mb-2">
+                Well Connected to the City
+              </h2>
 
-        </div>
-
-
-        {/* =====================================================
-            AMENITIES SLIDER
-        ===================================================== */}
-        <div className="amenities-slider-wrapper position-relative px-5">
-
-          <Swiper
-            modules={[
-              Navigation,
-              Pagination,
-              Autoplay,
-              EffectCoverflow,
-            ]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            loop={true}
-            speed={800}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            slidesPerView={1.2}
-            spaceBetween={20}
-            navigation={{
-              prevEl: ".amenity-prev",
-              nextEl: ".amenity-next",
-            }}
-            pagination={{
-              el: ".amenity-pagination",
-              clickable: true,
-            }}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 120,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            breakpoints={{
-              576: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2.5,
-                spaceBetween: 24,
-              },
-              992: {
-                slidesPerView: 3,
-                spaceBetween: 26,
-              },
-              1200: {
-                slidesPerView: 3.5,
-                spaceBetween: 28,
-              },
-              1400: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-            }}
-            className="amenitiesSwiper py-4"
-          >
-
-            {AMENITIES_DATA.map((amenity, index) => (
-
-              <SwiperSlide
-                className="amenity-slide"
-                key={index}
+              <p
+                className="text-muted mx-auto mb-0"
+                style={{
+                  maxWidth: "650px",
+                  fontSize: "14px",
+                }}
               >
+                A location that keeps your everyday destinations within
+                convenient reach.
+              </p>
+            </div>
 
+            <div className="row g-3">
+              <div className="col-lg-5">
                 <div
-                  className="
-                    amenity-image-wrapper
-                    position-relative
-                    rounded-4
-                    overflow-hidden
-                    shadow-sm
-                  "
+                  className="h-100 rounded-4 p-4 project-card"
                   style={{
-                    height: "320px",
+                    backgroundColor: "#fafafa",
+                    border: "1px solid #eeeeee",
                   }}
                 >
+                  <h5 className="fw-bold mb-3">
+                    Ramayna City Location
+                  </h5>
 
-                  <img
-                    src={amenity.image}
-                    alt={amenity.title}
-                    loading="lazy"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <div className="d-flex gap-3 mb-3">
+                    <div className="icon-box">
+                      <FaLocationDot />
+                    </div>
 
-                  <div
-                    className="
-                      amenity-label
-                      position-absolute
-                      bottom-0
-                      start-0
-                      w-100
-                      p-3
-                      d-flex
-                      align-items-center
-                      text-white
-                    "
-                    style={{
-                      background:
-                        "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
-                    }}
-                  >
+                    <div>
+                      <h6 className="fw-bold mb-1">
+                        Address
+                      </h6>
 
-                    <i
-                      className={`
-                        ${amenity.icon}
-                        text-warning
-                        fs-5
-                        me-2
-                      `}
-                    ></i>
-
-                    <span className="fw-semibold fs-6">
-                      {amenity.title}
-                    </span>
-
+                      <p className="text-muted mb-0 small">
+                        Lucknow, Uttar Pradesh, India
+                      </p>
+                    </div>
                   </div>
 
+                  <div className="d-flex gap-3 mb-3">
+                    <div className="icon-box">
+                      <FaCar />
+                    </div>
+
+                    <div>
+                      <h6 className="fw-bold mb-1">
+                        Connectivity
+                      </h6>
+
+                      <p className="text-muted mb-0 small">
+                        Convenient access to major roads and important
+                        destinations.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="d-flex gap-3">
+                    <div className="icon-box">
+                      <FaCity />
+                    </div>
+
+                    <div>
+                      <h6 className="fw-bold mb-1">
+                        Nearby Development
+                      </h6>
+
+                      <p className="text-muted mb-0 small">
+                        Located in a developing residential and investment
+                        corridor.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-              </SwiperSlide>
+              <div className="col-lg-7">
+                <div
+                  className="rounded-4 overflow-hidden shadow-sm"
+                  style={{
+                    minHeight: "390px",
+                  }}
+                >
+                  <iframe
+                    title="Ramayna City Location"
+                    src="https://www.google.com/maps?q=Lucknow%20Uttar%20Pradesh&output=embed"
+                    width="100%"
+                    height="390"
+                    style={{
+                      border: 0,
+                      display: "block",
+                    }}
+                    loading="lazy"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            ))}
+        {/* ==================================================
+            MASTER PLAN — DARK
+        ================================================== */}
 
-          </Swiper>
+        <section
+          className="project-section py-5"
+          style={{
+            backgroundColor: DARK,
+          }}
+        >
+          <div className="container py-lg-4">
+            <div className="row align-items-center g-4">
+              <div className="col-lg-6">
+                <div
+                  className="rounded-4 overflow-hidden"
+                  style={{
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <img
+                    src={PROJECT_IMAGES.masterPlan}
+                    alt="Ramayna City Master Plan"
+                    className="master-plan-image img-fluid w-100"
+                    style={{
+                      maxHeight: "480px",
+                    }}
+                  />
+                </div>
+              </div>
 
+              <div className="col-lg-6">
+                <span
+                  className="fw-semibold text-uppercase"
+                  style={{
+                    color: GOLD,
+                    letterSpacing: "2px",
+                    fontSize: "12px",
+                  }}
+                >
+                  Master Plan
+                </span>
 
-          {/* =====================================================
-              NAVIGATION CONTROLS
-          ===================================================== */}
+                <h2 className="text-white fw-bold mt-2 mb-3">
+                  A Thoughtfully Planned Community
+                </h2>
 
-          <button
-            type="button"
-            className="amenity-prev"
-            aria-label="Previous amenity"
-          >
-            <i className="fa-solid fa-arrow-left"></i>
-          </button>
+                <p
+                  className="text-white-50"
+                  style={{
+                    lineHeight: "1.7",
+                    fontSize: "14px",
+                  }}
+                >
+                  The master plan is designed to create a well-organized
+                  residential environment with proper access roads, plot
+                  planning and open spaces.
+                </p>
 
+                <p
+                  className="text-white-50"
+                  style={{
+                    lineHeight: "1.7",
+                    fontSize: "14px",
+                  }}
+                >
+                  Explore the layout to understand the overall planning and
+                  positioning of the residential plots.
+                </p>
 
-          <button
-            type="button"
-            className="amenity-next"
-            aria-label="Next amenity"
-          >
-            <i className="fa-solid fa-arrow-right"></i>
-          </button>
+                <a
+                  href="/contact"
+                  className="btn px-4 py-2 mt-2 fw-semibold project-button"
+                  style={{
+                    backgroundColor: GOLD,
+                    color: "#fff",
+                    borderColor: GOLD,
+                  }}
+                >
+                  Enquire About Availability
+                  <FaArrowRight className="ms-2" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        {/* ==================================================
+            CTA — WHITE
+        ================================================== */}
 
-          {/* Pagination */}
-          <div className="amenity-pagination mt-4 d-flex justify-content-center"></div>
+        <section
+          className="project-section py-5"
+          style={{
+            backgroundColor: WHITE,
+          }}
+        >
+          <div className="container py-4">
+            <div className="row align-items-center">
+              <div className="col-lg-8">
+                <h2 className="fw-bold mb-2">
+                  Find Your Perfect Plot at{" "}
+                  <span style={{ color: GOLD }}>
+                    Ramayna City
+                  </span>
+                </h2>
 
-        </div>
-      </section>
+                <p className="text-muted mb-0">
+                  Get complete project details, plot availability and pricing
+                  information from our team.
+                </p>
+              </div>
 
-    </main>
+              <div className="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a
+                  href="/contact"
+                  className="btn px-4 py-2 fw-bold project-button"
+                  style={{
+                    backgroundColor: DARK,
+                    color: "#fff",
+                    border: `1px solid ${DARK}`,
+                  }}
+                >
+                  Contact Us
+                  <FaArrowRight className="ms-2" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 
-export default About;
+export default Project;
