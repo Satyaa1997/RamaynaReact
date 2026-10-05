@@ -269,7 +269,7 @@ const Footer = () => {
                   { name: "Gallery", to: "/gallery" },
                   { name: "Contact", to: "/contact" },
                 ].map((link, idx) => (
-                  <li className="mb-2" key={idx}>
+                  <li className="mb-0" key={idx}>
                     <Link
                       to={link.to}
                       className="footer-link text-decoration-none d-inline-flex align-items-center"
@@ -296,7 +296,7 @@ const Footer = () => {
                   { name: "Sitemap", to: "/sitemap" },
                   { name: "RERA Details", to: "/rera" },
                 ].map((link, idx) => (
-                  <li className="mb-2" key={idx}>
+                  <li className="mb-0" key={idx}>
                     <Link
                       to={link.to}
                       className="footer-link text-decoration-none d-inline-flex align-items-center"

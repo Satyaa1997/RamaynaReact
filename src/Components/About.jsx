@@ -17,15 +17,13 @@ import "swiper/css/effect-coverflow";
 // =====================================================
 // IMAGES IMPORTS
 // =====================================================
-import aboutImage from "../assets/about-img.jpg";
+import aboutImage from "../assets/mandir2.png";
 import grandEntrance from "../assets/Grand Entrence.jpeg";
-import greenTownship from "../assets/green-township.jpg";
-import locationInvestment from "../assets/Loc&Invest.png";
-import mandir from "../assets/Mandir.jpeg";
+import mandir from "../assets/mandir2.png";
 import lordRama from "../assets/lord-rama.jpg";
-import greenBelt from "../assets/green-belt.jpg";
+import greenBelt from "../assets/green-belt.png";
 import security from "../assets/security.jpg";
-import park from "../assets/park.jpg";
+import park from "../assets/green-belt.png";
 import agraExpressway from "../assets/AgraExpressway.jpg";
 
 // =====================================================
@@ -894,10 +892,6 @@ const About = () => {
                     Explore More
 
                     <span className="arrow1">
-                      <i className="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                    <span className="arrow2">
                       <i className="fa-solid fa-arrow-right"></i>
                     </span>
 
