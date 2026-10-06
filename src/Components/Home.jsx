@@ -350,16 +350,7 @@ const PremiumCard = ({ title, description, image, dark = false }) => {
             letterSpacing: "1.5px",
           }}
         >
-          Discover More
-          <span
-            style={{
-              fontSize: "18px",
-              lineHeight: 1,
-              transition: "transform .3s ease",
-            }}
-          >
-            →
-          </span>
+         
         </div>
       </div>
     </div>
