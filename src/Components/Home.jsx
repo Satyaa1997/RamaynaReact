@@ -149,7 +149,7 @@ const GeometricBackground = ({ dark = false }) => {
           position: "absolute",
           width: "300px",
           height: "1px",
-          background: `rgba(208,177,91,${dark ? 0.10 : 0.07})`,
+          background: `rgba(208,177,91,${dark ? 0.1 : 0.07})`,
           transform: "rotate(-35deg)",
           left: "-90px",
           top: "24%",
@@ -175,12 +175,7 @@ const GeometricBackground = ({ dark = false }) => {
 // =====================================================
 // SECTION TITLE
 // =====================================================
-const SectionTitle = ({
-  eyebrow,
-  title,
-  description,
-  dark = false,
-}) => {
+const SectionTitle = ({ eyebrow, title, description, dark = false }) => {
   return (
     <div className="text-center mb-4 position-relative">
       {eyebrow && (
@@ -245,12 +240,7 @@ const SectionTitle = ({
 // =====================================================
 // PREMIUM IMAGE CARD
 // =====================================================
-const PremiumCard = ({
-  title,
-  description,
-  image,
-  dark = false,
-}) => {
+const PremiumCard = ({ title, description, image, dark = false }) => {
   return (
     <div
       className="home-premium-card h-100"
@@ -260,9 +250,7 @@ const PremiumCard = ({
         borderRadius: "18px",
         background: dark ? DARK2 : WHITE,
         border: `1px solid ${
-          dark
-            ? "rgba(255,255,255,0.12)"
-            : "rgba(0,0,0,0.08)"
+          dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"
         }`,
         boxShadow: dark
           ? "0 12px 35px rgba(0,0,0,0.25)"
@@ -363,7 +351,6 @@ const PremiumCard = ({
           }}
         >
           Discover More
-
           <span
             style={{
               fontSize: "18px",
@@ -392,8 +379,7 @@ const AmenityCard = ({ item, index }) => {
         borderRadius: "16px",
         overflow: "hidden",
         boxShadow: "0 12px 30px rgba(0,0,0,.20)",
-        transition:
-          "transform .35s ease, border-color .35s ease",
+        transition: "transform .35s ease, border-color .35s ease",
       }}
     >
       <div
@@ -418,8 +404,7 @@ const AmenityCard = ({ item, index }) => {
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "linear-gradient(180deg, transparent, rgba(0,0,0,.7))",
+            background: "linear-gradient(180deg, transparent, rgba(0,0,0,.7))",
           }}
         />
 
@@ -496,7 +481,7 @@ const Home = () => {
             _subject: "New Site Visit Request - Ramayana City",
             _template: "table",
           }),
-        }
+        },
       );
 
       if (!response.ok) {
@@ -973,8 +958,7 @@ const Home = () => {
               maxWidth: "600px",
               opacity: showHeroText ? 1 : 0,
               visibility: showHeroText ? "visible" : "hidden",
-              transition:
-                "opacity 0.8s ease, visibility 0.8s ease",
+              transition: "opacity 0.8s ease, visibility 0.8s ease",
             }}
           >
             <div
@@ -994,7 +978,6 @@ const Home = () => {
                   background: GOLD,
                 }}
               />
-
               Premium Residential Township · Lucknow
             </div>
 
@@ -1005,10 +988,7 @@ const Home = () => {
                 lineHeight: 1.1,
               }}
             >
-              Welcome to{" "}
-              <span style={{ color: GOLD }}>
-                Ramayana City
-              </span>
+              Welcome to <span style={{ color: GOLD }}>Ramayana City</span>
             </h1>
 
             <p
@@ -1041,11 +1021,9 @@ const Home = () => {
                 className="btn px-3 py-1.5 fw-semibold"
                 style={{
                   color: WHITE,
-                  border:
-                    "1px solid rgba(255,255,255,.45)",
+                  border: "1px solid rgba(255,255,255,.45)",
                   borderRadius: "4px",
-                  background:
-                    "rgba(255,255,255,.05)",
+                  background: "rgba(255,255,255,.05)",
                   fontSize: "12px",
                 }}
               >
@@ -1071,10 +1049,7 @@ const Home = () => {
       >
         <GeometricBackground />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <div
@@ -1083,8 +1058,7 @@ const Home = () => {
                   position: "relative",
                   borderRadius: "20px",
                   overflow: "hidden",
-                  boxShadow:
-                    "0 20px 45px rgba(0,0,0,.10)",
+                  boxShadow: "0 20px 45px rgba(0,0,0,.10)",
                 }}
               >
                 <img
@@ -1092,8 +1066,7 @@ const Home = () => {
                   alt="Ramayana City Township"
                   className="img-fluid w-100 ramayana-about-image"
                   style={{
-                    height:
-                      "clamp(320px, 42vw, 420px)",
+                    height: "clamp(320px, 42vw, 420px)",
                     objectFit: "cover",
                   }}
                 />
@@ -1103,8 +1076,7 @@ const Home = () => {
                     position: "absolute",
                     left: "18px",
                     bottom: "18px",
-                    background:
-                      "rgba(17,17,17,.92)",
+                    background: "rgba(17,17,17,.92)",
                     color: WHITE,
                     padding: "13px 18px",
                     borderLeft: `3px solid ${GOLD}`,
@@ -1120,10 +1092,7 @@ const Home = () => {
                     RAMAYANA CITY
                   </small>
 
-                  <div
-                    className="fw-bold"
-                    style={{ fontSize: "13px" }}
-                  >
+                  <div className="fw-bold" style={{ fontSize: "13px" }}>
                     Premium Residential Township
                   </div>
                 </div>
@@ -1157,13 +1126,11 @@ const Home = () => {
                   className="fw-bold mb-3"
                   style={{
                     color: "#171717",
-                    fontSize:
-                      "clamp(26px, 3.2vw, 38px)",
+                    fontSize: "clamp(26px, 3.2vw, 38px)",
                     lineHeight: 1.15,
                   }}
                 >
-                  Modern Living Rooted in Timeless
-                  Values
+                  Modern Living Rooted in Timeless Values
                 </h2>
 
                 <p
@@ -1174,10 +1141,8 @@ const Home = () => {
                     lineHeight: 1.7,
                   }}
                 >
-                  A thoughtfully planned residential
-                  township combining modern
-                  infrastructure, greenery,
-                  connectivity and spiritual values.
+                  A thoughtfully planned residential township combining modern
+                  infrastructure, greenery, connectivity and spiritual values.
                 </p>
               </div>
 
@@ -1188,13 +1153,10 @@ const Home = () => {
                   fontSize: "14px",
                 }}
               >
-                Ramayana City is a premier gated
-                township created for modern living
-                while remaining rooted in timeless
-                spiritual values. Located on NH-56B
-                in Khatola Village, Sarojini Nagar,
-                Lucknow, the township brings together
-                modern connectivity and peaceful
+                Ramayana City is a premier gated township created for modern
+                living while remaining rooted in timeless spiritual values.
+                Located on NH-56B in Khatola Village, Sarojini Nagar, Lucknow,
+                the township brings together modern connectivity and peaceful
                 residential living.
               </p>
 
@@ -1205,12 +1167,10 @@ const Home = () => {
                   fontSize: "14px",
                 }}
               >
-                With a thoughtful environment
-                inspired by the legacy of Lord Rama,
-                the township aims to create a
-                harmonious lifestyle where community,
-                greenery and contemporary
-                infrastructure come together.
+                With a thoughtful environment inspired by the legacy of Lord
+                Rama, the township aims to create a harmonious lifestyle where
+                community, greenery and contemporary infrastructure come
+                together.
               </p>
 
               <div
@@ -1238,10 +1198,7 @@ const Home = () => {
                 </div>
 
                 <div>
-                  <div
-                    className="fw-bold"
-                    style={{ fontSize: "14px" }}
-                  >
+                  <div className="fw-bold" style={{ fontSize: "14px" }}>
                     Our Vision
                   </div>
 
@@ -1251,8 +1208,7 @@ const Home = () => {
                       fontSize: "12px",
                     }}
                   >
-                    Spiritual values · Sustainable
-                    development · Modern living
+                    Spiritual values · Sustainable development · Modern living
                   </small>
                 </div>
               </div>
@@ -1276,10 +1232,7 @@ const Home = () => {
       >
         <GeometricBackground dark />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             title="Thoughtfully Planned. Strategically Connected."
             description="Thoughtfully planned spaces, strategic connectivity and a lifestyle designed around comfort, security and long-term value."
@@ -1288,10 +1241,7 @@ const Home = () => {
 
           <div className="row g-4 mt-2">
             {highlights.map((item, index) => (
-              <div
-                className="col-lg-4 col-md-6"
-                key={index}
-              >
+              <div className="col-lg-4 col-md-6" key={index}>
                 <PremiumCard
                   title={item.title}
                   description={item.description}
@@ -1319,10 +1269,7 @@ const Home = () => {
       >
         <GeometricBackground />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             eyebrow="PROJECT OVERVIEW"
             title="Designed Around Better Living"
@@ -1336,26 +1283,21 @@ const Home = () => {
               ["100%", "Gated & Secure"],
               ["NH-56B", "Prime Location"],
             ].map(([value, label]) => (
-              <div
-                className="col-12 col-sm-6 col-lg-3"
-                key={label}
-              >
+              <div className="col-12 col-sm-6 col-lg-3" key={label}>
                 <div
                   className="ramayana-stat-card text-center p-3 h-100"
                   style={{
                     background: "#fff",
                     border: "1px solid #e8e8e8",
                     borderRadius: "15px",
-                    boxShadow:
-                      "0 10px 25px rgba(0,0,0,.045)",
+                    boxShadow: "0 10px 25px rgba(0,0,0,.045)",
                   }}
                 >
                   <div
                     className="fw-bold"
                     style={{
                       color: GOLD,
-                      fontSize:
-                        "clamp(27px, 3.5vw, 40px)",
+                      fontSize: "clamp(27px, 3.5vw, 40px)",
                       lineHeight: 1.1,
                     }}
                   >
@@ -1393,10 +1335,7 @@ const Home = () => {
       >
         <GeometricBackground dark />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             dark
             eyebrow="PREMIUM AMENITIES"
@@ -1411,14 +1350,8 @@ const Home = () => {
 
           <div className="row g-3 mt-1 amenity-desktop-grid">
             {amenities.map((item, index) => (
-              <div
-                className="col-sm-6 col-lg-3"
-                key={item.title}
-              >
-                <AmenityCard
-                  item={item}
-                  index={index}
-                />
+              <div className="col-sm-6 col-lg-3" key={item.title}>
+                <AmenityCard item={item} index={index} />
               </div>
             ))}
           </div>
@@ -1432,20 +1365,12 @@ const Home = () => {
             <div
               className="amenity-mobile-track"
               style={{
-                transform: `translateX(-${
-                  amenityIndex * 100
-                }%)`,
+                transform: `translateX(-${amenityIndex * 100}%)`,
               }}
             >
               {amenities.map((item, index) => (
-                <div
-                  className="amenity-mobile-slide"
-                  key={item.title}
-                >
-                  <AmenityCard
-                    item={item}
-                    index={index}
-                  />
+                <div className="amenity-mobile-slide" key={item.title}>
+                  <AmenityCard item={item} index={index} />
                 </div>
               ))}
             </div>
@@ -1462,13 +1387,9 @@ const Home = () => {
                 type="button"
                 aria-label={`Go to ${item.title}`}
                 className={`amenity-slider-dot ${
-                  amenityIndex === index
-                    ? "active"
-                    : ""
+                  amenityIndex === index ? "active" : ""
                 }`}
-                onClick={() =>
-                  setAmenityIndex(index)
-                }
+                onClick={() => setAmenityIndex(index)}
               />
             ))}
           </div>
@@ -1490,10 +1411,7 @@ const Home = () => {
       >
         <GeometricBackground />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             eyebrow="DIVINE LIFESTYLE"
             title="A Lifestyle Inspired by Peace & Purpose"
@@ -1509,33 +1427,23 @@ const Home = () => {
                   fontSize: "14px",
                 }}
               >
-                Ramayana City is envisioned as more than
-                just a residential address. It is a
-                thoughtfully planned community where
-                serenity, greenery, spiritual values, and
-                modern infrastructure come together to
-                create an elevated and fulfilling
-                lifestyle. Designed with a vision for
-                comfortable and harmonious living, the
-                township offers a peaceful environment
-                away from the everyday rush while
-                keeping essential conveniences and
+                Ramayana City is envisioned as more than just a residential
+                address. It is a thoughtfully planned community where serenity,
+                greenery, spiritual values, and modern infrastructure come
+                together to create an elevated and fulfilling lifestyle.
+                Designed with a vision for comfortable and harmonious living,
+                the township offers a peaceful environment away from the
+                everyday rush while keeping essential conveniences and
                 connectivity within easy reach.
-
                 <br />
                 <br />
-
-                Every aspect of Ramayana City is planned
-                to encourage a balanced way of life —
-                from beautifully designed green spaces
-                and well-planned roads to a secure,
-                welcoming community atmosphere. With its
-                blend of nature, modern amenities, and
-                spiritual surroundings, Ramayana City
-                provides an ideal setting where families
-                can build meaningful memories, enjoy
-                peaceful living, and look forward to a
-                better tomorrow.
+                Every aspect of Ramayana City is planned to encourage a balanced
+                way of life — from beautifully designed green spaces and
+                well-planned roads to a secure, welcoming community atmosphere.
+                With its blend of nature, modern amenities, and spiritual
+                surroundings, Ramayana City provides an ideal setting where
+                families can build meaningful memories, enjoy peaceful living,
+                and look forward to a better tomorrow.
               </p>
 
               <div className="row g-2 mt-3">
@@ -1545,10 +1453,7 @@ const Home = () => {
                   "Prime NH-56B Location",
                   "Gated Community",
                 ].map((item) => (
-                  <div
-                    className="col-sm-6"
-                    key={item}
-                  >
+                  <div className="col-sm-6" key={item}>
                     <div
                       className="d-flex align-items-center gap-2 p-2"
                       style={{
@@ -1579,24 +1484,24 @@ const Home = () => {
 
               <div className="d-flex flex-wrap gap-2 mt-3">
                 <Link
-                    to="/contact"
-                    onClick={() => {
-                      window.scrollTo({
-                        top: 0,
-                        left: 0,
-                        behavior: "auto",
-                      });
-                    }}
-                    className="btn px-4 py-2 fw-semibold"
-                    style={{
-                      background: GOLD,
-                      color: WHITE,
-                      border: `1px solid ${GOLD}`,
-                      fontSize: "13px",
-                    }}
-                  >
-                    Book Site Visit
-                  </Link>
+                  to="/contact"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      left: 0,
+                      behavior: "auto",
+                    });
+                  }}
+                  className="btn px-4 py-2 fw-semibold"
+                  style={{
+                    background: GOLD,
+                    color: WHITE,
+                    border: `1px solid ${GOLD}`,
+                    fontSize: "13px",
+                  }}
+                >
+                  Book Site Visit
+                </Link>
 
                 <a
                   href="tel:+918882125125"
@@ -1635,14 +1540,12 @@ const Home = () => {
                   alt="Experience Ramayana City"
                   className="img-fluid w-100"
                   style={{
-                    height:
-                      "clamp(300px, 40vw, 390px)",
+                    height: "clamp(300px, 40vw, 390px)",
                     objectFit: "cover",
                     borderRadius: "18px",
                     position: "relative",
                     zIndex: 2,
-                    boxShadow:
-                      "0 20px 45px rgba(0,0,0,.10)",
+                    boxShadow: "0 20px 45px rgba(0,0,0,.10)",
                   }}
                 />
               </div>
@@ -1666,10 +1569,7 @@ const Home = () => {
       >
         <GeometricBackground dark />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             dark
             eyebrow="STRATEGIC LOCATION"
@@ -1711,20 +1611,14 @@ const Home = () => {
                 "Shopping and everyday conveniences nearby.",
               ],
             ].map(([num, icon, title, text]) => (
-              <div
-                className="col-6 col-md-6 col-lg-4"
-                key={num}
-              >
+              <div className="col-6 col-md-6 col-lg-4" key={num}>
                 <div
                   className="location-card p-3 h-100"
                   style={{
-                    background:
-                      "rgba(255,255,255,.025)",
-                    border:
-                      "1px solid rgba(255,255,255,.09)",
+                    background: "rgba(255,255,255,.025)",
+                    border: "1px solid rgba(255,255,255,.09)",
                     borderRadius: "15px",
-                    transition:
-                      "transform .3s ease, border-color .3s ease",
+                    transition: "transform .3s ease, border-color .3s ease",
                   }}
                 >
                   <div
@@ -1770,8 +1664,7 @@ const Home = () => {
                   <p
                     className="mb-0 location-card-text"
                     style={{
-                      color:
-                        "rgba(255,255,255,.54)",
+                      color: "rgba(255,255,255,.54)",
                       lineHeight: 1.6,
                       fontSize: "13px",
                     }}
@@ -1800,10 +1693,7 @@ const Home = () => {
       >
         <GeometricBackground />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             eyebrow="SITE VISIT"
             title="Book Your Free Site Visit"
@@ -1815,8 +1705,7 @@ const Home = () => {
             style={{
               borderRadius: "22px",
               overflow: "hidden",
-              boxShadow:
-                "0 20px 55px rgba(0,0,0,.13)",
+              boxShadow: "0 20px 55px rgba(0,0,0,.13)",
             }}
           >
             {/* =================================================
@@ -1857,8 +1746,7 @@ const Home = () => {
                     position: "absolute",
                     width: "240px",
                     height: "240px",
-                    border:
-                      "1px solid rgba(208,177,91,.28)",
+                    border: "1px solid rgba(208,177,91,.28)",
                     borderRadius: "50%",
                     right: "-100px",
                     top: "-75px",
@@ -1889,17 +1777,12 @@ const Home = () => {
                   <h3
                     className="text-white fw-bold mb-2"
                     style={{
-                      fontSize:
-                        "clamp(27px, 3vw, 38px)",
+                      fontSize: "clamp(27px, 3vw, 38px)",
                       lineHeight: 1.1,
                     }}
                   >
                     Experience
-
-                    <span
-                      className="d-block"
-                      style={{ color: GOLD }}
-                    >
+                    <span className="d-block" style={{ color: GOLD }}>
                       Ramayana City
                     </span>
                   </h3>
@@ -1907,41 +1790,34 @@ const Home = () => {
                   <p
                     className="mb-0"
                     style={{
-                      color:
-                        "rgba(255,255,255,.70)",
+                      color: "rgba(255,255,255,.70)",
                       fontSize: "13px",
                       lineHeight: 1.65,
                       maxWidth: "370px",
                     }}
                   >
-                    Discover a thoughtfully planned
-                    residential township where modern
-                    infrastructure meets timeless
-                    spiritual values.
+                    Discover a thoughtfully planned residential township where
+                    modern infrastructure meets timeless spiritual values.
                   </p>
 
                   <div className="d-flex flex-wrap gap-2 mt-3">
-                    {[
-                      "35m Boulevard",
-                      "17m Green Belt",
-                      "Gated Community",
-                    ].map((item) => (
-                      <span
-                        key={item}
-                        style={{
-                          border:
-                            "1px solid rgba(208,177,91,.38)",
-                          background:
-                            "rgba(0,0,0,.28)",
-                          color: WHITE,
-                          borderRadius: "20px",
-                          padding: "5px 9px",
-                          fontSize: "10px",
-                        }}
-                      >
-                        {item}
-                      </span>
-                    ))}
+                    {["35m Boulevard", "17m Green Belt", "Gated Community"].map(
+                      (item) => (
+                        <span
+                          key={item}
+                          style={{
+                            border: "1px solid rgba(208,177,91,.38)",
+                            background: "rgba(0,0,0,.28)",
+                            color: WHITE,
+                            borderRadius: "20px",
+                            padding: "5px 9px",
+                            fontSize: "10px",
+                          }}
+                        >
+                          {item}
+                        </span>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
@@ -1956,8 +1832,7 @@ const Home = () => {
                 className="h-100"
                 style={{
                   background: DARK,
-                  padding:
-                    "clamp(25px, 4vw, 42px)",
+                  padding: "clamp(25px, 4vw, 42px)",
                   position: "relative",
                   overflow: "hidden",
                 }}
@@ -1967,55 +1842,42 @@ const Home = () => {
                     position: "absolute",
                     width: "170px",
                     height: "170px",
-                    border:
-                      "1px solid rgba(208,177,91,.09)",
+                    border: "1px solid rgba(208,177,91,.09)",
                     transform: "rotate(45deg)",
                     right: "-85px",
                     bottom: "-85px",
                   }}
                 />
 
-                <div
-                  className="position-relative"
-                  style={{ zIndex: 2 }}
-                >
+                <div className="position-relative" style={{ zIndex: 2 }}>
                   <div className="mb-3">
                     <h2
                       className="text-white fw-bold mt-2 mb-2"
                       style={{
-                        fontSize:
-                          "clamp(27px, 3vw, 38px)",
+                        fontSize: "clamp(27px, 3vw, 38px)",
                         lineHeight: 1.1,
                       }}
                     >
-                      Plan Your{" "}
-                      <span style={{ color: GOLD }}>
-                        Visit
-                      </span>
+                      Plan Your <span style={{ color: GOLD }}>Visit</span>
                     </h2>
 
                     <p
                       className="mb-0"
                       style={{
-                        color:
-                          "rgba(255,255,255,.55)",
+                        color: "rgba(255,255,255,.55)",
                         fontSize: "13px",
                         lineHeight: 1.6,
                       }}
                     >
-                      Fill in your details and our team
-                      will contact you to arrange your
-                      personalized site visit.
+                      Fill in your details and our team will contact you to
+                      arrange your personalized site visit.
                     </p>
                   </div>
 
                   <form onSubmit={handleSiteVisitSubmit}>
                     <div className="row g-2">
                       <div className="col-md-6">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Full Name
                         </label>
 
@@ -2030,10 +1892,7 @@ const Home = () => {
                       </div>
 
                       <div className="col-md-6">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Phone Number
                         </label>
 
@@ -2048,10 +1907,7 @@ const Home = () => {
                       </div>
 
                       <div className="col-md-6">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Email Address
                         </label>
 
@@ -2066,10 +1922,7 @@ const Home = () => {
                       </div>
 
                       <div className="col-md-6">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Plot Type
                         </label>
 
@@ -2087,29 +1940,18 @@ const Home = () => {
                             Select plot type
                           </option>
 
-                          <option>
-                            Residential Plot
-                          </option>
+                          <option>Residential Plot</option>
 
-                          <option>
-                            Corner Plot
-                          </option>
+                          <option>Corner Plot</option>
 
-                          <option>
-                            Park Facing Plot
-                          </option>
+                          <option>Park Facing Plot</option>
 
-                          <option>
-                            Commercial Plot
-                          </option>
+                          <option>Commercial Plot</option>
                         </select>
                       </div>
 
                       <div className="col-md-6">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Budget
                         </label>
 
@@ -2127,29 +1969,18 @@ const Home = () => {
                             Select budget
                           </option>
 
-                          <option>
-                            10-20 Lakh
-                          </option>
+                          <option>10-20 Lakh</option>
 
-                          <option>
-                            20-40 Lakh
-                          </option>
+                          <option>20-40 Lakh</option>
 
-                          <option>
-                            40-60 Lakh
-                          </option>
+                          <option>40-60 Lakh</option>
 
-                          <option>
-                            Above 60 Lakh
-                          </option>
+                          <option>Above 60 Lakh</option>
                         </select>
                       </div>
 
                       <div className="col-md-6">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Preferred Visit Date
                         </label>
 
@@ -2166,10 +1997,7 @@ const Home = () => {
                       </div>
 
                       <div className="col-12">
-                        <label
-                          className="form-label"
-                          style={formLabelStyle}
-                        >
+                        <label className="form-label" style={formLabelStyle}>
                           Message
                         </label>
 
@@ -2199,20 +2027,12 @@ const Home = () => {
                             minHeight: "46px",
                             fontSize: "13px",
                             opacity: isSubmitting ? 0.7 : 1,
-                            cursor: isSubmitting
-                              ? "not-allowed"
-                              : "pointer",
+                            cursor: isSubmitting ? "not-allowed" : "pointer",
                           }}
                         >
-                          {isSubmitting
-                            ? "Sending..."
-                            : "Book Free Site Visit"}
+                          {isSubmitting ? "Sending..." : "Book Free Site Visit"}
 
-                          {!isSubmitting && (
-                            <span className="ms-2">
-                              →
-                            </span>
-                          )}
+                          {!isSubmitting && <span className="ms-2">→</span>}
                         </button>
 
                         {formStatus === "success" && (
@@ -2223,8 +2043,8 @@ const Home = () => {
                               fontSize: "13px",
                             }}
                           >
-                            Thank you! Your site visit request has
-                            been sent successfully.
+                            Thank you! Your site visit request has been sent
+                            successfully.
                           </p>
                         )}
 
@@ -2236,8 +2056,7 @@ const Home = () => {
                               fontSize: "13px",
                             }}
                           >
-                            Message could not be sent. Please try
-                            again.
+                            Message could not be sent. Please try again.
                           </p>
                         )}
                       </div>
@@ -2245,13 +2064,11 @@ const Home = () => {
                       <div className="col-12 text-center">
                         <small
                           style={{
-                            color:
-                              "rgba(255,255,255,.35)",
+                            color: "rgba(255,255,255,.35)",
                             fontSize: "10px",
                           }}
                         >
-                          🔒 100% Confidential & Spam
-                          Free Assurance
+                          🔒 100% Confidential & Spam Free Assurance
                         </small>
                       </div>
                     </div>
@@ -2278,10 +2095,7 @@ const Home = () => {
       >
         <GeometricBackground dark />
 
-        <div
-          className="container position-relative"
-          style={{ zIndex: 2 }}
-        >
+        <div className="container position-relative" style={{ zIndex: 2 }}>
           <span
             style={{
               color: GOLD,
@@ -2296,31 +2110,25 @@ const Home = () => {
           <h2
             className="text-white fw-bold mt-2 mb-3"
             style={{
-              fontSize:
-                "clamp(32px, 4.5vw, 55px)",
+              fontSize: "clamp(32px, 4.5vw, 55px)",
               lineHeight: 1.1,
             }}
           >
-            Your Premium Address{" "}
-            <span style={{ color: GOLD }}>
-              Awaits.
-            </span>
+            Your Premium Address <span style={{ color: GOLD }}>Awaits.</span>
           </h2>
 
           <p
             className="mx-auto mb-4"
             style={{
               maxWidth: "600px",
-              color:
-                "rgba(255,255,255,.56)",
+              color: "rgba(255,255,255,.56)",
               lineHeight: 1.7,
               fontSize: "13px",
             }}
           >
-            Experience a thoughtfully planned
-            township where modern infrastructure,
-            greenery, connectivity and timeless
-            values come together.
+            Experience a thoughtfully planned township where modern
+            infrastructure, greenery, connectivity and timeless values come
+            together.
           </p>
 
           <div className="d-flex justify-content-center flex-wrap gap-2">
@@ -2342,8 +2150,7 @@ const Home = () => {
               className="btn px-4 py-2 fw-semibold"
               style={{
                 color: WHITE,
-                border:
-                  "1px solid rgba(255,255,255,.35)",
+                border: "1px solid rgba(255,255,255,.35)",
                 fontSize: "13px",
               }}
             >
