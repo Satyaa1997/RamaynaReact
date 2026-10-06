@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo1.png";
+import brochurePdf from "../assets/R-city.pdf";
+
 
 const navigation = [
   { label: "Home", to: "/" },
@@ -109,24 +111,25 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* ================= ENQUIRY BUTTON ================= */}
-          <div className="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0 mb-2 mb-lg-0">
-            <Link
-              to="/contact"
-              onClick={handleNavClick}
-              className="btn text-white fw-semibold rounded-1"
-              style={{
-                backgroundColor: GOLD,
-                border: `1px solid ${GOLD}`,
-                fontSize: "14px",
-                padding: "9px 20px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Enquiry Now
-              <span className="ms-2">→</span>
-            </Link>
-          </div>
+        
+          {/* ================= DOWNLOAD BROCHURE BUTTON ================= */}
+           <div className="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0 mb-2 mb-lg-0">
+             <a
+               href={brochurePdf}
+               download="Ramayana-City-Brochure.pdf"
+               onClick={handleNavClick}
+               className="btn text-white fw-semibold rounded-1"
+               style={{
+                 backgroundColor: GOLD,
+                            fontSize: "14px",
+                 padding: "9px 20px",
+                 whiteSpace: "nowrap",
+               }}
+             >
+               Download Brochure
+               <span className="ms-2">↓</span>
+             </a>
+           </div>
         </div>
       </div>
     </nav>

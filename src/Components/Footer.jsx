@@ -39,7 +39,7 @@ const Footer = () => {
           }
 
           footer .footer-link:hover {
-            color: #ffffff !important;
+            color: #9A741C !important;
             transform: translateX(3px);
           }
 
@@ -68,7 +68,7 @@ const Footer = () => {
           }
 
           footer .footer-contact-link:hover {
-            color: #ffffff !important;
+            color: #9A741C !important;
           }
 
           footer .footer-contact-icon {
@@ -91,6 +91,7 @@ const Footer = () => {
             max-height: 65px !important;
             height: auto !important;
             object-fit: contain !important;
+            margin-left: -12px !important;
           }
 
           /* ================= SOCIAL BUTTONS ================= */
@@ -124,7 +125,7 @@ const Footer = () => {
           }
 
           footer .footer-bottom-link:hover {
-            color: #ffffff !important;
+            color: #9A741C !important;
           }
 
           /* ================= COPYRIGHT ================= */
@@ -146,7 +147,7 @@ const Footer = () => {
           }
 
           footer .footer-developer-link:hover {
-            color: #ffffff !important;
+            color: #9A741C !important;
             opacity: 0.8;
           }
 
@@ -207,8 +208,25 @@ const Footer = () => {
           }
 
           footer .rera-website:hover {
-            color: #ffffff !important;
+            color: #9A741C !important;
             text-decoration: underline !important;
+          }
+
+          /* ================= ALL LINK HOVERS ================= */
+
+          footer a:hover {
+            color: #9A741C !important;
+          }
+
+          footer .footer-social-btn:hover {
+            background: #9A741C !important;
+            color: #ffffff !important;
+            border-color: #9A741C !important;
+          }
+
+          footer a:focus-visible {
+            outline: 2px solid #9A741C;
+            outline-offset: 3px;
           }
 
           @media (min-width: 992px) {

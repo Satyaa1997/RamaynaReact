@@ -469,6 +469,49 @@ const AmenityCard = ({ item, index }) => {
 // =====================================================
 const Home = () => {
   const [showHeroText, setShowHeroText] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
+
+  const handleSiteVisitSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const formValues = Object.fromEntries(formData.entries());
+
+    setIsSubmitting(true);
+    setFormStatus("");
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/info@ramayanacity.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            ...formValues,
+            _subject: "New Site Visit Request - Ramayana City",
+            _template: "table",
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Unable to send the site visit request.");
+      }
+
+      form.reset();
+      setFormStatus("success");
+    } catch (error) {
+      console.error("Site visit form submission failed:", error);
+      setFormStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // =====================================================
   // MOBILE AMENITY SLIDER STATES
@@ -711,6 +754,44 @@ const Home = () => {
         ===================================================== */
 
         @media (max-width: 767px) {
+
+          /* Connected to the Future: compact 2-column cards */
+          .location-grid {
+            --bs-gutter-x: 10px;
+            --bs-gutter-y: 10px;
+          }
+
+          .location-card {
+            min-height: 148px;
+            padding: 12px 8px !important;
+            border-radius: 11px !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .location-card-icon {
+            width: 38px !important;
+            height: 38px !important;
+            margin-bottom: 7px !important;
+            font-size: 19px !important;
+          }
+
+          .location-card-number {
+            display: none;
+          }
+
+          .location-card-title {
+            font-size: 14px !important;
+            margin-bottom: 4px !important;
+          }
+
+          .location-card-text {
+            font-size: 10px !important;
+            line-height: 1.4 !important;
+          }
 
           .home-premium-card > div:first-child {
             height: 235px !important;
@@ -1471,17 +1552,24 @@ const Home = () => {
 
               <div className="d-flex flex-wrap gap-2 mt-3">
                 <Link
-                  to="/contact"
-                  className="btn px-4 py-2 fw-semibold"
-                  style={{
-                    background: GOLD,
-                    color: WHITE,
-                    border: `1px solid ${GOLD}`,
-                    fontSize: "13px",
-                  }}
-                >
-                  Book Site Visit
-                </Link>
+                    to="/contact"
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "auto",
+                      });
+                    }}
+                    className="btn px-4 py-2 fw-semibold"
+                    style={{
+                      background: GOLD,
+                      color: WHITE,
+                      border: `1px solid ${GOLD}`,
+                      fontSize: "13px",
+                    }}
+                  >
+                    Book Site Visit
+                  </Link>
 
                 <a
                   href="tel:+918882125125"
@@ -1562,37 +1650,42 @@ const Home = () => {
             description="A strategically positioned address designed around accessibility, connectivity and the growth of Lucknow."
           />
 
-          <div className="row g-3 mt-1">
+          <div className="row g-3 mt-1 location-grid">
             {[
-              ["01", "NH-56B", "Prime highway connectivity."],
+              ["01", "🛣️", "NH-56B", "Prime highway connectivity."],
               [
                 "02",
+                "✈️",
                 "Airport",
                 "Easy access to Chaudhary Charan Singh International Airport.",
               ],
               [
                 "03",
+                "🚘",
                 "Expressways",
                 "Convenient access to major expressway corridors.",
               ],
               [
                 "04",
+                "🎓",
                 "Education",
                 "Schools and colleges within convenient reach.",
               ],
               [
                 "05",
+                "🏥",
                 "Healthcare",
                 "Hospitals and healthcare facilities nearby.",
               ],
               [
                 "06",
+                "🛍️",
                 "Markets",
                 "Shopping and everyday conveniences nearby.",
               ],
-            ].map(([num, title, text]) => (
+            ].map(([num, icon, title, text]) => (
               <div
-                className="col-md-6 col-lg-4"
+                className="col-6 col-md-6 col-lg-4"
                 key={num}
               >
                 <div
@@ -1608,6 +1701,27 @@ const Home = () => {
                   }}
                 >
                   <div
+                    className="location-card-icon"
+                    aria-hidden="true"
+                    style={{
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 12px",
+                      color: GOLD,
+                      background: "rgba(208,177,91,.12)",
+                      border: "1px solid rgba(208,177,91,.26)",
+                      fontSize: "21px",
+                    }}
+                  >
+                    {icon}
+                  </div>
+
+                  <div
+                    className="location-card-number"
                     style={{
                       color: GOLD,
                       fontSize: "10px",
@@ -1620,14 +1734,14 @@ const Home = () => {
                   </div>
 
                   <h4
-                    className="fw-bold text-white mb-1"
+                    className="fw-bold text-white mb-1 location-card-title"
                     style={{ fontSize: "18px" }}
                   >
                     {title}
                   </h4>
 
                   <p
-                    className="mb-0"
+                    className="mb-0 location-card-text"
                     style={{
                       color:
                         "rgba(255,255,255,.54)",
@@ -1868,11 +1982,7 @@ const Home = () => {
                     </p>
                   </div>
 
-                  <form
-                    onSubmit={(e) =>
-                      e.preventDefault()
-                    }
-                  >
+                  <form onSubmit={handleSiteVisitSubmit}>
                     <div className="row g-2">
                       <div className="col-md-6">
                         <label
@@ -1884,6 +1994,7 @@ const Home = () => {
 
                         <input
                           type="text"
+                          name="name"
                           className="form-control"
                           placeholder="Enter your name"
                           required
@@ -1901,6 +2012,7 @@ const Home = () => {
 
                         <input
                           type="tel"
+                          name="phone"
                           className="form-control"
                           placeholder="Enter phone number"
                           required
@@ -1918,8 +2030,10 @@ const Home = () => {
 
                         <input
                           type="email"
+                          name="email"
                           className="form-control"
                           placeholder="Enter email"
+                          required
                           style={inputStyle}
                         />
                       </div>
@@ -1933,8 +2047,10 @@ const Home = () => {
                         </label>
 
                         <select
+                          name="plotType"
                           className="form-select"
                           defaultValue=""
+                          required
                           style={{
                             ...inputStyle,
                             colorScheme: "dark",
@@ -1971,8 +2087,10 @@ const Home = () => {
                         </label>
 
                         <select
+                          name="budget"
                           className="form-select"
                           defaultValue=""
+                          required
                           style={{
                             ...inputStyle,
                             colorScheme: "dark",
@@ -2010,7 +2128,9 @@ const Home = () => {
 
                         <input
                           type="date"
+                          name="visitDate"
                           className="form-control"
+                          required
                           style={{
                             ...inputStyle,
                             colorScheme: "dark",
@@ -2027,6 +2147,7 @@ const Home = () => {
                         </label>
 
                         <textarea
+                          name="message"
                           rows="2"
                           className="form-control"
                           placeholder="Tell us how we can help..."
@@ -2041,6 +2162,7 @@ const Home = () => {
                       <div className="col-12 mt-2">
                         <button
                           type="submit"
+                          disabled={isSubmitting}
                           className="btn w-100 py-2 fw-bold"
                           style={{
                             background: GOLD,
@@ -2049,14 +2171,48 @@ const Home = () => {
                             borderRadius: "5px",
                             minHeight: "46px",
                             fontSize: "13px",
+                            opacity: isSubmitting ? 0.7 : 1,
+                            cursor: isSubmitting
+                              ? "not-allowed"
+                              : "pointer",
                           }}
                         >
-                          Book Free Site Visit
+                          {isSubmitting
+                            ? "Sending..."
+                            : "Book Free Site Visit"}
 
-                          <span className="ms-2">
-                            →
-                          </span>
+                          {!isSubmitting && (
+                            <span className="ms-2">
+                              →
+                            </span>
+                          )}
                         </button>
+
+                        {formStatus === "success" && (
+                          <p
+                            className="text-center mt-2 mb-0"
+                            style={{
+                              color: "#64d98b",
+                              fontSize: "13px",
+                            }}
+                          >
+                            Thank you! Your site visit request has
+                            been sent successfully.
+                          </p>
+                        )}
+
+                        {formStatus === "error" && (
+                          <p
+                            className="text-center mt-2 mb-0"
+                            style={{
+                              color: "#ff6b6b",
+                              fontSize: "13px",
+                            }}
+                          >
+                            Message could not be sent. Please try
+                            again.
+                          </p>
+                        )}
                       </div>
 
                       <div className="col-12 text-center">
