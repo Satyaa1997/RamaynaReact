@@ -10,6 +10,7 @@ import WhyChoose from "./Components/WhyChoose";
 import Gallery from "./Components/Gallery";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import FloatingCallButton from "./Components/FloatingCallButton";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
       </Routes>
 
       <Footer />
+      <FloatingCallButton />
     </>
   );
 };

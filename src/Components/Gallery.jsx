@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // =====================================================
 // IMAGE IMPORTS
@@ -82,6 +82,48 @@ const galleryItems = [
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const selectedIndex = selectedImage
+    ? galleryItems.findIndex((item) => item.id === selectedImage.id)
+    : -1;
+
+  const showPreviousImage = () => {
+    if (selectedIndex === -1) return;
+
+    const previousIndex =
+      (selectedIndex - 1 + galleryItems.length) % galleryItems.length;
+
+    setSelectedImage(galleryItems[previousIndex]);
+  };
+
+  const showNextImage = () => {
+    if (selectedIndex === -1) return;
+
+    const nextIndex = (selectedIndex + 1) % galleryItems.length;
+    setSelectedImage(galleryItems[nextIndex]);
+  };
+
+  useEffect(() => {
+    if (!selectedImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowLeft") {
+        showPreviousImage();
+      } else if (event.key === "ArrowRight") {
+        showNextImage();
+      } else if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage, selectedIndex]);
 
   return (
     <>
@@ -317,6 +359,7 @@ const Gallery = () => {
         className="py-5"
         style={{
           backgroundColor: "#F8F7F3",
+          backgroundColor: "#000000",
         }}
       >
         <div className="container py-lg-4">
@@ -340,6 +383,7 @@ const Gallery = () => {
                 className="fw-bold mt-2 mb-2"
                 style={{
                   color: "#202020",
+                  color: "#ffffff",
                   fontSize: "clamp(28px, 4vw, 42px)",
                 }}
               >
@@ -348,7 +392,9 @@ const Gallery = () => {
 
               <p
                 className="text-secondary mb-0"
+                className="mb-0"
                 style={{
+                  color: "rgba(255,255,255,0.68)",
                   lineHeight: "1.8",
                   maxWidth: "700px",
                 }}
@@ -421,6 +467,56 @@ const Gallery = () => {
             }}
           >
 
+            {/* Previous Button */}
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                showPreviousImage();
+              }}
+              aria-label="View previous image"
+              className="btn position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center"
+              style={{
+                width: "46px",
+                height: "46px",
+                marginLeft: "clamp(4px, 2vw, 18px)",
+                borderRadius: "50%",
+                color: "#ffffff",
+                backgroundColor: "rgba(208,177,91,0.88)",
+                border: "1px solid rgba(255,255,255,0.4)",
+                fontSize: "28px",
+                lineHeight: 1,
+                zIndex: 2002,
+              }}
+            >
+              ‹
+            </button>
+
+            {/* Next Button */}
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                showNextImage();
+              }}
+              aria-label="View next image"
+              className="btn position-absolute top-50 end-0 translate-middle-y d-flex align-items-center justify-content-center"
+              style={{
+                width: "46px",
+                height: "46px",
+                marginRight: "clamp(4px, 2vw, 18px)",
+                borderRadius: "50%",
+                color: "#ffffff",
+                backgroundColor: "rgba(208,177,91,0.88)",
+                border: "1px solid rgba(255,255,255,0.4)",
+                fontSize: "28px",
+                lineHeight: 1,
+                zIndex: 2002,
+              }}
+            >
+              ›
+            </button>
+
             <img
               src={selectedImage.image}
               alt={selectedImage.title}
@@ -451,6 +547,13 @@ const Gallery = () => {
               <h5 className="text-white mt-1 mb-0">
                 {selectedImage.title}
               </h5>
+
+              <small
+                className="d-block mt-2"
+                style={{ color: "rgba(255,255,255,0.65)" }}
+              >
+                {selectedIndex + 1} / {galleryItems.length}
+              </small>
 
             </div>
 
