@@ -112,7 +112,7 @@ const Project = () => {
             overflow: hidden;
             background-color: #171717;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
           }
 
           .hero-project-bg {
@@ -122,19 +122,53 @@ const Project = () => {
             height: 100%;
             object-fit: cover;
             object-position: center center;
+            filter: blur(2px);
+            transform: scale(1.01);
             z-index: 0;
           }
 
           .hero-project-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.58);
+            background: rgba(0, 0, 0, 0.32);
+            background: rgba(0, 0, 0, 0.28);
             z-index: 1;
           }
 
           .hero-project-content {
             position: relative;
             z-index: 2;
+            width: 100%;
+          }
+
+          .hero-glass-panel {
+            width: min(760px, 100%);
+          .hero-project-text {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 30px 34px;
+            padding: 20px 24px;
+            text-align: center;
+            background: rgba(15, 15, 15, 0.34);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+          }
+
+          .hero-project-title {
+            font-size: clamp(34px, 5vw, 52px) !important;
+            line-height: 1.1;
+          }
+
+          .hero-project-description {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .hero-project-actions {
+            justify-content: center;
           }
 
           /* =========================================
@@ -227,11 +261,11 @@ const Project = () => {
           .quick-stats-box {
             margin-left: 12px;
             margin-right: 12px;
-            padding: 24px !important;
+            padding: 60px 24px !important;
           }
 
           .quick-stat-item {
-            padding: 8px 10px;
+            padding: 18px 10px;
           }
 
           /* =========================================
@@ -244,7 +278,17 @@ const Project = () => {
             }
 
             .hero-project h1 {
-              font-size: 2.5rem !important;
+              font-size: 2rem !important;
+            }
+
+            .hero-glass-panel {
+            .hero-project-text {
+              width: calc(100% - 16px);
+              padding: 22px 16px;
+              border-radius: 15px;
+              backdrop-filter: blur(8px);
+              -webkit-backdrop-filter: blur(8px);
+              padding: 18px 8px;
             }
 
             .hero-project-bg {
@@ -279,11 +323,11 @@ const Project = () => {
             .quick-stats-box {
               margin-left: 8px;
               margin-right: 8px;
-              padding: 20px !important;
+              padding: 44px 16px !important;
             }
 
             .quick-stat-item {
-              padding: 8px 4px;
+              padding: 16px 4px;
             }
           }
         `}
@@ -310,22 +354,12 @@ const Project = () => {
           <div className="hero-project-overlay"></div>
 
           <div className="container py-5 hero-project-content">
-            <div className="row align-items-center">
-              <div className="col-lg-8">
-                <span
-                  className="d-inline-block px-3 py-2 mb-3 rounded-pill fw-semibold"
-                  style={{
-                    backgroundColor: GOLD,
-                    color: "#fff",
-                    fontSize: "12px",
-                    letterSpacing: "0.8px",
-                  }}
-                >
-                  PREMIUM RESIDENTIAL PROJECT
-                </span>
+            <div className="row justify-content-center align-items-center">
+              <div className="col-12">
+                <div className="hero-project-text">
 
                 <h1
-                  className="display-3 fw-bold text-white mb-3"
+                  className="fw-bold text-white mb-3 hero-project-title"
                   style={{
                     letterSpacing: "0.5px",
                   }}
@@ -334,7 +368,7 @@ const Project = () => {
                 </h1>
 
                 <p
-                  className="text-white fs-5 mb-3"
+                  className="text-white fs-5 mb-3 hero-project-description"
                   style={{
                     maxWidth: "680px",
                     lineHeight: "1.6",
@@ -354,7 +388,7 @@ const Project = () => {
                   Lucknow, Uttar Pradesh
                 </p>
 
-                <div className="d-flex flex-wrap gap-3">
+                <div className="d-flex flex-wrap gap-3 hero-project-actions">
                   <a
                     href="/contact"
                     className="btn px-4 py-2 fw-semibold project-button"
@@ -375,6 +409,7 @@ const Project = () => {
                     Explore Project
                   </a>
                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -391,8 +426,8 @@ const Project = () => {
             marginTop: "-25px",
             position: "relative",
             zIndex: 3,
-            paddingTop: "20px",
-            paddingBottom: "20px",
+            paddingTop: "45px",
+            paddingBottom: "45px",
           }}
         >
           <div className="container">
@@ -1043,4 +1078,3 @@ const Project = () => {
 };
 
 export default Project;
-
