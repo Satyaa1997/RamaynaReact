@@ -311,7 +311,6 @@ const Footer = () => {
                 {[
                   { name: "Home", to: "/" },
                   { name: "About", to: "/about" },
-                  { name: "Project", to: "/project" },
                   { name: "Why Choose", to: "/whychoose" },
                   { name: "Gallery", to: "/gallery" },
                   { name: "Contact", to: "/contact" },

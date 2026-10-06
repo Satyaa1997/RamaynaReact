@@ -131,12 +131,30 @@ const WhyChoose = () => {
         overflowX: "hidden",
       }}
     >
+      <style>{`
+        .why-choose-hero-content {
+          padding-top: 195px;
+        }
+
+        @media (max-width: 767px) {
+          .why-choose-hero,
+          .why-choose-hero-inner {
+            min-height: 460px !important;
+          }
+
+          .why-choose-hero-content {
+            padding-top: 285px;
+          }
+        }
+      `}</style>
+
       {/* =====================================================
           HERO SECTION
       ===================================================== */}
 
       <section
         className="position-relative overflow-hidden"
+        className="position-relative overflow-hidden why-choose-hero"
         style={{
           minHeight: "520px",
           backgroundColor: DARK,
@@ -182,6 +200,7 @@ const WhyChoose = () => {
 
         <div
           className="container position-relative h-100"
+          className="container position-relative h-100 why-choose-hero-inner"
           style={{
             zIndex: 3,
             minHeight: "520px",
@@ -192,6 +211,7 @@ const WhyChoose = () => {
             style={{
               paddingTop: "180px", // Yahan padding aur badha di hai taaki text aur neeche aaye
             }}
+            className="row h-100 align-items-start justify-content-center text-center why-choose-hero-content"
           >
             <div className="col-12 col-lg-8">
               {/* LABEL */}

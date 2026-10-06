@@ -753,7 +753,33 @@ const Home = () => {
             MOBILE
         ===================================================== */
 
-        @media (max-width: 767px) {
+
+          @media (max-width: 767px) {
+  .home-hero-section {
+    height: clamp(350px, 70vw, 480px) !important; /* Height ko increase kar diya gaya hai */
+    min-height: 350px !important;
+    margin-top: 60px; /* Agar navbar fixed hai toh uske niche se start karne ke liye (apne navbar ki height ke hisaab se adjust karein) */
+  }
+  /* Baki CSS wahi rahegi */
+}
+
+          .home-hero-video {
+            object-fit: contain !important;
+            object-position: center center;
+            background: #111111;
+          }
+
+          .home-hero-content {
+            padding-bottom: 12px !important;
+          }
+
+          .home-hero-text h1 {
+            font-size: 24px !important;
+          }
+
+          .home-hero-text p {
+            margin-bottom: 8px !important;
+          }
 
           /* Connected to the Future: compact 2-column cards */
           .location-grid {
@@ -905,7 +931,7 @@ const Home = () => {
 
       <section
         id="home"
-        className="position-relative"
+        className="position-relative home-hero-section"
         style={{
           height: "min(780px, 100vh)",
           minHeight: "620px",
@@ -918,7 +944,7 @@ const Home = () => {
           muted
           loop
           playsInline
-          className="w-100 h-100"
+          className="w-100 h-100 home-hero-video"
           style={{
             objectFit: "cover",
             position: "absolute",
@@ -938,10 +964,11 @@ const Home = () => {
         />
 
         <div
-          className="container h-100 position-relative d-flex align-items-end pb-5"
+          className="container h-100 position-relative d-flex align-items-end pb-5 home-hero-content"
           style={{ zIndex: 2 }}
         >
           <div
+            className="home-hero-text"
             style={{
               maxWidth: "600px",
               opacity: showHeroText ? 1 : 0,
