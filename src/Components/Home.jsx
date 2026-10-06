@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaRoad, FaPlane, FaRoute, FaGraduationCap, FaHospital, FaShoppingBag } from "react-icons/fa";
 
 // =====================================================
 // ASSETS
@@ -349,9 +350,7 @@ const PremiumCard = ({ title, description, image, dark = false }) => {
             textTransform: "uppercase",
             letterSpacing: "1.5px",
           }}
-        >
-         
-        </div>
+        />
       </div>
     </div>
   );
@@ -472,7 +471,7 @@ const Home = () => {
             _subject: "New Site Visit Request - Ramayana City",
             _template: "table",
           }),
-        },
+        }
       );
 
       if (!response.ok) {
@@ -631,16 +630,19 @@ const Home = () => {
         }
 
         /* =====================================================
-            MOBILE AMENITY SLIDER
+            AMENITY GRID (DESKTOP & TABLET DEFAULT)
         ===================================================== */
-
         .amenity-mobile-slider {
           display: none;
-          width: 100%;
-          overflow: hidden;
-          position: relative;
         }
 
+        .amenity-slider-dots {
+          display: none;
+        }
+
+        /* =====================================================
+            MOBILE AMENITY SLIDER
+        ===================================================== */
         .amenity-mobile-track {
           display: flex;
           width: 100%;
@@ -653,10 +655,6 @@ const Home = () => {
           width: 100%;
           max-width: 100%;
           padding: 0 2px;
-        }
-
-        .amenity-slider-dots {
-          display: none;
         }
 
         .amenity-slider-dot {
@@ -728,16 +726,12 @@ const Home = () => {
         /* =====================================================
             MOBILE
         ===================================================== */
-
-
-          @media (max-width: 767px) {
-  .home-hero-section {
-    height: clamp(350px, 70vw, 480px) !important; /* Height ko increase kar diya gaya hai */
-    min-height: 350px !important;
-    margin-top: 60px; /* Agar navbar fixed hai toh uske niche se start karne ke liye (apne navbar ki height ke hisaab se adjust karein) */
-  }
-  /* Baki CSS wahi rahegi */
-}
+        @media (max-width: 767px) {
+          .home-hero-section {
+            height: clamp(350px, 70vw, 480px) !important;
+            min-height: 350px !important;
+            margin-top: 60px;
+          }
 
           .home-hero-video {
             object-fit: contain !important;
@@ -809,19 +803,20 @@ const Home = () => {
           }
 
           /* ===============================================
-             AMENITY DESKTOP GRID HIDE
+             AMENITY DESKTOP GRID HIDE ON MOBILE
           =============================================== */
-
           .amenity-desktop-grid {
             display: none !important;
           }
 
           /* ===============================================
-             AMENITY MOBILE SLIDER SHOW
+             AMENITY MOBILE SLIDER SHOW ON MOBILE
           =============================================== */
-
           .amenity-mobile-slider {
             display: block;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
           }
 
           .amenity-slider-dots {
@@ -839,7 +834,6 @@ const Home = () => {
           /* ===============================================
              SITE VISIT IMAGE - HIDE ON MOBILE
           =============================================== */
-
           .site-visit-image {
             display: none !important;
           }
@@ -847,7 +841,6 @@ const Home = () => {
           /* ===============================================
              SITE VISIT FORM - FULL WIDTH ON MOBILE
           =============================================== */
-
           .site-visit-form {
             display: block !important;
             width: 100% !important;
@@ -877,7 +870,6 @@ const Home = () => {
         }
 
         @media (max-width: 575px) {
-
           .site-visit-form > div {
             padding: 23px 15px !important;
           }
@@ -904,7 +896,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 01 - HERO
       ====================================================== */}
-
       <section
         id="home"
         className="position-relative home-hero-section"
@@ -1028,7 +1019,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 02 - ABOUT
       ====================================================== */}
-
       <section
         id="about"
         className="position-relative ramayana-section"
@@ -1211,7 +1201,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 03 - WHY CHOOSE
       ====================================================== */}
-
       <section
         id="why-choose"
         className="position-relative ramayana-section"
@@ -1248,7 +1237,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 04 - PROJECT OVERVIEW
       ====================================================== */}
-
       <section
         id="project-overview"
         className="position-relative ramayana-section"
@@ -1314,7 +1302,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 05 - PREMIUM AMENITIES
       ====================================================== */}
-
       <section
         id="amenities"
         className="position-relative ramayana-section"
@@ -1335,13 +1322,11 @@ const Home = () => {
           />
 
           {/* =================================================
-              DESKTOP + TABLET GRID
-              4 CARDS DESKTOP / 2 CARDS TABLET
+              DESKTOP + TABLET GRID (4 CARDS PER ROW)
           ================================================== */}
-
           <div className="row g-3 mt-1 amenity-desktop-grid">
             {amenities.map((item, index) => (
-              <div className="col-sm-6 col-lg-3" key={item.title}>
+              <div className="col-6 col-md-3" key={item.title}>
                 <AmenityCard item={item} index={index} />
               </div>
             ))}
@@ -1349,9 +1334,7 @@ const Home = () => {
 
           {/* =================================================
               MOBILE AUTO SLIDER
-              ONE CARD AT A TIME
           ================================================== */}
-
           <div className="amenity-mobile-slider mt-1">
             <div
               className="amenity-mobile-track"
@@ -1370,7 +1353,6 @@ const Home = () => {
           {/* =================================================
               MOBILE SLIDER DOTS
           ================================================== */}
-
           <div className="amenity-slider-dots justify-content-center align-items-center gap-2 mt-3">
             {amenities.map((item, index) => (
               <button
@@ -1390,7 +1372,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 06 - DIVINE LIFESTYLE
       ====================================================== */}
-
       <section
         id="lifestyle"
         className="position-relative ramayana-section"
@@ -1548,7 +1529,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 07 - STRATEGIC LOCATION
       ====================================================== */}
-
       <section
         id="location"
         className="position-relative ramayana-section"
@@ -1570,38 +1550,38 @@ const Home = () => {
 
           <div className="row g-3 mt-1 location-grid">
             {[
-              ["01", "🛣️", "NH-56B", "Prime highway connectivity."],
+              ["01", <FaRoad />, "NH-56B", "Prime highway connectivity."],
               [
                 "02",
-                "✈️",
+                <FaPlane />,
                 "Airport",
                 "Easy access to Chaudhary Charan Singh International Airport.",
               ],
               [
                 "03",
-                "🚘",
+                <FaRoute />,
                 "Expressways",
                 "Convenient access to major expressway corridors.",
               ],
               [
                 "04",
-                "🎓",
+                <FaGraduationCap />,
                 "Education",
                 "Schools and colleges within convenient reach.",
               ],
               [
                 "05",
-                "🏥",
+                <FaHospital />,
                 "Healthcare",
                 "Hospitals and healthcare facilities nearby.",
               ],
               [
                 "06",
-                "🛍️",
+                <FaShoppingBag />,
                 "Markets",
                 "Shopping and everyday conveniences nearby.",
               ],
-            ].map(([num, icon, title, text]) => (
+            ].map(([num, iconComponent, title, text]) => (
               <div className="col-6 col-md-6 col-lg-4" key={num}>
                 <div
                   className="location-card p-3 h-100"
@@ -1626,10 +1606,10 @@ const Home = () => {
                       color: GOLD,
                       background: "rgba(208,177,91,.12)",
                       border: "1px solid rgba(208,177,91,.26)",
-                      fontSize: "21px",
+                      fontSize: "18px",
                     }}
                   >
-                    {icon}
+                    {iconComponent}
                   </div>
 
                   <div
@@ -1672,7 +1652,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 08 - BOOK YOUR FREE SITE VISIT
       ====================================================== */}
-
       <section
         id="site-visit"
         className="position-relative ramayana-section"
@@ -1702,7 +1681,6 @@ const Home = () => {
             {/* =================================================
                 IMAGE COLUMN
             ================================================== */}
-
             <div className="col-12 col-md-5 col-lg-5 site-visit-image">
               <div
                 className="h-100 position-relative"
@@ -1807,7 +1785,7 @@ const Home = () => {
                         >
                           {item}
                         </span>
-                      ),
+                      )
                     )}
                   </div>
                 </div>
@@ -1817,7 +1795,6 @@ const Home = () => {
             {/* =================================================
                 FORM COLUMN
             ================================================== */}
-
             <div className="col-12 col-md-7 col-lg-7 site-visit-form">
               <div
                 className="h-100"
@@ -2074,7 +2051,6 @@ const Home = () => {
       {/* =====================================================
           SECTION 09 - FINAL CTA
       ==================================================== */}
-
       <section
         id="contact-cta"
         className="position-relative text-center ramayana-section"
