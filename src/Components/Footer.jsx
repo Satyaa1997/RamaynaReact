@@ -162,23 +162,23 @@ const Footer = () => {
             max-width: 100% !important;
           }
 
-        footer .rera-content {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  gap: 8px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
+          footer .rera-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+            gap: 10px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
 
           footer .rera-image {
-  width: 85px !important;
-  height: 85px !important;
-  object-fit: contain !important;
-  flex-shrink: 0 !important;
-  display: block !important;
-}
+            width: 85px !important;
+            height: 85px !important;
+            object-fit: contain !important;
+            flex-shrink: 0 !important;
+            display: block !important;
+          }
 
           footer .rera-details {
             font-size: 8.5px !important;
@@ -210,6 +210,30 @@ const Footer = () => {
           footer .rera-website:hover {
             color: #9A741C !important;
             text-decoration: underline !important;
+          }
+
+          /* MOBILE VIEW: QR Code and Details Side-by-Side */
+          @media (max-width: 767px) {
+            footer .rera-content {
+              flex-direction: row !important;
+              align-items: flex-start !important;
+              gap: 14px !important;
+            }
+
+            footer .rera-image {
+              width: 95px !important;
+              height: 95px !important;
+              flex-shrink: 0 !important;
+            }
+
+            footer .rera-details {
+              font-size: 10px !important;
+              line-height: 1.5 !important;
+            }
+
+            footer .rera-details strong {
+              font-size: 10px !important;
+            }
           }
 
           /* ================= ALL LINK HOVERS ================= */
@@ -433,7 +457,7 @@ const Footer = () => {
                       <strong>Account No.:</strong>0294002900000288
                     </div>
                     <div>
-                      <strong>A/c Name:</strong> : Dishadeep developrs pvt Itd collection a/c for Ramayana city
+                      <strong>A/c Name:</strong> Dishadeep developrs pvt Itd collection a/c for Ramayana city
                     </div>
                     <div>
                       <strong>Bank Name:</strong> PNB, Hazratganj, Lucknow
