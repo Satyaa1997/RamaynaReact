@@ -20,7 +20,7 @@ import {
 
 import heroImage from "../assets/Ramayana_city (3).png";
 import overviewImage from "../assets/Ramayana_city (3).png";
-import masterPlanImage from "../assets/project-map.jpg";
+import masterPlanImage from "../assets/R-city-2.jpg.jpeg";
 
 const Project = () => {
   const GOLD = "#D0B15B";
