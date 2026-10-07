@@ -1,5 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import {
   FaLocationDot,
@@ -17,6 +22,10 @@ import {
 } from "react-icons/fa6";
 
 import heroImage from "../assets/Ramayana_city (3).png";
+import grandEntranceImg from "../assets/gate2.jpeg";
+import greenBeltImg from "../assets/Ramayana_city (4).png";
+import highwayImg from "../assets/highway.jpg";
+import purvanchalImg from "../assets/Why3.png";
 
 const WhyChoose = () => {
   const GOLD = "#D0B15B";
@@ -27,38 +36,42 @@ const WhyChoose = () => {
     {
       number: "01",
       icon: <FaBuilding />,
+      category: "Phase 01",
       title: "Grand Entrance",
-      text: "A 35-meter-wide grand boulevard with dual 9-meter roads and a lush 17-meter central green belt.",
+      image: grandEntranceImg,
+      text: "A magnificent 35-metre-wide boulevard complemented by a lush 17-metre central green belt, creating an impressive and welcoming arrival experience.",
+      tags: ["35m Boulevard", "17m Green Belt"],
+      accent: "#D0B15B",
     },
     {
       number: "02",
       icon: <FaHouse />,
+      category: "Plot Sizes",
       title: "Bespoke Residential Plots",
-      text: "Flexible plot sizes designed to help you build a lasting family legacy.",
+      image: greenBeltImg,
+      text: "A thoughtfully planned range of flexible plot sizes, offering the freedom to create a distinctive home and build a lasting family legacy.",
+      tags: ["Prime Plots", "Freehold Land"],
+      accent: "#4e8397",
     },
     {
       number: "03",
       icon: <FaLocationDot />,
-      title: "Strategic Location",
-      text: "Direct access to NH56B with upcoming arterial links connecting seamlessly to both the Agra Expressway and Purvanchal Expressway.",
+      category: "NH-56B Link",
+      title: "Strategic Location & Seamless Connectivity",
+      image: highwayImg,
+      text: "Strategically positioned on NH-56B (Mohanlalganj–Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agra–Lucknow Expressway and Purvanchal Expressway.",
+      tags: ["NH-56B Link", "Expressways"],
+      accent: "#ff8066",
     },
     {
       number: "04",
       icon: <FaChartLine />,
+      category: "High Growth",
       title: "High-Value Investment",
-      text: "An ideal blend of high-growth potential and secure, peaceful living.",
-    },
-    {
-      number: "05",
-      icon: <FaHouse />,
-      title: "Modern Living",
-      text: "A practical residential environment created around today's lifestyle needs.",
-    },
-    {
-      number: "06",
-      icon: <FaChartLine />,
-      title: "Long-Term Potential",
-      text: "A developing location with planned infrastructure for long-term property planning.",
+      image: purvanchalImg,
+      text: "A compelling combination of strong growth potential, strategic connectivity, and peaceful living, making Ramayana City an attractive destination for both discerning homeowners and long-term investors.",
+      tags: ["High Return", "Long Term"],
+      accent: "#008bc9",
     },
   ];
 
@@ -145,6 +158,108 @@ const WhyChoose = () => {
           .why-choose-hero-content {
             padding-top: 285px;
           }
+        }
+
+        .rc-card {
+          background: #ffffff;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+          overflow: hidden;
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .rc-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 22px 45px rgba(0, 0, 0, 0.35);
+        }
+        .rc-thumbnail-stack {
+          position: relative;
+          height: 215px; /* Highlighted image height */
+          overflow: hidden;
+          background: #111111;
+        }
+        .rc-thumbnail-stack img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .rc-card:hover .rc-thumbnail-stack img {
+          transform: scale(1.08);
+        }
+        .rc-thumbnail-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(0,0,0,0.08) 40%, rgba(0,0,0,0.65) 100%);
+          pointer-events: none;
+        }
+        .rc-category-badge {
+          position: absolute;
+          top: 12px;
+          left: 12px;
+          background: rgba(17, 17, 17, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          color: #ffffff;
+          font-size: 11px;
+          font-weight: 600;
+          padding: 4px 12px;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          z-index: 2;
+        }
+        .rc-card-body {
+          padding: 14px 14px 16px 14px; /* Compact height */
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+        .rc-heading {
+          font-size: 15.5px;
+          font-weight: 700;
+          color: #181818;
+          margin-bottom: 6px;
+          line-height: 1.3;
+        }
+        .rc-description {
+          font-size: 11.8px;
+          color: #555555;
+          line-height: 1.45;
+          margin-bottom: 12px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .rc-tag-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          margin-bottom: 0;
+          padding: 0;
+          list-style: none;
+          margin-top: auto;
+        }
+        .rc-tag {
+          font-size: 10px;
+          font-weight: 600;
+          padding: 3px 8px;
+          border-radius: 12px;
+        }
+        .whyChooseSwiper .swiper-pagination-bullet {
+          background: rgba(255, 255, 255, 0.35);
+          opacity: 1;
+        }
+        .whyChooseSwiper .swiper-pagination-bullet-active {
+          background: #D0B15B;
+          width: 22px;
+          border-radius: 10px;
         }
       `}</style>
 
@@ -353,62 +468,86 @@ const WhyChoose = () => {
             </p>
           </div>
 
-          <div className="row g-3">
-            {reasons.map((reason) => (
-              <div className="col-md-6 col-lg-4" key={reason.number}>
-                <div
-                  className="h-100 p-3 rounded-3"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                  }}
-                >
-                  <div className="d-flex justify-content-between align-items-center mb-3">
-                    <div
-                      className="d-flex align-items-center justify-content-center rounded-3"
-                      style={{
-                        width: "46px",
-                        height: "46px",
-                        backgroundColor: `${GOLD}22`,
-                        color: GOLD,
-                        fontSize: "19px",
-                      }}
-                    >
-                      {reason.icon}
+          <div className="why-choose-swiper-wrapper mt-4">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={20}
+              loop={true}
+              grabCursor={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              pagination={{ clickable: true, dynamicBullets: true }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 16,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 16,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+              className="whyChooseSwiper pb-5"
+            >
+              {reasons.map((reason) => (
+                <SwiperSlide key={reason.number} className="h-auto">
+                  <div
+                    className="rc-card h-100"
+                    style={{
+                      borderColor: `${reason.accent}45`,
+                    }}
+                  >
+                    {/* THUMBNAIL STACK */}
+                    <div className="rc-thumbnail-stack">
+                      <img src={reason.image} alt={reason.title} />
+                      <div className="rc-thumbnail-overlay" />
+
+                      {/* CATEGORY BADGE */}
+                      <div className="rc-category-badge">
+                        <span className="badge-num" style={{ color: reason.accent }}>
+                          {reason.number}
+                        </span>
+                        <span>{reason.category}</span>
+                      </div>
                     </div>
 
-                    <span
-                      className="fw-bold"
-                      style={{
-                        color: GOLD,
-                        fontSize: "12px",
-                      }}
-                    >
-                      {reason.number}
-                    </span>
+                    {/* CARD BODY */}
+                    <div className="rc-card-body">
+                      <h3 className="rc-heading">{reason.title}</h3>
+
+                      <p className="rc-description">{reason.text}</p>
+
+                      {/* TAG LIST */}
+                      <ul className="rc-tag-list">
+                        {reason.tags.map((tag) => (
+                          <li
+                            className="rc-tag"
+                            key={tag}
+                            style={{
+                              backgroundColor: `${reason.accent}15`,
+                              color: reason.accent,
+                              borderColor: `${reason.accent}35`,
+                              borderStyle: "solid",
+                              borderWidth: "1px",
+                            }}
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-
-                  <h5
-                    className="fw-bold mb-2"
-                    style={{
-                      fontSize: "17px",
-                    }}
-                  >
-                    {reason.title}
-                  </h5>
-
-                  <p
-                    className="text-muted mb-0"
-                    style={{
-                      fontSize: "13px",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {reason.text}
-                  </p>
-                </div>
-              </div>
-            ))}
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>

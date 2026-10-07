@@ -430,10 +430,10 @@ const Footer = () => {
                       <strong>Launch Date:</strong> 03-Oct-2026
                     </div>
                     <div>
-                      <strong>Account No.:</strong> 0294002900000288
+                      <strong>Account No.:</strong>0294002900000288
                     </div>
                     <div>
-                      <strong>A/c Name:</strong> DISHADEEP DEVELOPRS PVT LTD
+                      <strong>A/c Name:</strong> : Dishadeep developrs pvt Itd collection a/c for Ramayana city
                     </div>
                     <div>
                       <strong>Bank Name:</strong> PNB, Hazratganj, Lucknow

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaRoad, FaPlane, FaRoute, FaGraduationCap, FaHospital, FaShoppingBag } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 
 // =====================================================
 // ASSETS
@@ -18,6 +23,14 @@ import schoolImage from "../assets/school.jpg";
 import marketImage from "../assets/market.jpg";
 
 import ramayanaCityImage from "../assets/Ramayana_city (3).png";
+import securityImage from "../assets/24 X 7 Security and Safety.jpg";
+import Electriccable from "../assets/undergroundwire.png";
+import greenBeltImage from "../assets/Sewage Treatment Plant (STP).jfif";
+import greenTownshipImage from "../assets/Dual Water Pipelines (Drinking & Reuse).webp";
+import wideRoadImage from "../assets/Stormwater Drainage.jfif";
+import parkImage from "../assets/undergroundwatertank.webp";
+import rCity4Image from "../assets/Waste Management System.webp";
+import PrimeLocationConnectivity from "../assets/Prime Location Connectivity.avif";
 
 // =====================================================
 // COLORS
@@ -558,6 +571,63 @@ const Home = () => {
     },
   ];
 
+  const facilities = [
+    {
+      num: "01",
+      title: "Underground Electricity Cables",
+      text: "Safely concealed power networks ensuring uncluttered landscapes and uninterrupted electricity.",
+      image: Electriccable,
+    },
+    {
+      num: "02",
+      title: "Underground Water Tank",
+      text: "High-capacity centralized reservoir delivering continuous 24/7 water supply throughout the township.",
+      image: parkImage,
+    },
+    {
+      num: "03",
+      title: "Dual Water Pipelines (Drinking & Reuse)",
+      text: "Eco-friendly dual piping system segregating pure drinking water from recycled water for irrigation.",
+      image: greenTownshipImage,
+    },
+    {
+      num: "04",
+      title: "Sewage Treatment Plant (STP)",
+      text: "Advanced eco-efficient STP recycling wastewater for green belt maintenance and conservation.",
+      image: greenBeltImage,
+    },
+    {
+      num: "05",
+      title: "Stormwater Drainage",
+      text: "Engineered underground drainage network preventing waterlogging and keeping roads dry in monsoon.",
+      image: wideRoadImage,
+    },
+    {
+      num: "06",
+      title: "Wide Roads",
+      text: "35-meter grand boulevard and 9-meter wide internal sector roads with footpaths and central green belts.",
+      image: highwayImage,
+    },
+    {
+      num: "07",
+      title: "Waste Management System",
+      text: "Organized door-to-door solid waste segregation and eco-disposal ensuring clean, hygienic surroundings.",
+      image: rCity4Image,
+    },
+    {
+      num: "08",
+      title: "Prime Location Connectivity",
+      text: "Strategic positioning directly on NH-56B with rapid access to Outer Ring Road, Airport, and expressways.",
+      image: PrimeLocationConnectivity,
+    },
+    {
+      num: "09",
+      title: "24 X 7 Security and Safety",
+      text: "Gated township with round-the-clock CCTV surveillance, manned entrance gates, and perimeter safety.",
+      image: securityImage,
+    },
+  ];
+
   // =====================================================
   // CHECK MOBILE SCREEN
   // =====================================================
@@ -709,6 +779,113 @@ const Home = () => {
 
         .ramayana-about-image-wrap:hover .ramayana-about-image {
           transform: scale(1.03);
+        }
+
+        /* =====================================================
+            FACILITY CARD STYLES
+        ===================================================== */
+        .facility-card {
+          --bg: #181818;
+          --title-color: #ffffff;
+          --title-color-hover: #D0B15B;
+          --text-color: rgba(255, 255, 255, 0.72);
+          background: var(--bg);
+          border-radius: 1.8rem;
+          padding: 0.6rem;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+          border: 1px solid rgba(208, 177, 91, 0.2);
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+          display: flex;
+          flex-direction: column;
+        }
+        .facility-card:hover {
+          transform: translateY(-6px);
+          border-color: #D0B15B;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .facility-card::before {
+          content: "";
+          position: absolute;
+          width: calc(100% - 1.2rem);
+          height: 38%;
+          bottom: 0.6rem;
+          left: 0.6rem;
+          mask: linear-gradient(#0000, #000f 80%);
+          -webkit-mask: linear-gradient(#0000, #000f 80%);
+          backdrop-filter: blur(1rem);
+          -webkit-backdrop-filter: blur(1rem);
+          border-radius: 0 0 1.4rem 1.4rem;
+          transition: transform 0.3s ease;
+          pointer-events: none;
+          z-index: 1;
+        }
+        .facility-card-img-wrapper {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          border-radius: 1.3rem;
+          overflow: hidden;
+        }
+        .facility-card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+        .facility-card:hover .facility-card-img {
+          transform: scale(1.08);
+        }
+        .facility-card-badge {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          background: rgba(17, 17, 17, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          color: #D0B15B;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 4px 10px;
+          border-radius: 20px;
+          border: 1px solid rgba(208, 177, 91, 0.35);
+          z-index: 2;
+        }
+        .facility-card-section {
+          padding: 1.1rem 0.9rem 0.8rem 0.9rem;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          position: relative;
+          z-index: 2;
+        }
+        .facility-card-title {
+          margin: 0 0 0.5rem 0;
+          font-size: 16.5px;
+          font-weight: 700;
+          color: var(--title-color);
+          line-height: 1.35;
+          transition: color 0.3s ease;
+        }
+        .facility-card:hover .facility-card-title {
+          color: var(--title-color-hover);
+        }
+        .facility-card-text {
+          font-size: 12.5px;
+          line-height: 1.5;
+          color: var(--text-color);
+          margin: 0;
+        }
+        .facilitySwiper .swiper-pagination-bullet {
+          background: rgba(255, 255, 255, 0.35);
+          opacity: 1;
+        }
+        .facilitySwiper .swiper-pagination-bullet-active {
+          background: #D0B15B;
+          width: 22px;
+          border-radius: 10px;
         }
 
         /* =====================================================
@@ -1527,7 +1704,7 @@ const Home = () => {
       </section>
 
       {/* =====================================================
-          SECTION 07 - STRATEGIC LOCATION
+          SECTION 07 - FACILITIES
       ====================================================== */}
       <section
         id="location"
@@ -1543,108 +1720,60 @@ const Home = () => {
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             dark
-            eyebrow="STRATEGIC LOCATION"
-            title="Connected to the Future"
-            description="A strategically positioned address designed around accessibility, connectivity and the growth of Lucknow."
+            eyebrow="FACILITIES"
+            title="Infrastructure Designed for Modern Living"
+            description="A master-planned township equipped with modern underground utilities, sustainable eco-systems, and round-the-clock safety."
           />
 
-          <div className="row g-3 mt-1 location-grid">
-            {[
-              ["01", <FaRoad />, "NH-56B", "Prime highway connectivity."],
-              [
-                "02",
-                <FaPlane />,
-                "Airport",
-                "Easy access to Chaudhary Charan Singh International Airport.",
-              ],
-              [
-                "03",
-                <FaRoute />,
-                "Expressways",
-                "Convenient access to major expressway corridors.",
-              ],
-              [
-                "04",
-                <FaGraduationCap />,
-                "Education",
-                "Schools and colleges within convenient reach.",
-              ],
-              [
-                "05",
-                <FaHospital />,
-                "Healthcare",
-                "Hospitals and healthcare facilities nearby.",
-              ],
-              [
-                "06",
-                <FaShoppingBag />,
-                "Markets",
-                "Shopping and everyday conveniences nearby.",
-              ],
-            ].map(([num, iconComponent, title, text]) => (
-              <div className="col-6 col-md-6 col-lg-4" key={num}>
-                <div
-                  className="location-card p-3 h-100"
-                  style={{
-                    background: "rgba(255,255,255,.025)",
-                    border: "1px solid rgba(255,255,255,.09)",
-                    borderRadius: "15px",
-                    transition: "transform .3s ease, border-color .3s ease",
-                  }}
-                >
-                  <div
-                    className="location-card-icon"
-                    aria-hidden="true"
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "50%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: "0 auto 12px",
-                      color: GOLD,
-                      background: "rgba(208,177,91,.12)",
-                      border: "1px solid rgba(208,177,91,.26)",
-                      fontSize: "18px",
-                    }}
-                  >
-                    {iconComponent}
+          {/* DESKTOP & TABLET: 3 CARDS PER LINE (3 IN ROW 1, 3 IN ROW 2, 3 IN ROW 3) */}
+          <div className="row g-4 mt-2 d-none d-md-flex">
+            {facilities.map((item) => (
+              <div className="col-md-4 col-lg-4" key={item.num}>
+                <div className="facility-card h-100">
+                  <div className="facility-card-img-wrapper">
+                    <img src={item.image} alt={item.title} className="facility-card-img" />
+                    <div className="facility-card-badge">{item.num}</div>
                   </div>
-
-                  <div
-                    className="location-card-number"
-                    style={{
-                      color: GOLD,
-                      fontSize: "10px",
-                      fontWeight: 700,
-                      letterSpacing: "1px",
-                      marginBottom: "12px",
-                    }}
-                  >
-                    {num}
+                  <div className="facility-card-section">
+                    <h3 className="facility-card-title">{item.title}</h3>
+                    <p className="facility-card-text">{item.text}</p>
                   </div>
-
-                  <h4
-                    className="fw-bold text-white mb-1 location-card-title"
-                    style={{ fontSize: "18px" }}
-                  >
-                    {title}
-                  </h4>
-
-                  <p
-                    className="mb-0 location-card-text"
-                    style={{
-                      color: "rgba(255,255,255,.54)",
-                      lineHeight: 1.6,
-                      fontSize: "13px",
-                    }}
-                  >
-                    {text}
-                  </p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* MOBILE: 1 CARD AT A TIME AUTO-SLIDING */}
+          <div className="d-block d-md-none mt-3">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={16}
+              loop={true}
+              grabCursor={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              pagination={{ clickable: true, dynamicBullets: true }}
+              className="facilitySwiper pb-5"
+            >
+              {facilities.map((item) => (
+                <SwiperSlide key={item.num} className="h-auto">
+                  <div className="facility-card h-100">
+                    <div className="facility-card-img-wrapper">
+                      <img src={item.image} alt={item.title} className="facility-card-img" />
+                      <div className="facility-card-badge">{item.num}</div>
+                    </div>
+                    <div className="facility-card-section">
+                      <h3 className="facility-card-title">{item.title}</h3>
+                      <p className="facility-card-text">{item.text}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
