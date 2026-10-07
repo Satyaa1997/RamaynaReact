@@ -23,9 +23,14 @@ import {
 
 import heroImage from "../assets/Ramayana_city (3).png";
 import grandEntranceImg from "../assets/gate2.jpeg";
-import greenBeltImg from "../assets/Ramayana_city (4).png";
+import greenBeltImg from "../assets/green-belt.png";
 import highwayImg from "../assets/highway.jpg";
 import purvanchalImg from "../assets/Why3.png";
+import sportsImg from "../assets/Sports Courts.webp";
+import kidsZoneImg from "../assets/Kids’ Play Zones.png";
+import meditationImg from "../assets/mandir3.png";
+import evChargingImg from "../assets/EV Charging Points.jpg";
+import wellnessImg from "../assets/Wellness Amenities.jfif";
 
 const WhyChoose = () => {
   const GOLD = "#D0B15B";
@@ -72,6 +77,51 @@ const WhyChoose = () => {
       text: "A compelling combination of strong growth potential, strategic connectivity, and peaceful living, making Ramayana City an attractive destination for both discerning homeowners and long-term investors.",
       tags: ["High Return", "Long Term"],
       accent: "#008bc9",
+    },
+  ];
+
+  const sixAmenities = [
+    {
+      num: "01",
+      title: "Sports Courts",
+      subtitle: "Badminton & Basketball",
+      desc: "Dedicated outdoor courts designed for active sports, friendly matches, and fitness for all ages.",
+      image: sportsImg,
+    },
+    {
+      num: "02",
+      title: "Gardens & Green Areas",
+      subtitle: "Lush Landscaped Park",
+      desc: "Beautifully maintained central gardens and green belts providing a peaceful, oxygen-rich environment.",
+      image: greenBeltImg,
+    },
+    {
+      num: "03",
+      title: "Kids’ Play Zones",
+      subtitle: "Safe Recreation",
+      desc: "Thoughtfully planned play zones with safe equipment where children can play, socialise, and explore.",
+      image: kidsZoneImg,
+    },
+    {
+      num: "04",
+      title: "Meditation Spaces",
+      subtitle: "Spiritual Tranquility",
+      desc: "Quiet, peaceful open-air corners surrounded by greenery, ideal for yoga, mindfulness and reflection.",
+      image: meditationImg,
+    },
+    {
+      num: "05",
+      title: "EV Charging Points",
+      subtitle: "Eco Infrastructure",
+      desc: "Future-ready electric vehicle charging facilities catering to modern eco-conscious homeowners.",
+      image: evChargingImg,
+    },
+    {
+      num: "06",
+      title: "Wellness Amenities",
+      subtitle: "Health & Wellbeing",
+      desc: "Outdoor fitness equipment, walking/jogging tracks, and open spaces encouraging a healthy lifestyle.",
+      image: wellnessImg,
     },
   ];
 
@@ -261,6 +311,100 @@ const WhyChoose = () => {
           width: 22px;
           border-radius: 10px;
         }
+
+        /* =====================================================
+            AMENITIES 6 CARDS STYLING
+        ===================================================== */
+        .amenity-topic-card {
+          background: #ffffff;
+          border-radius: 18px;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+          overflow: hidden;
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .amenity-topic-card:hover {
+          transform: translateY(-6px);
+          border-color: #D0B15B;
+          box-shadow: 0 20px 42px rgba(208, 177, 91, 0.2);
+        }
+        .amenity-topic-img-wrapper {
+          position: relative;
+          width: 100%;
+          height: 220px; /* Taller image */
+          overflow: hidden;
+          background: #181818;
+        }
+        .amenity-topic-img-wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .amenity-topic-card:hover .amenity-topic-img-wrapper img {
+          transform: scale(1.08);
+        }
+        .amenity-topic-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.65) 100%);
+          pointer-events: none;
+        }
+        .amenity-topic-badge {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: rgba(17, 17, 17, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          color: #D0B15B;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 3px 10px;
+          border-radius: 20px;
+          border: 1px solid rgba(208, 177, 91, 0.35);
+          z-index: 2;
+        }
+        .amenity-topic-body {
+          padding: 14px 15px 16px 15px; /* Compact text height */
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+        .amenity-topic-subtitle {
+          font-size: 10.5px;
+          font-weight: 700;
+          color: #D0B15B;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 3px;
+        }
+        .amenity-topic-title {
+          font-size: 16px;
+          font-weight: 700;
+          color: #181818;
+          margin-bottom: 5px;
+          line-height: 1.3;
+        }
+        .amenity-topic-text {
+          font-size: 12px;
+          color: #555555;
+          line-height: 1.48;
+          margin-bottom: 0;
+        }
+
+        .amenityTopicSwiper .swiper-pagination-bullet {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 1;
+        }
+        .amenityTopicSwiper .swiper-pagination-bullet-active {
+          background: #D0B15B;
+          width: 22px;
+          border-radius: 10px;
+        }
       `}</style>
 
       {/* =====================================================
@@ -378,14 +522,18 @@ const WhyChoose = () => {
           INTRODUCTION - WHITE
       ===================================================== */}
 
+      {/* =====================================================
+          INTRODUCTION & 6 AMENITIES CARDS - WHITE
+      ===================================================== */}
+
       <section
-        className="py-4"
+        className="py-5"
         style={{
           backgroundColor: "#ffffff",
         }}
       >
-        <div className="container py-4">
-          <div className="row justify-content-center text-center">
+        <div className="container py-2">
+          <div className="row justify-content-center text-center mb-4">
             <div className="col-lg-9">
               <span
                 className="fw-semibold text-uppercase"
@@ -395,7 +543,7 @@ const WhyChoose = () => {
                   fontSize: "11px",
                 }}
               >
-                Why Choose Ramayna City
+                AMENITIES
               </span>
 
               <h2
@@ -420,6 +568,61 @@ const WhyChoose = () => {
                 the possibilities it offers for your family's future.
               </p>
             </div>
+          </div>
+
+          {/* DESKTOP & TABLET: 3 CARDS IN ROW 1, 3 CARDS IN ROW 2 */}
+          <div className="row g-4 mt-2 d-none d-md-flex">
+            {sixAmenities.map((item) => (
+              <div className="col-md-4 col-lg-4" key={item.num}>
+                <div className="amenity-topic-card h-100">
+                  <div className="amenity-topic-img-wrapper">
+                    <img src={item.image} alt={item.title} />
+                    <div className="amenity-topic-overlay" />
+                    <div className="amenity-topic-badge">{item.num}</div>
+                  </div>
+                  <div className="amenity-topic-body">
+                    <span className="amenity-topic-subtitle">{item.subtitle}</span>
+                    <h3 className="amenity-topic-title">{item.title}</h3>
+                    <p className="amenity-topic-text">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* MOBILE: 1 CARD WITH MARQUEE AUTO-SLIDER */}
+          <div className="d-block d-md-none mt-3">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={16}
+              loop={true}
+              grabCursor={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              pagination={{ clickable: true, dynamicBullets: true }}
+              className="amenityTopicSwiper pb-5"
+            >
+              {sixAmenities.map((item) => (
+                <SwiperSlide key={item.num} className="h-auto">
+                  <div className="amenity-topic-card h-100">
+                    <div className="amenity-topic-img-wrapper">
+                      <img src={item.image} alt={item.title} />
+                      <div className="amenity-topic-overlay" />
+                      <div className="amenity-topic-badge">{item.num}</div>
+                    </div>
+                    <div className="amenity-topic-body">
+                      <span className="amenity-topic-subtitle">{item.subtitle}</span>
+                      <h3 className="amenity-topic-title">{item.title}</h3>
+                      <p className="amenity-topic-text">{item.desc}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
@@ -527,7 +730,7 @@ const WhyChoose = () => {
 
                       {/* TAG LIST */}
                       <ul className="rc-tag-list">
-                        {reason.tags.map((tag) => (
+                        {reason.tags?.map((tag) => (
                           <li
                             className="rc-tag"
                             key={tag}
