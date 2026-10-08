@@ -5,6 +5,17 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import {
+  FaBolt,
+  FaWater,
+  FaFilter,
+  FaRecycle,
+  FaCloudShowersHeavy,
+  FaRoad,
+  FaTrashCan,
+  FaLocationDot,
+  FaShieldHalved,
+} from "react-icons/fa6";
 
 
 // =====================================================
@@ -574,57 +585,57 @@ const Home = () => {
   const facilities = [
     {
       num: "01",
+      icon: <FaBolt />,
       title: "Underground Electricity Cables",
       text: "Safely concealed power networks ensuring uncluttered landscapes and uninterrupted electricity.",
-      image: Electriccable,
     },
     {
       num: "02",
+      icon: <FaWater />,
       title: "Underground Water Tank",
       text: "High-capacity centralized reservoir delivering continuous 24/7 water supply throughout the township.",
-      image: parkImage,
     },
     {
       num: "03",
+      icon: <FaFilter />,
       title: "Dual Water Pipelines (Drinking & Reuse)",
       text: "Eco-friendly dual piping system segregating pure drinking water from recycled water for irrigation.",
-      image: greenTownshipImage,
     },
     {
       num: "04",
+      icon: <FaRecycle />,
       title: "Sewage Treatment Plant (STP)",
       text: "Advanced eco-efficient STP recycling wastewater for green belt maintenance and conservation.",
-      image: greenBeltImage,
     },
     {
       num: "05",
+      icon: <FaCloudShowersHeavy />,
       title: "Stormwater Drainage",
       text: "Engineered underground drainage network preventing waterlogging and keeping roads dry in monsoon.",
-      image: wideRoadImage,
     },
     {
       num: "06",
+      icon: <FaRoad />,
       title: "Wide Roads",
       text: "35-meter grand boulevard and 9-meter wide internal sector roads with footpaths and central green belts.",
-      image: highwayImage,
     },
     {
       num: "07",
+      icon: <FaTrashCan />,
       title: "Waste Management System",
       text: "Organized door-to-door solid waste segregation and eco-disposal ensuring clean, hygienic surroundings.",
-      image: rCity4Image,
     },
     {
       num: "08",
+      icon: <FaLocationDot />,
       title: "Prime Location Connectivity",
       text: "Strategic positioning directly on NH-56B with rapid access to Outer Ring Road, Airport, and expressways.",
-      image: PrimeLocationConnectivity,
     },
     {
       num: "09",
+      icon: <FaShieldHalved />,
       title: "24 X 7 Security and Safety",
       text: "Gated township with round-the-clock CCTV surveillance, manned entrance gates, and perimeter safety.",
-      image: securityImage,
     },
   ];
 
@@ -785,97 +796,74 @@ const Home = () => {
             FACILITY CARD STYLES
         ===================================================== */
         .facility-card {
-          --bg: #181818;
-          --title-color: #ffffff;
-          --title-color-hover: #D0B15B;
-          --text-color: rgba(255, 255, 255, 0.72);
-          background: var(--bg);
-          border-radius: 1.8rem;
-          padding: 0.6rem;
+          background: #181818;
+          border-radius: 14px;
+          padding: 20px 18px;
           height: 100%;
-          overflow: hidden;
-          position: relative;
-          border: 1px solid rgba(208, 177, 91, 0.2);
-          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+          border: 1px solid rgba(208, 177, 91, 0.22);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+          transition: all 0.35s ease;
           display: flex;
-          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          position: relative;
         }
         .facility-card:hover {
-          transform: translateY(-6px);
+          transform: translateY(-5px);
           border-color: #D0B15B;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 14px 35px rgba(208, 177, 91, 0.15);
+          background: #1e1e1e;
         }
-        .facility-card::before {
-          content: "";
-          position: absolute;
-          width: calc(100% - 1.2rem);
-          height: 38%;
-          bottom: 0.6rem;
-          left: 0.6rem;
-          mask: linear-gradient(#0000, #000f 80%);
-          -webkit-mask: linear-gradient(#0000, #000f 80%);
-          backdrop-filter: blur(1rem);
-          -webkit-backdrop-filter: blur(1rem);
-          border-radius: 0 0 1.4rem 1.4rem;
-          transition: transform 0.3s ease;
-          pointer-events: none;
-          z-index: 1;
+        .facility-icon-wrapper {
+          width: 44px;
+          height: 44px;
+          min-width: 44px;
+          border-radius: 12px;
+          background: rgba(208, 177, 91, 0.12);
+          border: 1px solid rgba(208, 177, 91, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #D0B15B;
+          font-size: 20px;
+          transition: all 0.35s ease;
         }
-        .facility-card-img-wrapper {
-          position: relative;
-          width: 100%;
-          height: 200px;
-          border-radius: 1.3rem;
-          overflow: hidden;
-        }
-        .facility-card-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-          transition: transform 0.5s ease;
-        }
-        .facility-card:hover .facility-card-img {
-          transform: scale(1.08);
+        .facility-card:hover .facility-icon-wrapper {
+          background: #D0B15B;
+          color: #111111;
+          border-color: #D0B15B;
+          transform: scale(1.06);
         }
         .facility-card-badge {
           position: absolute;
-          top: 1rem;
-          left: 1rem;
-          background: rgba(17, 17, 17, 0.85);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          color: #D0B15B;
+          top: 12px;
+          right: 14px;
+          color: rgba(208, 177, 91, 0.6);
           font-size: 11px;
           font-weight: 700;
-          padding: 4px 10px;
-          border-radius: 20px;
-          border: 1px solid rgba(208, 177, 91, 0.35);
-          z-index: 2;
+          letter-spacing: 1px;
         }
-        .facility-card-section {
-          padding: 1.1rem 0.9rem 0.8rem 0.9rem;
+        .facility-card-content {
           display: flex;
           flex-direction: column;
+          gap: 4px;
           flex-grow: 1;
-          position: relative;
-          z-index: 2;
         }
         .facility-card-title {
-          margin: 0 0 0.5rem 0;
-          font-size: 16.5px;
+          margin: 0;
+          font-size: 15px;
           font-weight: 700;
-          color: var(--title-color);
+          color: #ffffff;
           line-height: 1.35;
           transition: color 0.3s ease;
         }
         .facility-card:hover .facility-card-title {
-          color: var(--title-color-hover);
+          color: #D0B15B;
         }
         .facility-card-text {
-          font-size: 12.5px;
-          line-height: 1.5;
-          color: var(--text-color);
+          font-size: 12px;
+          line-height: 1.55;
+          color: rgba(255, 255, 255, 0.65);
           margin: 0;
         }
         .facilitySwiper .swiper-pagination-bullet {
@@ -1726,18 +1714,16 @@ const Home = () => {
           />
 
           {/* DESKTOP & TABLET: 3 CARDS PER LINE (3 IN ROW 1, 3 IN ROW 2, 3 IN ROW 3) */}
-          <div className="row g-4 mt-2 d-none d-md-flex">
+          <div className="row g-3 mt-2 d-none d-md-flex">
             {facilities.map((item) => (
               <div className="col-md-4 col-lg-4" key={item.num}>
-                <div className="facility-card h-100">
-                  <div className="facility-card-img-wrapper">
-                    <img src={item.image} alt={item.title} className="facility-card-img" />
-                    <div className="facility-card-badge">{item.num}</div>
-                  </div>
-                  <div className="facility-card-section">
+                <div className="facility-card">
+                  <div className="facility-icon-wrapper">{item.icon}</div>
+                  <div className="facility-card-content">
                     <h3 className="facility-card-title">{item.title}</h3>
                     <p className="facility-card-text">{item.text}</p>
                   </div>
+                  <span className="facility-card-badge">{item.num}</span>
                 </div>
               </div>
             ))}
@@ -1761,15 +1747,13 @@ const Home = () => {
             >
               {facilities.map((item) => (
                 <SwiperSlide key={item.num} className="h-auto">
-                  <div className="facility-card h-100">
-                    <div className="facility-card-img-wrapper">
-                      <img src={item.image} alt={item.title} className="facility-card-img" />
-                      <div className="facility-card-badge">{item.num}</div>
-                    </div>
-                    <div className="facility-card-section">
+                  <div className="facility-card">
+                    <div className="facility-icon-wrapper">{item.icon}</div>
+                    <div className="facility-card-content">
                       <h3 className="facility-card-title">{item.title}</h3>
                       <p className="facility-card-text">{item.text}</p>
                     </div>
+                    <span className="facility-card-badge">{item.num}</span>
                   </div>
                 </SwiperSlide>
               ))}

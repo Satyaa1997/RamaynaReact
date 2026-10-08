@@ -419,7 +419,7 @@ const Footer = () => {
                 <div className="footer-contact-item d-flex align-items-start gap-2">
                   <i className="footer-contact-icon bi bi-clock-fill mt-1"></i>
                   <span>
-                    <strong>Working Hours:</strong> Mon–Sun : 9:00 AM – 7:00 PM
+                    <strong>Working Hours:</strong> Mon–Sat : 9:00 AM – 7:00 PM
                   </span>
                 </div>
               </div>
