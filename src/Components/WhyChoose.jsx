@@ -23,14 +23,14 @@ import {
 
 import heroImage from "../assets/Ramayana_city (3).png";
 import grandEntranceImg from "../assets/gate2.jpeg";
-import greenBeltImg from "../assets/GreenArea.png";
+import greenBeltImg from "../assets/GreenArea.PNG";
 import greenBeltImg2 from "../assets/green-belt.png";
 import highwayImg from "../assets/highway.jpg";
 import purvanchalImg from "../assets/Why3.png";
-import sportsImg from "../assets/Sports.png";
+import sportsImg from "../assets/Sports.PNG";
 import kidsZoneImg from "../assets/Kids’ Play Zones.png";
-import meditationImg from "../assets/Metitation.png";
-import evChargingImg from "../assets/EV Charging.png";
+import meditationImg from "../assets/Metitation.PNG";
+import evChargingImg from "../assets/EV Charging.PNG";
 import wellnessImg from "../assets/Aminities.PNG";
 
 const WhyChoose = () => {
