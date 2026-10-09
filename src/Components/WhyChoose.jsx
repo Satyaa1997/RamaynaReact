@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -19,6 +19,8 @@ import {
   FaHospital,
   FaCartShopping,
   FaCheck,
+  FaXmark,
+  FaExpand,
 } from "react-icons/fa6";
 
 import heroImage from "../assets/Ramayana_city (3).png";
@@ -34,6 +36,26 @@ import evChargingImg from "../assets/EV Charging.PNG";
 import wellnessImg from "../assets/Aminities.PNG";
 
 const WhyChoose = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
+
   const GOLD = "#D0B15B";
   const DARK = "#202020";
   const LIGHT = "#F8F7F3";
@@ -406,6 +428,43 @@ const WhyChoose = () => {
           width: 22px;
           border-radius: 10px;
         }
+
+        /* Image Expand Icon Overlay */
+        .img-hover-expand-btn {
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          background: rgba(17, 17, 17, 0.8);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          color: #ffffff;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          opacity: 0.85;
+          transition: all 0.3s ease;
+          z-index: 3;
+        }
+        .amenity-topic-img-wrapper:hover .img-hover-expand-btn,
+        .rc-thumbnail-stack:hover .img-hover-expand-btn {
+          opacity: 1;
+          transform: scale(1.15);
+          background: #D0B15B;
+          color: #ffffff;
+          border-color: #D0B15B;
+        }
+        @keyframes fadeInLightBox {
+          from { opacity: 0; transform: scale(0.96); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .lightbox-modal-content {
+          animation: fadeInLightBox 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
       `}</style>
 
       {/* =====================================================
@@ -576,10 +635,18 @@ const WhyChoose = () => {
             {sixAmenities.map((item) => (
               <div className="col-md-4 col-lg-4" key={item.num}>
                 <div className="amenity-topic-card h-100">
-                  <div className="amenity-topic-img-wrapper">
+                  <div
+                    className="amenity-topic-img-wrapper"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setSelectedImage({ src: item.image, title: item.title })}
+                    title="Click to view full screen"
+                  >
                     <img src={item.image} alt={item.title} />
                     <div className="amenity-topic-overlay" />
                     <div className="amenity-topic-badge">{item.num}</div>
+                    <div className="img-hover-expand-btn" title="View Full Screen">
+                      <FaExpand />
+                    </div>
                   </div>
                   <div className="amenity-topic-body">
                     <span className="amenity-topic-subtitle">{item.subtitle}</span>
@@ -610,10 +677,18 @@ const WhyChoose = () => {
               {sixAmenities.map((item) => (
                 <SwiperSlide key={item.num} className="h-auto">
                   <div className="amenity-topic-card h-100">
-                    <div className="amenity-topic-img-wrapper">
+                    <div
+                      className="amenity-topic-img-wrapper"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setSelectedImage({ src: item.image, title: item.title })}
+                      title="Click to view full screen"
+                    >
                       <img src={item.image} alt={item.title} />
                       <div className="amenity-topic-overlay" />
                       <div className="amenity-topic-badge">{item.num}</div>
+                      <div className="img-hover-expand-btn" title="View Full Screen">
+                        <FaExpand />
+                      </div>
                     </div>
                     <div className="amenity-topic-body">
                       <span className="amenity-topic-subtitle">{item.subtitle}</span>
@@ -710,9 +785,17 @@ const WhyChoose = () => {
                     }}
                   >
                     {/* THUMBNAIL STACK */}
-                    <div className="rc-thumbnail-stack">
+                    <div
+                      className="rc-thumbnail-stack"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setSelectedImage({ src: reason.image, title: reason.title })}
+                      title="Click to view full screen"
+                    >
                       <img src={reason.image} alt={reason.title} />
                       <div className="rc-thumbnail-overlay" />
+                      <div className="img-hover-expand-btn" title="View Full Screen">
+                        <FaExpand />
+                      </div>
 
                       {/* CATEGORY BADGE */}
                       <div className="rc-category-badge">
@@ -1225,12 +1308,98 @@ const WhyChoose = () => {
                   fontSize: "13px",
                 }}
               >
-                Enquire Now â†’
+                Enquire Now →
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          FULLSCREEN IMAGE LIGHTBOX MODAL
+      ===================================================== */}
+      {selectedImage && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.88)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            zIndex: 99999,
+            padding: "20px",
+          }}
+          onClick={() => setSelectedImage(null)}
+        >
+          {/* CLOSE CROSS BUTTON */}
+          <button
+            type="button"
+            className="btn position-absolute top-0 end-0 m-3 m-md-4 rounded-circle d-flex align-items-center justify-content-center text-white"
+            style={{
+              width: "46px",
+              height: "46px",
+              backgroundColor: "rgba(255, 255, 255, 0.15)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              fontSize: "24px",
+              cursor: "pointer",
+              zIndex: 100000,
+              transition: "all 0.25s ease",
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = GOLD;
+              e.currentTarget.style.borderColor = GOLD;
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.3)";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+            aria-label="Close"
+            title="Close (Esc)"
+          >
+            <FaXmark />
+          </button>
+
+          {/* IMAGE & TITLE CONTAINER */}
+          <div
+            className="lightbox-modal-content position-relative d-flex flex-column align-items-center text-center"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "92vw",
+              maxHeight: "92vh",
+            }}
+          >
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.title || "Full screen preview"}
+              className="img-fluid rounded-3 shadow-lg"
+              style={{
+                maxHeight: "82vh",
+                maxWidth: "90vw",
+                objectFit: "contain",
+                border: "2px solid rgba(208, 177, 91, 0.4)",
+              }}
+            />
+            {selectedImage.title && (
+              <div
+                className="mt-3 px-3 py-2 rounded-3 text-white"
+                style={{
+                  background: "rgba(20, 20, 20, 0.8)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                }}
+              >
+                <h5 className="mb-0 fw-bold" style={{ fontSize: "15px", color: GOLD }}>
+                  {selectedImage.title}
+                </h5>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 };

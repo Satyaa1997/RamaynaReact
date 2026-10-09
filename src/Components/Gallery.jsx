@@ -7,10 +7,10 @@ import React, { useEffect, useState } from "react";
 
 import gallerydp from "../assets/gallerydp.png";
 import projectView from "../assets/Ramayana_city (4).png";
-import park from "../assets/park.jpg";
+import park from "../assets/GreenArea.PNG";
 import entrance from "../assets/Ramayana_city (3).png";
 import surroundings from "../assets/WhatsApp Image 2026-10-02 at 11.20.54.jpeg";
-import security from "../assets/security.jpg";
+import security from "../assets/Aminities.PNG";
 import projectMap from "../assets/project-map.jpg";
 import gallery2 from "../assets/gallery2.jpg";
 import highway from "../assets/highway.jpg";
