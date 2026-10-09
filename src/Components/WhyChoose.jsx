@@ -31,7 +31,7 @@ import sportsImg from "../assets/Sports.png";
 import kidsZoneImg from "../assets/Kids’ Play Zones.png";
 import meditationImg from "../assets/Metitation.png";
 import evChargingImg from "../assets/EV Charging.png";
-import wellnessImg from "../assets/Aminities.png";
+import wellnessImg from "../assets/Aminities.PNG";
 
 const WhyChoose = () => {
   const GOLD = "#D0B15B";
