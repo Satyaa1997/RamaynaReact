@@ -23,14 +23,15 @@ import {
 
 import heroImage from "../assets/Ramayana_city (3).png";
 import grandEntranceImg from "../assets/gate2.jpeg";
-import greenBeltImg from "../assets/green-belt.png";
+import greenBeltImg from "../assets/GreenArea.png";
+import greenBeltImg2 from "../assets/green-belt.png";
 import highwayImg from "../assets/highway.jpg";
 import purvanchalImg from "../assets/Why3.png";
-import sportsImg from "../assets/Sports Courts.webp";
+import sportsImg from "../assets/Sports.png";
 import kidsZoneImg from "../assets/Kids’ Play Zones.png";
-import meditationImg from "../assets/mandir3.png";
-import evChargingImg from "../assets/EV Charging Points.jpg";
-import wellnessImg from "../assets/Wellness Amenities.jfif";
+import meditationImg from "../assets/Metitation.png";
+import evChargingImg from "../assets/EV Charging.png";
+import wellnessImg from "../assets/Aminities.png";
 
 const WhyChoose = () => {
   const GOLD = "#D0B15B";
@@ -53,7 +54,7 @@ const WhyChoose = () => {
       icon: <FaHouse />,
       category: "Plot Sizes",
       title: "Bespoke Residential Plots",
-      image: greenBeltImg,
+      image: greenBeltImg2,
       text: "A thoughtfully planned range of flexible plot sizes, offering the freedom to create a distinctive home and build a lasting family legacy.",
       tags: ["Prime Plots", "Freehold Land"],
       accent: "#4e8397",
