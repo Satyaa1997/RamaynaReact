@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -28,7 +28,7 @@ import greenBeltImg2 from "../assets/green-belt.png";
 import highwayImg from "../assets/highway.jpg";
 import purvanchalImg from "../assets/Why3.png";
 import sportsImg from "../assets/Sports.PNG";
-import kidsZoneImg from "../assets/Kids’ Play Zones.png";
+import kidsZoneImg from "../assets/KidsPlay Zones.png";
 import meditationImg from "../assets/Metitation.PNG";
 import evChargingImg from "../assets/EV Charging.PNG";
 import wellnessImg from "../assets/Aminities.PNG";
@@ -65,7 +65,7 @@ const WhyChoose = () => {
       category: "NH-56B Link",
       title: "Strategic Location & Seamless Connectivity",
       image: highwayImg,
-      text: "Strategically positioned on NH-56B (Mohanlalganj–Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agra–Lucknow Expressway and Purvanchal Expressway.",
+      text: "Strategically positioned on NH-56B (Mohanlalganjâ€“Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agraâ€“Lucknow Expressway and Purvanchal Expressway.",
       tags: ["NH-56B Link", "Expressways"],
       accent: "#ff8066",
     },
@@ -98,7 +98,7 @@ const WhyChoose = () => {
     },
     {
       num: "03",
-      title: "Kids’ Play Zones",
+      title: "Kidsâ€™ Play Zones",
       subtitle: "Safe Recreation",
       desc: "Thoughtfully planned play zones with safe equipment where children can play, socialise, and explore.",
       image: kidsZoneImg,
@@ -822,7 +822,7 @@ const WhyChoose = () => {
                   fontSize: "13px",
                 }}
               >
-                Know More About Location →
+                Know More About Location â†’
               </Link>
             </div>
 
@@ -1225,7 +1225,7 @@ const WhyChoose = () => {
                   fontSize: "13px",
                 }}
               >
-                Enquire Now →
+                Enquire Now â†’
               </Link>
             </div>
           </div>
@@ -1236,3 +1236,4 @@ const WhyChoose = () => {
 };
 
 export default WhyChoose;
+
