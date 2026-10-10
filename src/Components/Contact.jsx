@@ -28,16 +28,16 @@ const Contact = () => {
       <section
         className="position-relative d-flex align-items-center justify-content-center text-center"
         style={{
-  minHeight: "380px",
-  marginTop: "70px",
-  backgroundImage: `linear-gradient(
+          minHeight: "380px",
+          marginTop: "70px",
+          backgroundImage: `linear-gradient(
     rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.4)
   ), url("${heroImage}")`,
-  backgroundPosition: "center center",
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-}}
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="container py-4">
           <div className="row justify-content-center">
@@ -53,17 +53,6 @@ const Contact = () => {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.2)",
                 }}
               >
-                <span
-                  className="text-uppercase fw-semibold"
-                  style={{
-                    color: gold,
-                    letterSpacing: "2.5px",
-                    fontSize: "12px",
-                  }}
-                >
-                  Direct Channels
-                </span>
-
                 <h1
                   className="text-white fw-bold mt-2 mb-2"
                   style={{
@@ -268,7 +257,7 @@ const Contact = () => {
                 </p>
 
                 <a
-                  href="#mapSection"
+                  href="https://maps.app.goo.gl/GSs199J77AZ8vNr6A?g_st=aw"
                   className="text-decoration-none fw-semibold d-inline-flex align-items-center gap-1"
                   style={{
                     color: dark,

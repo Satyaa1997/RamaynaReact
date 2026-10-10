@@ -148,8 +148,8 @@ const Gallery = () => {
           className="position-absolute top-0 start-0 w-100 h-100"
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.45)",
-            backdropFilter: "blur(3px)",
-            WebkitBackdropFilter: "blur(3px)",
+            backdropFilter: "blur(1px)",
+            WebkitBackdropFilter: "blur(1px)",
             zIndex: 1,
           }}
         />
@@ -161,18 +161,6 @@ const Gallery = () => {
         >
           <div className="row justify-content-center">
             <div className="col-lg-8">
-
-              <span
-                className="d-inline-block text-uppercase fw-semibold mb-3"
-                style={{
-                  color: "#D0B15B",
-                  letterSpacing: "3px",
-                  fontSize: "13px",
-                }}
-              >
-                Ramayna City
-              </span>
-
               <h1
                 className="text-white fw-bold mb-3"
                 style={{

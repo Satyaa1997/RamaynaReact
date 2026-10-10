@@ -916,18 +916,21 @@ const Project = () => {
                     minHeight: "390px",
                   }}
                 >
-                  <iframe
-                    title="Ramayna City Location"
-                    src="https://www.google.com/maps?q=Lucknow%20Uttar%20Pradesh&output=embed"
-                    width="100%"
-                    height="390"
-                    style={{
-                      border: 0,
-                      display: "block",
-                    }}
-                    loading="lazy"
-                    allowFullScreen
-                  ></iframe>
+                 
+<iframe
+  title="Ramayana City Location"
+  src="https://www.google.com/maps?q=Ramayana+City,+Khatola,+Near+Ratauli+Chauraha,+NH-56B,+Sarojini+Nagar,+Uttar+Pradesh+226301&output=embed"
+  width="100%"
+  height="390"
+  style={{
+    border: 0,
+    display: "block",
+  }}
+  loading="lazy"
+  allowFullScreen
+  referrerPolicy="no-referrer-when-downgrade"
+></iframe>
+
                 </div>
               </div>
 
