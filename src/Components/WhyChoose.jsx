@@ -30,7 +30,7 @@ import greenBeltImg2 from "../assets/green-belt.png";
 import highwayImg from "../assets/highway.jpg";
 import purvanchalImg from "../assets/Why3.png";
 import sportsImg from "../assets/Sports.PNG";
-import kidsZoneImg from "../assets/KidsPlay Zones.png";
+import kidsZoneImg from "../assets/KidsPlayZones.PNG";
 import meditationImg from "../assets/Metitation.PNG";
 import evChargingImg from "../assets/EV Charging.PNG";
 import wellnessImg from "../assets/Aminities.PNG";
