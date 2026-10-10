@@ -18,8 +18,8 @@ import {
 // IMAGE IMPORTS
 // =====================================================
 
-import heroImage from "../assets/Ramayana_city (3).png";
-import overviewImage from "../assets/Ramayana_city (3).png";
+import heroImage from "../assets/Ramayana City Grand Entrance Gate.png";
+import overviewImage from "../assets/Ramayana City Grand Entrance Gate.png";
 import masterPlanImage from "../assets/R-city-2.jpg.jpeg";
 
 const Project = () => {

@@ -7,13 +7,16 @@ import React, { useEffect, useState } from "react";
 
 import gallerydp from "../assets/gallerydp.png";
 import projectView from "../assets/Ramayana_city (4).png";
-import park from "../assets/GreenArea.PNG";
-import entrance from "../assets/Ramayana_city (3).png";
-import surroundings from "../assets/WhatsApp Image 2026-10-02 at 11.20.54.jpeg";
-import security from "../assets/Aminities.PNG";
+import entrance from "../assets/Ramayana City Grand Entrance Gate.png";
+import surroundings from "../assets/Ramayana City Golden-Hour Entrance.png";
+import security from "../assets/security.jpg";
 import projectMap from "../assets/project-map.jpg";
-import gallery2 from "../assets/gallery2.jpg";
+import gallery2 from "../assets/green-township.jpg";
 import highway from "../assets/highway.jpg";
+import Metitation from "../assets/Metitation.PNG";
+import GreenArea from "../assets/GreenArea.PNG";
+import Aminities from "../assets/Aminities.PNG";
+import KidsPlayZones from "../assets/KidsPlay Zones.PNG";
 
 // =====================================================
 // GALLERY DATA
@@ -34,9 +37,9 @@ const galleryItems = [
   },
   {
     id: 3,
-    title: "Green Landscape",
+    title: "Kids Play Zone",
     category: "Lifestyle",
-    image: park,
+    image: KidsPlayZones,
   },
   {
     id: 4,
@@ -73,6 +76,24 @@ const galleryItems = [
     title: "Connectivity",
     category: "Location",
     image: highway,
+  },
+  {
+    id: 11,
+    title: "Spritual",
+    category: "Meditation",
+    image: Metitation,
+  },
+  {
+    id: 12,
+    title: "Green",
+    category: "Garden",
+    image: GreenArea,
+  },
+  {
+    id: 13,
+    title: "FitZone",
+    category: "Amenities",
+    image: Aminities,
   },
 ];
 

@@ -33,15 +33,8 @@ import hospitalImage from "../assets/hospital.jpg";
 import schoolImage from "../assets/school.jpg";
 import marketImage from "../assets/market.jpg";
 
-import ramayanaCityImage from "../assets/Ramayana_city (3).png";
-import securityImage from "../assets/24 X 7 Security and Safety.jpg";
-import Electriccable from "../assets/undergroundwire.png";
-import greenBeltImage from "../assets/Sewage Treatment Plant (STP).jfif";
-import greenTownshipImage from "../assets/Dual Water Pipelines (Drinking & Reuse).webp";
-import wideRoadImage from "../assets/Stormwater Drainage.jfif";
-import parkImage from "../assets/undergroundwatertank.webp";
-import rCity4Image from "../assets/Waste Management System.webp";
-import PrimeLocationConnectivity from "../assets/Prime Location Connectivity.avif";
+import ramayanaCityImage from "../assets/Ramayana City Grand Entrance Gate.png";
+
 
 // =====================================================
 // COLORS
