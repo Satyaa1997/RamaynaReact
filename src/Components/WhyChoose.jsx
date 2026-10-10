@@ -64,7 +64,6 @@ const WhyChoose = () => {
     {
       number: "01",
       icon: <FaBuilding />,
-      category: "Phase 01",
       title: "Grand Entrance",
       image: grandEntranceImg,
       text: "A magnificent 35-metre-wide boulevard complemented by a lush 17-metre central green belt, creating an impressive and welcoming arrival experience.",
@@ -74,7 +73,6 @@ const WhyChoose = () => {
     {
       number: "02",
       icon: <FaHouse />,
-      category: "Plot Sizes",
       title: "Bespoke Residential Plots",
       image: greenBeltImg2,
       text: "A thoughtfully planned range of flexible plot sizes, offering the freedom to create a distinctive home and build a lasting family legacy.",
@@ -84,7 +82,6 @@ const WhyChoose = () => {
     {
       number: "03",
       icon: <FaLocationDot />,
-      category: "NH-56B Link",
       title: "Strategic Location & Seamless Connectivity",
       image: highwayImg,
       text: "Strategically positioned on NH-56B (Mohanlalganjâ€“Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agraâ€“Lucknow Expressway and Purvanchal Expressway.",
@@ -94,7 +91,6 @@ const WhyChoose = () => {
     {
       number: "04",
       icon: <FaChartLine />,
-      category: "High Growth",
       title: "High-Value Investment",
       image: purvanchalImg,
       text: "A compelling combination of strong growth potential, strategic connectivity, and peaceful living, making Ramayana City an attractive destination for both discerning homeowners and long-term investors.",
