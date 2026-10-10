@@ -16,7 +16,7 @@ import highway from "../assets/highway.jpg";
 import Metitation from "../assets/Metitation.PNG";
 import GreenArea from "../assets/GreenArea.PNG";
 import Aminities from "../assets/Aminities.PNG";
-import KidsPlayZones from "../assets/KidsPlayZones.PNG";
+import KidsPlayZones from "../assets/KidsPlayZones.png";
 
 // =====================================================
 // GALLERY DATA
@@ -575,3 +575,5 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+
