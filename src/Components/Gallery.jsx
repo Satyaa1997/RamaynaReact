@@ -79,8 +79,8 @@ const galleryItems = [
   },
   {
     id: 11,
-    title: "Spritual",
-    category: "Meditation",
+    title: "Meditation",
+    category: "Spritual",
     image: Metitation,
   },
   {
