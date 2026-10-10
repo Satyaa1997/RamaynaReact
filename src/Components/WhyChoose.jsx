@@ -116,7 +116,7 @@ const WhyChoose = () => {
     },
     {
       num: "03",
-      title: "Kidsâ€™ Play Zones",
+      title: "Kids Play Zones",
       subtitle: "Safe Recreation",
       desc: "Thoughtfully planned play zones with safe equipment where children can play, socialise, and explore.",
       image: kidsZoneImg,
