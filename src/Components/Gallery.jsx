@@ -16,7 +16,7 @@ import highway from "../assets/highway.jpg";
 import Metitation from "../assets/Metitation.PNG";
 import GreenArea from "../assets/GreenArea.PNG";
 import Aminities from "../assets/Aminities.PNG";
-import KidsPlayZones from "../assets/KidsPlayZones.png";
+import KidsPlayZones from "../assets/mandir4.png";
 
 // =====================================================
 // GALLERY DATA
@@ -37,7 +37,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    title: "Kids Play Zone",
+    title: "Temple",
     category: "Lifestyle",
     image: KidsPlayZones,
   },
