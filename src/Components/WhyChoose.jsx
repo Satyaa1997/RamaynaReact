@@ -31,7 +31,7 @@ import highwayImg from "../assets/highway.jpg";
 import purvanchalImg from "../assets/Why3.png";
 import sportsImg from "../assets/Sports.png";
 import kidsZoneImg from "../assets/KidsPlayZones.PNG";
-import meditationImg from "../assets/Metitation.png";
+import meditationImg from "../assets/Metitation.PNG";
 import evChargingImg from "../assets/EV Charging.png";
 import wellnessImg from "../assets/Aminities.PNG";
 
