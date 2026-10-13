@@ -366,11 +366,11 @@ const Project = () => {
           .quick-stats-box {
             margin-left: 12px;
             margin-right: 12px;
-            padding: 60px 24px !important;
+            padding: 42px 30px !important;
           }
 
           .quick-stat-item {
-            padding: 18px 10px;
+            padding: 14px 10px;
           }
 
           /* =========================================
@@ -540,6 +540,7 @@ const Project = () => {
               className="bg-white rounded-3 shadow quick-stats-box"
               style={{
                 borderTop: `3px solid ${GOLD}`,
+                padding: "42px 30px",
               }}
             >
               <div className="row g-4 text-center align-items-center">

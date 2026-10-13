@@ -704,8 +704,8 @@ const Project = () => {
       className="bg-white rounded-3 shadow"
       style={{
         borderTop: `3px solid ${GOLD}`,
-        padding: "28px 20px",
-        minHeight: "125px",
+        padding: "42px 30px",
+        minHeight: "135px",
         display: "flex",
         alignItems: "center",
       }}
