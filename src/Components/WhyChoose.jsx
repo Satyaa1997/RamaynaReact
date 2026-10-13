@@ -35,6 +35,111 @@ import meditationImg from "../assets/Metitation.PNG";
 import evChargingImg from "../assets/EV Charging.PNG";
 import wellnessImg from "../assets/Aminities.PNG";
 
+// =====================================================
+// DECORATIVE GEOMETRIC BACKGROUND
+// =====================================================
+
+const GeometricBackground = ({ dark = false }) => {
+  return (
+    <div
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        inset: 0,
+        overflow: "hidden",
+        pointerEvents: "none",
+        zIndex: 0,
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: dark ? 0.028 : 0.035,
+          backgroundImage: `
+            linear-gradient(rgba(208,177,91,0.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(208,177,91,0.7) 1px, transparent 1px)
+          `,
+          backgroundSize: "70px 70px",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "380px",
+          height: "380px",
+          border: `1px solid rgba(208,177,91,${dark ? 0.09 : 0.07})`,
+          borderRadius: "50%",
+          right: "-170px",
+          top: "60px",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "230px",
+          height: "230px",
+          border: `1px solid rgba(208,177,91,${dark ? 0.07 : 0.05})`,
+          borderRadius: "50%",
+          right: "-95px",
+          top: "135px",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "170px",
+          height: "170px",
+          border: `1px solid rgba(208,177,91,${dark ? 0.08 : 0.055})`,
+          transform: "rotate(28deg)",
+          left: "-90px",
+          bottom: "50px",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "65px",
+          height: "65px",
+          border: `1px solid rgba(208,177,91,${dark ? 0.12 : 0.08})`,
+          transform: "rotate(45deg)",
+          right: "8%",
+          bottom: "12%",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "300px",
+          height: "1px",
+          background: `rgba(208,177,91,${dark ? 0.1 : 0.07})`,
+          transform: "rotate(-35deg)",
+          left: "-90px",
+          top: "24%",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "420px",
+          height: "420px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(208,177,91,0.055) 0%, transparent 68%)",
+          right: "-180px",
+          bottom: "-160px",
+        }}
+      />
+    </div>
+  );
+};
+
 const WhyChoose = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -704,12 +809,15 @@ const WhyChoose = () => {
       ===================================================== */}
 
       <section
-        className="py-4"
+        className="py-4 position-relative"
         style={{
           backgroundColor: DARK,
+          overflow: "hidden",
         }}
       >
-        <div className="container py-4">
+        <GeometricBackground dark />
+
+        <div className="container py-4 position-relative" style={{ zIndex: 2 }}>
           <div className="text-center mb-4">
             <span
               className="fw-semibold text-uppercase"
@@ -1120,12 +1228,15 @@ const WhyChoose = () => {
       ===================================================== */}
 
       <section
-        className="py-4"
+        className="py-4 position-relative"
         style={{
           backgroundColor: DARK,
+          overflow: "hidden",
         }}
       >
-        <div className="container py-4">
+        <GeometricBackground dark />
+
+        <div className="container py-4 position-relative" style={{ zIndex: 2 }}>
           <div className="row justify-content-center">
             <div className="col-lg-9 text-center">
               <span

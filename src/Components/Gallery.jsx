@@ -98,6 +98,118 @@ const galleryItems = [
 ];
 
 // =====================================================
+// DECORATIVE GEOMETRIC BACKGROUND
+// =====================================================
+
+const GeometricBackground = ({ dark = true }) => {
+  return (
+    <div
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        inset: 0,
+        overflow: "hidden",
+        pointerEvents: "none",
+        zIndex: 0,
+      }}
+    >
+      {/* Subtle Golden Grid */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: dark ? 0.03 : 0.045,
+          backgroundImage: `
+            linear-gradient(rgba(208,177,91,0.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(208,177,91,0.7) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Large Concentric Circles */}
+      <div
+        style={{
+          position: "absolute",
+          width: "420px",
+          height: "420px",
+          border: "1px solid rgba(208,177,91,0.12)",
+          borderRadius: "50%",
+          right: "-120px",
+          top: "-100px",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          width: "260px",
+          height: "260px",
+          border: "1px solid rgba(208,177,91,0.10)",
+          borderRadius: "50%",
+          right: "-40px",
+          top: "-20px",
+        }}
+      />
+
+      {/* Left Angled Accent Box */}
+      <div
+        style={{
+          position: "absolute",
+          width: "180px",
+          height: "180px",
+          border: "1px solid rgba(208,177,91,0.08)",
+          transform: "rotate(28deg)",
+          left: "-70px",
+          bottom: "-40px",
+        }}
+      />
+
+      {/* Floating Diamond Accent */}
+      <div
+        style={{
+          position: "absolute",
+          width: "70px",
+          height: "70px",
+          border: "1px solid rgba(208,177,91,0.15)",
+          transform: "rotate(45deg)",
+          left: "48%",
+          top: "15%",
+        }}
+      />
+
+      {/* Diagonal Accent Line */}
+      <div
+        style={{
+          position: "absolute",
+          width: "320px",
+          height: "1px",
+          background:
+            "linear-gradient(90deg, transparent, rgba(208,177,91,0.22), transparent)",
+          transform: "rotate(-25deg)",
+          left: "15%",
+          bottom: "25%",
+        }}
+      />
+
+      {/* Golden Radial Glow */}
+      <div
+        style={{
+          position: "absolute",
+          width: "450px",
+          height: "450px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(208,177,91,0.07) 0%, transparent 70%)",
+          right: "5%",
+          top: "-150px",
+        }}
+      />
+    </div>
+  );
+};
+
+// =====================================================
 // GALLERY COMPONENT
 // =====================================================
 
@@ -365,13 +477,15 @@ const Gallery = () => {
       ===================================================== */}
 
       <section
-        className="py-5"
+        className="py-5 position-relative"
         style={{
-          backgroundColor: "#F8F7F3",
-          backgroundColor: "#000000",
+          backgroundColor: "#111111",
+          overflow: "hidden",
         }}
       >
-        <div className="container py-lg-4">
+        <GeometricBackground dark />
+
+        <div className="container py-lg-4 position-relative" style={{ zIndex: 2 }}>
 
           <div className="row align-items-center g-4">
 
@@ -389,10 +503,8 @@ const Gallery = () => {
               </span>
 
               <h2
-                className="fw-bold mt-2 mb-2"
+                className="fw-bold mt-2 mb-2 text-white"
                 style={{
-                  color: "#202020",
-                  color: "#ffffff",
                   fontSize: "clamp(28px, 4vw, 42px)",
                 }}
               >
@@ -400,7 +512,6 @@ const Gallery = () => {
               </h2>
 
               <p
-                className="text-secondary mb-0"
                 className="mb-0"
                 style={{
                   color: "rgba(255,255,255,0.68)",

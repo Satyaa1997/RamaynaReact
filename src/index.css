@@ -1,12 +1,68 @@
-@import "tailwindcss";
-*{
+
+:root {
+  --bs-body-font-family: Helvetica, Arial, sans-serif !important;
+  --bs-font-sans-serif: Helvetica, Arial, sans-serif !important;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: helvetica;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-html,body{
+html,
+body {
   height: 100%;
   width: 100%;
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+ul,
+ol,
+div,
+label,
+input,
+button,
+select,
+textarea {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Preserve icon fonts */
+.bi,
+[class^="bi-"],
+[class*=" bi-"],
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  font-family: bootstrap-icons !important;
+}
+
+.fa,
+.fas,
+.far,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands,
+[class^="fa-"],
+[class*=" fa-"] {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome !important;
 }
