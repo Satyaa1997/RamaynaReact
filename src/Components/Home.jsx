@@ -23,7 +23,7 @@ import {
 // =====================================================
 import heroVideo from "../assets/video.mp4";
 
-import aboutImage from "../assets/mandir3.png";
+import aboutImage from "../assets/Metitation.PNG";
 import highwayImage from "../assets/highway.jpg";
 import airportImage from "../assets/airport.jpg";
 import agraExpresswayImage from "../assets/agra-expressway.jpg";
@@ -33,7 +33,8 @@ import hospitalImage from "../assets/hospital.jpg";
 import schoolImage from "../assets/school.jpg";
 import marketImage from "../assets/market.jpg";
 
-import ramayanaCityImage from "../assets/Ramayana City Grand Entrance Gate.png";
+import ramayanaCityImage from "../assets/RealGate.png";
+import ramayanaCityImage1 from "../assets/RealGate2.png";
 
 
 // =====================================================
@@ -1797,7 +1798,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src={ramayanaCityImage}
+                  src={ramayanaCityImage1}
                   alt="Ramayana City"
                   className="w-100 h-100"
                   style={{

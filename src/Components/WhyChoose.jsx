@@ -23,8 +23,8 @@ import {
   FaExpand,
 } from "react-icons/fa6";
 
-import heroImage from "../assets/Ramayana City Grand Entrance Gate.png";
-import grandEntranceImg from "../assets/Ramayana City Grand Entrance Gate.png";
+import heroImage from "../assets/RealGate3.png";
+import grandEntranceImg from "../assets/RealGate3.png";
 import greenBeltImg from "../assets/GreenArea.PNG";
 import greenBeltImg2 from "../assets/green-belt.png";
 import highwayImg from "../assets/highway.jpg";

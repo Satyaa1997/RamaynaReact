@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 import gallerydp from "../assets/gallerydp.png";
 import projectView from "../assets/Ramayana_city (4).png";
-import entrance from "../assets/Ramayana City Grand Entrance Gate.png";
+import entrance from "../assets/RealGate.png";
 import surroundings from "../assets/Ramayana City Golden-Hour Entrance.png";
 import security from "../assets/security.jpg";
 import projectMap from "../assets/project-map.jpg";

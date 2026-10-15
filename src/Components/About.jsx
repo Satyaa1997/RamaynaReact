@@ -18,8 +18,8 @@ import {
 // IMAGE IMPORTS
 // =====================================================
 
-import heroImage from "../assets/Ramayana City Grand Entrance Gate.png";
-import overviewImage from "../assets/Ramayana City Grand Entrance Gate.png";
+import heroImage from "../assets/RealGate.png";
+import overviewImage from "../assets/RealGate.png";
 import masterPlanImage from "../assets/R-city-2.jpg.jpeg";
 
 // =====================================================
