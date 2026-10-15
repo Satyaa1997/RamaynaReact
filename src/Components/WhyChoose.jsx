@@ -644,7 +644,7 @@ const WhyChoose = () => {
                   letterSpacing: "1.2px",
                 }}
               >
-                WHY RAMAYNA CITY
+                WHY RAMAYANA CITY
               </span>
 
               {/* HEADING */}
@@ -836,7 +836,7 @@ const WhyChoose = () => {
                 fontSize: "clamp(26px, 4vw, 38px)",
               }}
             >
-              Why People Look at Ramayna City
+              Why People Look at Ramayana City
             </h2>
 
             <p
@@ -984,7 +984,7 @@ const WhyChoose = () => {
                 }}
               >
                 Location plays an important role when choosing a home or
-                property. Ramayna City focuses on accessibility and
+                property. Ramayana City focuses on accessibility and
                 connectivity with the surrounding area.
               </p>
 
@@ -1247,7 +1247,7 @@ const WhyChoose = () => {
                   fontSize: "11px",
                 }}
               >
-                The Ramayna City Difference
+                The Ramayana City Difference
               </span>
 
               <h2
@@ -1266,7 +1266,7 @@ const WhyChoose = () => {
                   lineHeight: "1.7",
                 }}
               >
-                Ramayna City brings together location, planning,
+                Ramayana City brings together location, planning,
                 accessibility and lifestyle to create a practical residential
                 environment for today and tomorrow.
               </p>
@@ -1377,7 +1377,7 @@ const WhyChoose = () => {
                   fontSize: "11px",
                 }}
               >
-                Explore Ramayna City
+                Explore Ramayana City
               </span>
 
               <h3
@@ -1388,7 +1388,7 @@ const WhyChoose = () => {
                 }}
               >
                 Ready to Know More About{" "}
-                <span style={{ color: GOLD }}>Ramayna City?</span>
+                <span style={{ color: GOLD }}>Ramayana City?</span>
               </h3>
 
               <p
@@ -1400,7 +1400,7 @@ const WhyChoose = () => {
                 }}
               >
                 Get complete project information and connect with our team
-                to explore the opportunities at Ramayna City.
+                to explore the opportunities at Ramayana City.
               </p>
             </div>
 

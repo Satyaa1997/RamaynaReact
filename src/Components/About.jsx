@@ -20,7 +20,7 @@ import {
 
 import heroImage from "../assets/RealGate.png";
 import overviewImage from "../assets/RealGate.png";
-import masterPlanImage from "../assets/R-city-2.jpg.jpeg";
+import masterPlanImage from "../assets/Ramayana_Revised_view(10) (1).png";
 
 // =====================================================
 // DECORATIVE GEOMETRIC BACKGROUND
@@ -452,7 +452,7 @@ const Project = () => {
         <section className="hero-project">
           <img
             src={PROJECT_IMAGES.hero}
-            alt="Ramayna City"
+            alt="Ramayana City"
             className="hero-project-bg"
           />
 
@@ -469,7 +469,7 @@ const Project = () => {
                     letterSpacing: "0.5px",
                   }}
                 >
-                  Ramayna City
+                  Ramayana City
                 </h1>
 
                 <p
@@ -551,7 +551,7 @@ const Project = () => {
                       className="fw-bold mb-1"
                       style={{ color: GOLD }}
                     >
-                      Ramayna City
+                      Ramayana City
                     </h5>
 
                     <small className="text-muted">
@@ -631,7 +631,7 @@ const Project = () => {
               <div className="col-lg-6">
                 <img
                   src={PROJECT_IMAGES.overview}
-                  alt="Ramayna City"
+                  alt="Ramayana City"
                   className="project-image img-fluid rounded-4 shadow w-100"
                   style={{
                     height: "390px",
@@ -654,7 +654,7 @@ const Project = () => {
                 <h2 className="fw-bold mt-2 mb-3">
                   Welcome to{" "}
                   <span style={{ color: GOLD }}>
-                    Ramayna City
+                    Ramayana City
                   </span>
                 </h2>
 
@@ -665,7 +665,7 @@ const Project = () => {
                     fontSize: "15px",
                   }}
                 >
-                  Ramayna City is a thoughtfully planned residential project
+                  Ramayana City is a thoughtfully planned residential project
                   created for people looking for a peaceful and well-connected
                   place to build their dream home.
                 </p>
@@ -962,7 +962,7 @@ const Project = () => {
                   }}
                 >
                   <h5 className="fw-bold mb-3">
-                    Ramayna City Location
+                    Ramayana City Location
                   </h5>
 
                   <div className="d-flex gap-3 mb-3">
@@ -1073,7 +1073,7 @@ const Project = () => {
                 >
                   <img
                     src={PROJECT_IMAGES.masterPlan}
-                    alt="Ramayna City Master Plan"
+                    alt="Ramayana City Master Plan"
                     className="master-plan-image img-fluid w-100"
                     style={{
                       maxHeight: "480px",
@@ -1159,7 +1159,7 @@ const Project = () => {
                 <h2 className="fw-bold mb-2 text-white">
                   Find Your Perfect Plot at{" "}
                   <span style={{ color: GOLD }}>
-                    Ramayna City
+                    Ramayana City
                   </span>
                 </h2>
 

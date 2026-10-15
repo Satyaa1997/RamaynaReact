@@ -592,7 +592,7 @@ const Project = () => {
 
           <img
             src={PROJECT_IMAGES.hero}
-            alt="Ramayna City"
+            alt="Ramayana City"
             className="hero-project-bg"
           />
 
@@ -628,7 +628,7 @@ const Project = () => {
                     letterSpacing: "0.5px",
                   }}
                 >
-                  Ramayna City
+                  Ramayana City
                 </h1>
 
                 {/* DESCRIPTION */}
@@ -718,7 +718,7 @@ const Project = () => {
             className="fw-bold mb-2"
             style={{ color: GOLD }}
           >
-            Ramayna City
+            Ramayana City
           </h5>
 
           <small className="text-muted">
@@ -795,7 +795,7 @@ const Project = () => {
 
                 <img
                   src={PROJECT_IMAGES.overview}
-                  alt="Ramayna City"
+                  alt="Ramayana City"
                   className="project-image img-fluid rounded-4 shadow w-100"
                   style={{
                     height: "390px",
@@ -822,7 +822,7 @@ const Project = () => {
                   Welcome to{" "}
 
                   <span style={{ color: GOLD }}>
-                    Ramayna City
+                    Ramayana City
                   </span>
 
                 </h2>
@@ -834,7 +834,7 @@ const Project = () => {
                     fontSize: "15px",
                   }}
                 >
-                  Ramayna City is a thoughtfully planned residential project
+                  Ramayana City is a thoughtfully planned residential project
                   created for people looking for a peaceful and well-connected
                   place to build their dream home.
                 </p>
@@ -1170,7 +1170,7 @@ const Project = () => {
                 >
 
                   <h5 className="fw-bold mb-3">
-                    Ramayna City Location
+                    Ramayana City Location
                   </h5>
 
                   <div className="d-flex gap-3 mb-3">
@@ -1249,7 +1249,7 @@ const Project = () => {
                 >
 
                   <iframe
-                    title="Ramayna City Location"
+                    title="Ramayana City Location"
                     src="https://www.google.com/maps?q=Lucknow%20Uttar%20Pradesh&output=embed"
                     width="100%"
                     height="390"
@@ -1298,7 +1298,7 @@ const Project = () => {
 
                   <img
                     src={PROJECT_IMAGES.masterPlan}
-                    alt="Ramayna City Master Plan"
+                    alt="Ramayana City Master Plan"
                     className="master-plan-image img-fluid w-100"
                     style={{
                       maxHeight: "480px",

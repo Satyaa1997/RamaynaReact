@@ -25,7 +25,7 @@ import Temple from "../assets/mandir4.png";
 const galleryItems = [
   {
     id: 1,
-    title: "Ramayna City",
+    title: "Ramayana City",
     category: "Project",
     image: gallerydp,
   },
@@ -314,7 +314,7 @@ const Gallery = () => {
                 }}
               >
                 Explore the vision, surroundings and lifestyle
-                that make Ramayna City a thoughtfully planned
+                that make Ramayana City a thoughtfully planned
                 destination for modern living.
               </p>
 
@@ -355,7 +355,7 @@ const Gallery = () => {
                   fontSize: "clamp(30px, 4vw, 44px)",
                 }}
               >
-                Experience Ramayna City
+                Experience Ramayana City
               </h2>
 
               <p
@@ -366,7 +366,7 @@ const Gallery = () => {
                 }}
               >
                 Take a closer look at the spaces, surroundings,
-                planning and lifestyle envisioned for Ramayna City.
+                planning and lifestyle envisioned for Ramayana City.
               </p>
 
             </div>
@@ -519,7 +519,7 @@ const Gallery = () => {
                   maxWidth: "700px",
                 }}
               >
-                Discover the vision behind Ramayna City and
+                Discover the vision behind Ramayana City and
                 explore what makes it a distinctive destination
                 for future-focused living.
               </p>

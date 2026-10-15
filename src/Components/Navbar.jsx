@@ -59,9 +59,9 @@ export default function Navbar() {
             alt="Ramayana City"
             className="img-fluid"
             style={{
-              height: "50px",
+              height: "65px",
               width: "auto",
-              maxHeight: "55px",
+              maxHeight: "60px",
               objectFit: "contain",
             }}
           />

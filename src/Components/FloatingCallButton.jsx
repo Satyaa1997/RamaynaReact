@@ -67,7 +67,7 @@ const FloatingCallButton = () => {
       <a
         href="tel:+918882125125"
         className="floating-call-button"
-        aria-label="Call Ramayna City at +91 88821 25125"
+        aria-label="Call Ramayana City at +91 88821 25125"
         title="Call +91-8882125125"
       >
         <i className="bi bi-telephone-fill" aria-hidden="true"></i>
