@@ -214,6 +214,8 @@ const GeometricBackground = ({ dark = true }) => {
 // =====================================================
 
 const Gallery = () => {
+  const GOLD = "#D0B15B";
+  const CURSIVE = "'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive";
   const [selectedImage, setSelectedImage] = useState(null);
 
   const selectedIndex = selectedImage
@@ -338,11 +340,15 @@ const Gallery = () => {
             <div className="col-lg-8">
 
               <span
-                className="text-uppercase fw-semibold"
+                className="cursive-text"
                 style={{
-                  color: "#D0B15B",
-                  letterSpacing: "2px",
-                  fontSize: "13px",
+                  color: GOLD,
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Visual Journey
@@ -492,11 +498,15 @@ const Gallery = () => {
             <div className="col-lg-8">
 
               <span
-                className="text-uppercase fw-semibold"
+                className="cursive-text"
                 style={{
-                  color: "#D0B15B",
-                  letterSpacing: "2px",
-                  fontSize: "12px",
+                  color: GOLD,
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Discover More

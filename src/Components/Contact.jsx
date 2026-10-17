@@ -21,6 +21,7 @@ import siteVisitImage from "../assets/Ramayana_Revised_view(10) (1).png";
 const Contact = () => {
   const gold = "#D0B15B";
   const dark = "#202020";
+  const CURSIVE = "'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive";
 
   return (
     <>
@@ -394,11 +395,15 @@ const Contact = () => {
             {/* CONTENT */}
             <div className="col-lg-6">
               <span
-                className="text-uppercase fw-semibold"
+                className="cursive-text"
                 style={{
                   color: gold,
-                  letterSpacing: "1.5px",
-                  fontSize: "12px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Site Visit
@@ -571,11 +576,15 @@ const Contact = () => {
 
               <div className="text-center mb-3">
                 <span
-                  className="text-uppercase fw-semibold"
+                  className="cursive-text"
                   style={{
                     color: gold,
-                    letterSpacing: "1.5px",
-                    fontSize: "12px",
+                    fontFamily: CURSIVE,
+                    fontSize: "clamp(26px, 3.2vw, 36px)",
+                    fontWeight: 400,
+                    letterSpacing: "0.5px",
+                    display: "inline-block",
+                    lineHeight: 1.1,
                   }}
                 >
                   Enquiry & Booking
@@ -786,11 +795,15 @@ const Contact = () => {
 
           <div className="text-center mb-3">
             <span
-              className="text-uppercase fw-semibold"
+              className="cursive-text"
               style={{
                 color: gold,
-                letterSpacing: "1.5px",
-                fontSize: "12px",
+                fontFamily: CURSIVE,
+                fontSize: "clamp(26px, 3.2vw, 36px)",
+                fontWeight: 400,
+                letterSpacing: "0.5px",
+                display: "inline-block",
+                lineHeight: 1.1,
               }}
             >
               Find Us

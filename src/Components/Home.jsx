@@ -21,10 +21,11 @@ import {
 // =====================================================
 // ASSETS
 // =====================================================
-import heroVideo from "../assets/video.mp4";
-
-import aboutImage from "../assets/Metitation.PNG";
-import highwayImage from "../assets/highway.jpg";
+import heroVideo from "../assets/video.mp4"; 
+import roadImage from "../assets/road.jpg";
+import aboutImage2 from "../assets/Modern.jpg";
+import aboutImage from "../assets/security.jpg";
+import highwayImage from "../assets/location.jpg";
 import airportImage from "../assets/airport.jpg";
 import agraExpresswayImage from "../assets/agra-expressway.jpg";
 import purvanchalExpresswayImage from "../assets/purvanchal-expressway.jpg";
@@ -33,7 +34,7 @@ import hospitalImage from "../assets/hospital.jpg";
 import schoolImage from "../assets/school.jpg";
 import marketImage from "../assets/market.jpg";
 
-import ramayanaCityImage from "../assets/RealGate.png";
+import ramayanaCityImage from "../assets/Premium Living.jpg";
 import ramayanaCityImage1 from "../assets/RealGate2.png";
 
 
@@ -43,7 +44,8 @@ import ramayanaCityImage1 from "../assets/RealGate2.png";
 const GOLD = "#D0B15B";
 const DARK = "#111111";
 const DARK2 = "#181818";
-const WHITE = "#FFFFFF";
+const WHITE = "#f3eded";
+const CURSIVE = "'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive";
 
 // =====================================================
 // STAT COUNTER COMPONENT
@@ -194,19 +196,17 @@ const GeometricBackground = ({ dark = false }) => {
 // =====================================================
 // SECTION TITLE
 // =====================================================
+const toCursiveTitle = (str) => {
+  if (typeof str !== "string") return str;
+  return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+};
+
 const SectionTitle = ({ eyebrow, title, description, dark = false }) => {
   return (
     <div className="text-center mb-4 position-relative">
       {eyebrow && (
         <div
-          className="d-inline-flex align-items-center justify-content-center gap-2 mb-2"
-          style={{
-            color: GOLD,
-            fontSize: "10px",
-            fontWeight: 700,
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-          }}
+          className="d-inline-flex align-items-center justify-content-center gap-2 mb-2 cursive-text"
         >
           <span
             style={{
@@ -216,7 +216,20 @@ const SectionTitle = ({ eyebrow, title, description, dark = false }) => {
             }}
           />
 
-          <span>{eyebrow}</span>
+          <span
+            className="cursive-text"
+            style={{
+              color: GOLD,
+              fontFamily: CURSIVE,
+              fontSize: "clamp(26px, 3.2vw, 36px)",
+              fontWeight: 400,
+              letterSpacing: "0.5px",
+              lineHeight: 1.1,
+              display: "inline-block",
+            }}
+          >
+            {toCursiveTitle(eyebrow)}
+          </span>
 
           <span
             style={{
@@ -543,7 +556,7 @@ const Home = () => {
 
   const amenities = [
     {
-      image: highwayImage,
+      image: roadImage,
       title: "NH-56B Frontage",
     },
     {
@@ -581,56 +594,47 @@ const Home = () => {
       num: "01",
       icon: <FaBolt />,
       title: "Underground Electricity Cables",
-      text: "Safely concealed power networks ensuring uncluttered landscapes and uninterrupted electricity.",
-    },
+      },
     {
       num: "02",
       icon: <FaWater />,
       title: "Underground Water Tank",
-      text: "High-capacity centralized reservoir delivering continuous 24/7 water supply throughout the township.",
-    },
+       },
     {
       num: "03",
       icon: <FaFilter />,
       title: "Dual Water Pipelines (Drinking & Reuse)",
-      text: "Eco-friendly dual piping system segregating pure drinking water from recycled water for irrigation.",
-    },
+       },
     {
       num: "04",
       icon: <FaRecycle />,
       title: "Sewage Treatment Plant (STP)",
-      text: "Advanced eco-efficient STP recycling wastewater for green belt maintenance and conservation.",
-    },
+       },
     {
       num: "05",
       icon: <FaCloudShowersHeavy />,
       title: "Stormwater Drainage",
-      text: "Engineered underground drainage network preventing waterlogging and keeping roads dry in monsoon.",
-    },
+       },
     {
       num: "06",
       icon: <FaRoad />,
       title: "Wide Roads",
-      text: "35-meter grand boulevard and 9-meter wide internal sector roads with footpaths and central green belts.",
-    },
+        },
     {
       num: "07",
       icon: <FaTrashCan />,
       title: "Waste Management System",
-      text: "Organized door-to-door solid waste segregation and eco-disposal ensuring clean, hygienic surroundings.",
-    },
+       },
     {
       num: "08",
       icon: <FaLocationDot />,
       title: "Prime Location Connectivity",
-      text: "Strategic positioning directly on NH-56B with rapid access to Outer Ring Road, Airport, and expressways.",
-    },
+       },
     {
       num: "09",
       icon: <FaShieldHalved />,
       title: "24 X 7 Security and Safety",
-      text: "Gated township with round-the-clock CCTV surveillance, manned entrance gates, and perimeter safety.",
-    },
+        },
   ];
 
   // =====================================================
@@ -1139,7 +1143,7 @@ const Home = () => {
                 opacity: 0.85,
               }}
             >
-              Where Spiritual Legacy Meets Modern Living
+              Where blessing build Every Corner.
             </p>
 
             <div className="d-flex flex-wrap gap-2">
@@ -1202,7 +1206,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src={aboutImage}
+                  src={aboutImage2}
                   alt="Ramayana City Township"
                   className="img-fluid w-100 ramayana-about-image"
                   style={{
@@ -1224,12 +1228,16 @@ const Home = () => {
                   }}
                 >
                   <small
+                    className="cursive-text"
                     style={{
                       color: GOLD,
-                      fontSize: "10px",
+                      fontFamily: CURSIVE,
+                      fontSize: "18px",
+                      display: "block",
+                      lineHeight: 1.2,
                     }}
                   >
-                    RAMAYANA CITY
+                    Ramayana City
                   </small>
 
                   <div className="fw-bold" style={{ fontSize: "13px" }}>
@@ -1242,14 +1250,7 @@ const Home = () => {
             <div className="col-lg-6">
               <div className="mb-3">
                 <div
-                  className="d-inline-flex align-items-center justify-content-start gap-2 mb-2"
-                  style={{
-                    color: GOLD,
-                    fontSize: "10px",
-                    fontWeight: 700,
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                  }}
+                  className="d-inline-flex align-items-center justify-content-start gap-2 mb-2 cursive-text"
                 >
                   <span
                     style={{
@@ -1259,7 +1260,20 @@ const Home = () => {
                     }}
                   />
 
-                  <span>ABOUT RAMAYANA CITY</span>
+                  <span
+                    className="cursive-text"
+                    style={{
+                      color: GOLD,
+                      fontFamily: CURSIVE,
+                      fontSize: "clamp(26px, 3.2vw, 36px)",
+                      fontWeight: 400,
+                      letterSpacing: "0.5px",
+                      lineHeight: 1.1,
+                      display: "inline-block",
+                    }}
+                  >
+                    About Ramayana City
+                  </span>
                 </div>
 
                 <h2
@@ -1270,7 +1284,8 @@ const Home = () => {
                     lineHeight: 1.15,
                   }}
                 >
-                  Modern Living Rooted in Timeless Values
+                  Modern Living Rooted in{" "}
+                  <span style={{ color: GOLD }}>Timeless Values</span>
                 </h2>
 
                 <p
@@ -1373,7 +1388,12 @@ const Home = () => {
 
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
-            title="Thoughtfully Planned. Strategically Connected."
+            title={
+              <>
+                <span style={{ color: GOLD }}>Thoughtfully Planned.</span>{" "}
+                Strategically Connected.
+              </>
+            }
             description="Thoughtfully planned spaces, strategic connectivity and a lifestyle designed around comfort, security and long-term value."
             dark
           />
@@ -1409,7 +1429,7 @@ const Home = () => {
 
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
-            eyebrow="PROJECT OVERVIEW"
+            eyebrow="Project Overview"
             title="Designed Around Better Living"
             description="Key planning features that define the Ramayana City experience."
           />
@@ -1475,7 +1495,7 @@ const Home = () => {
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             dark
-            eyebrow="PREMIUM AMENITIES"
+            eyebrow="Premium Amenities"
             title="Connectivity That Adds Value"
             description="Everything you need for convenient modern living is connected to a strategically positioned township."
           />
@@ -1544,7 +1564,7 @@ const Home = () => {
 
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
-            eyebrow="DIVINE LIFESTYLE"
+            eyebrow="Divine Lifestyle"
             title="A Lifestyle Inspired by Peace & Purpose"
             description="A harmonious community where serenity, greenery, spiritual values and modern infrastructure come together."
           />
@@ -1702,7 +1722,7 @@ const Home = () => {
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
             dark
-            eyebrow="FACILITIES"
+            eyebrow="Facilities"
             title="Infrastructure Designed for Modern Living"
             description="A master-planned township equipped with modern underground utilities, sustainable eco-systems, and round-the-clock safety."
           />
@@ -1772,7 +1792,7 @@ const Home = () => {
 
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <SectionTitle
-            eyebrow="SITE VISIT"
+            eyebrow="Site Visit"
             title="Book Your Free Site Visit"
             description="Visit Ramayana City and experience the township, location and planning personally."
           />
@@ -2171,14 +2191,18 @@ const Home = () => {
 
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <span
+            className="cursive-text"
             style={{
               color: GOLD,
-              fontWeight: 700,
-              letterSpacing: "2px",
-              fontSize: "10px",
+              fontFamily: CURSIVE,
+              fontSize: "clamp(24px, 3.2vw, 32px)",
+              fontWeight: 400,
+              letterSpacing: "0.5px",
+              display: "inline-block",
+              lineHeight: 1.2,
             }}
           >
-            RAMAYANA CITY
+            Ramayana City
           </span>
 
           <h2

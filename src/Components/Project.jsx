@@ -130,6 +130,7 @@ const Project = () => {
   const GOLD = "#D0B15B";
   const DARK = "#171717";
   const WHITE = "#ffffff";
+  const CURSIVE = "'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive";
 
   // =====================================================
   // PROJECT IMAGES
@@ -807,11 +808,15 @@ const Project = () => {
               <div className="col-lg-6">
 
                 <span
-                  className="fw-semibold text-uppercase"
+                  className="cursive-text"
                   style={{
                     color: GOLD,
-                    letterSpacing: "2px",
-                    fontSize: "12px",
+                    fontFamily: CURSIVE,
+                    fontSize: "clamp(26px, 3.2vw, 36px)",
+                    fontWeight: 400,
+                    letterSpacing: "0.5px",
+                    display: "inline-block",
+                    lineHeight: 1.1,
                   }}
                 >
                   About The Project
@@ -932,11 +937,15 @@ const Project = () => {
             <div className="text-center mb-4">
 
               <span
-                className="fw-semibold text-uppercase"
+                className="cursive-text"
                 style={{
                   color: GOLD,
-                  letterSpacing: "2px",
-                  fontSize: "12px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Project Highlights
@@ -1029,11 +1038,15 @@ const Project = () => {
               <div className="col-lg-5">
 
                 <span
-                  className="fw-semibold text-uppercase"
+                  className="cursive-text"
                   style={{
                     color: GOLD,
-                    letterSpacing: "2px",
-                    fontSize: "12px",
+                    fontFamily: CURSIVE,
+                    fontSize: "clamp(26px, 3.2vw, 36px)",
+                    fontWeight: 400,
+                    letterSpacing: "0.5px",
+                    display: "inline-block",
+                    lineHeight: 1.1,
                   }}
                 >
                   Amenities & Infrastructure
@@ -1130,11 +1143,15 @@ const Project = () => {
             <div className="text-center mb-4">
 
               <span
-                className="fw-semibold text-uppercase"
+                className="cursive-text"
                 style={{
                   color: GOLD,
-                  letterSpacing: "2px",
-                  fontSize: "12px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Strategic Location
@@ -1312,11 +1329,15 @@ const Project = () => {
               <div className="col-lg-6">
 
                 <span
-                  className="fw-semibold text-uppercase"
+                  className="cursive-text"
                   style={{
                     color: GOLD,
-                    letterSpacing: "2px",
-                    fontSize: "12px",
+                    fontFamily: CURSIVE,
+                    fontSize: "clamp(26px, 3.2vw, 36px)",
+                    fontWeight: 400,
+                    letterSpacing: "0.5px",
+                    display: "inline-block",
+                    lineHeight: 1.1,
                   }}
                 >
                   Master Plan

@@ -66,3 +66,11 @@ textarea {
 [class*=" fa-"] {
   font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome !important;
 }
+
+/* Cursive letter styling */
+.cursive-text,
+.cursive-text *,
+span.cursive-text,
+div.cursive-text span {
+  font-family: 'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive !important;
+}

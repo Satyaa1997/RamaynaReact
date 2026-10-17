@@ -163,6 +163,7 @@ const WhyChoose = () => {
 
   const GOLD = "#D0B15B";
   const DARK = "#202020";
+  const CURSIVE = "'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive";
   const LIGHT = "#F8F7F3";
 
   const reasons = [
@@ -697,14 +698,18 @@ const WhyChoose = () => {
           <div className="row justify-content-center text-center mb-4">
             <div className="col-lg-9">
               <span
-                className="fw-semibold text-uppercase"
+                className="cursive-text"
                 style={{
                   color: GOLD,
-                  letterSpacing: "1.8px",
-                  fontSize: "11px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
-                AMENITIES
+                Amenities
               </span>
 
               <h2
@@ -820,11 +825,15 @@ const WhyChoose = () => {
         <div className="container py-4 position-relative" style={{ zIndex: 2 }}>
           <div className="text-center mb-4">
             <span
-              className="fw-semibold text-uppercase"
+              className="cursive-text"
               style={{
                 color: GOLD,
-                letterSpacing: "1.8px",
-                fontSize: "11px",
+                fontFamily: CURSIVE,
+                fontSize: "clamp(26px, 3.2vw, 36px)",
+                fontWeight: 400,
+                letterSpacing: "0.5px",
+                display: "inline-block",
+                lineHeight: 1.1,
               }}
             >
               Key Reasons
@@ -957,11 +966,15 @@ const WhyChoose = () => {
           <div className="row align-items-center g-4">
             <div className="col-lg-6">
               <span
-                className="fw-semibold text-uppercase"
+                className="cursive-text"
                 style={{
                   color: GOLD,
-                  letterSpacing: "1.8px",
-                  fontSize: "11px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Strategic Location
@@ -1072,11 +1085,15 @@ const WhyChoose = () => {
           <div className="row align-items-center g-4">
             <div className="col-lg-5">
               <span
-                className="fw-semibold text-uppercase"
+                className="cursive-text"
                 style={{
                   color: GOLD,
-                  letterSpacing: "1.8px",
-                  fontSize: "11px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 Connectivity
@@ -1153,11 +1170,15 @@ const WhyChoose = () => {
         <div className="container py-4">
           <div className="text-center mb-4">
             <span
-              className="fw-semibold text-uppercase"
+              className="cursive-text"
               style={{
                 color: GOLD,
-                letterSpacing: "1.8px",
-                fontSize: "11px",
+                fontFamily: CURSIVE,
+                fontSize: "clamp(26px, 3.2vw, 36px)",
+                fontWeight: 400,
+                letterSpacing: "0.5px",
+                display: "inline-block",
+                lineHeight: 1.1,
               }}
             >
               Lifestyle Benefits
@@ -1240,11 +1261,15 @@ const WhyChoose = () => {
           <div className="row justify-content-center">
             <div className="col-lg-9 text-center">
               <span
-                className="fw-semibold text-uppercase"
+                className="cursive-text"
                 style={{
                   color: GOLD,
-                  letterSpacing: "1.8px",
-                  fontSize: "11px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  display: "inline-block",
+                  lineHeight: 1.1,
                 }}
               >
                 The Ramayana City Difference
@@ -1370,11 +1395,14 @@ const WhyChoose = () => {
           <div className="row align-items-center">
             <div className="col-lg-8 text-center text-lg-start">
               <span
-                className="fw-semibold text-uppercase d-block mb-2"
+                className="cursive-text d-block mb-2"
                 style={{
                   color: GOLD,
-                  letterSpacing: "1.5px",
-                  fontSize: "11px",
+                  fontFamily: CURSIVE,
+                  fontSize: "clamp(26px, 3.2vw, 36px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.5px",
+                  lineHeight: 1.1,
                 }}
               >
                 Explore Ramayana City
