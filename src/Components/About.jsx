@@ -247,20 +247,18 @@ const Project = () => {
             width: 100%;
           }
 
-          .hero-glass-panel {
-            width: min(760px, 100%);
           .hero-project-text {
             max-width: 760px;
             margin: 0 auto;
-            padding: 30px 34px;
-            padding: 20px 24px;
+            padding: 10px 16px;
             text-align: center;
-            background: rgba(15, 15, 15, 0.34);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 20px;
-            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            box-shadow: none;
           }
 
           .hero-project-title {
@@ -361,17 +359,66 @@ const Project = () => {
           }
 
           /* =========================================
-             QUICK STATS
+             QUICK STATS (MINIMAL COMPACT CARDS)
           ========================================= */
 
-          .quick-stats-box {
-            margin-left: 12px;
-            margin-right: 12px;
-            padding: 42px 30px !important;
+          .quick-stat-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid rgba(208, 177, 91, 0.22);
+            border-top: 3px solid #d0b15b;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.25s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
           }
 
-          .quick-stat-item {
-            padding: 14px 10px;
+          .quick-stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(208, 177, 91, 0.16);
+            border-color: rgba(208, 177, 91, 0.45);
+          }
+
+          .quick-stat-icon-wrap {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(208, 177, 91, 0.1);
+            color: #d0b15b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-bottom: 6px;
+            transition: all 0.25s ease;
+          }
+
+          .quick-stat-card:hover .quick-stat-icon-wrap {
+            background: #d0b15b;
+            color: #ffffff;
+            transform: scale(1.05);
+          }
+
+          .quick-stat-title {
+            color: #d0b15b;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            line-height: 1.2;
+          }
+
+          .quick-stat-subtitle {
+            color: #6c757d;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
           }
 
           /* =========================================
@@ -387,14 +434,17 @@ const Project = () => {
               font-size: 2rem !important;
             }
 
-            .hero-glass-panel {
             .hero-project-text {
-              width: calc(100% - 16px);
-              padding: 22px 16px;
-              border-radius: 15px;
-              backdrop-filter: blur(8px);
-              -webkit-backdrop-filter: blur(8px);
-              padding: 18px 8px;
+              width: 100%;
+              padding: 10px 0;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background: transparent;
+              border: none;
+              box-shadow: none;
             }
 
             .hero-project-bg {
@@ -426,14 +476,8 @@ const Project = () => {
               font-size: 18px;
             }
 
-            .quick-stats-box {
-              margin-left: 8px;
-              margin-right: 8px;
-              padding: 44px 16px !important;
-            }
-
-            .quick-stat-item {
-              padding: 16px 4px;
+            .quick-stat-card {
+              padding: 10px 8px;
             }
           }
         `}
@@ -459,13 +503,13 @@ const Project = () => {
 
           <div className="hero-project-overlay"></div>
 
-          <div className="container py-5 hero-project-content">
-            <div className="row justify-content-center align-items-center">
-              <div className="col-12">
-                <div className="hero-project-text">
+          <div className="container py-5 hero-project-content text-center">
+          
+              <div className="col-12 d-flex justify-content-center">
+                <div className="hero-project-text text-center d-flex flex-column align-items-center">
 
                 <h1
-                  className="fw-bold text-white mb-3 hero-project-title"
+                  className="fw-bold text-white mb-3 hero-project-title text-center"
                   style={{
                     letterSpacing: "0.5px",
                   }}
@@ -474,7 +518,7 @@ const Project = () => {
                 </h1>
 
                 <p
-                  className="text-white fs-5 mb-3 hero-project-description"
+                  className="text-white fs-5 mb-3 hero-project-description text-center mx-auto"
                   style={{
                     maxWidth: "680px",
                     lineHeight: "1.6",
@@ -484,7 +528,7 @@ const Project = () => {
                   modern living, peaceful surroundings and long-term value.
                 </p>
 
-                <p className="text-white mb-4">
+                <p className="text-white mb-4 text-center d-inline-flex align-items-center justify-content-center">
                   <FaLocationDot
                     className="me-2"
                     style={{
@@ -494,7 +538,7 @@ const Project = () => {
                   Lucknow, Uttar Pradesh
                 </p>
 
-                <div className="d-flex flex-wrap gap-3 hero-project-actions">
+                <div className="d-flex flex-wrap gap-3 hero-project-actions justify-content-center align-items-center">
                   <a
                     href="/contact"
                     className="btn px-4 py-2 fw-semibold project-button"
@@ -517,7 +561,7 @@ const Project = () => {
                 </div>
                 </div>
               </div>
-            </div>
+           
           </div>
         </section>
 
@@ -532,81 +576,58 @@ const Project = () => {
             marginTop: "-25px",
             position: "relative",
             zIndex: 3,
-            paddingTop: "45px",
-            paddingBottom: "45px",
+            paddingTop: "24px",
+            paddingBottom: "24px",
           }}
         >
           <div className="container">
             <div
-              className="bg-white rounded-3 shadow quick-stats-box"
-              style={{
-                borderTop: `3px solid ${GOLD}`,
-                padding: "42px 30px",
-              }}
+              className="row g-2 g-md-3 justify-content-center mx-auto"
+              style={{ maxWidth: "680px" }}
             >
-              <div className="row g-4 text-center align-items-center">
 
-                <div className="col-6 col-lg-3">
-                  <div className="quick-stat-item">
-                    <h5
-                      className="fw-bold mb-1"
-                      style={{ color: GOLD }}
-                    >
-                      Ramayana City
-                    </h5>
-
-                    <small className="text-muted">
-                      Project
-                    </small>
+              <div className="col-12 col-sm-4">
+                <div className="quick-stat-card">
+                  <div className="quick-stat-icon-wrap">
+                    <FaCity />
                   </div>
+                  <h5 className="quick-stat-title">
+                    Ramayana City
+                  </h5>
+                  <small className="quick-stat-subtitle">
+                    Project
+                  </small>
                 </div>
-
-                <div className="col-6 col-lg-3">
-                  <div className="quick-stat-item">
-                    <h5
-                      className="fw-bold mb-1"
-                      style={{ color: GOLD }}
-                    >
-                      Residential
-                    </h5>
-
-                    <small className="text-muted">
-                      Development
-                    </small>
-                  </div>
-                </div>
-
-                <div className="col-6 col-lg-3">
-                  <div className="quick-stat-item">
-                    <h5
-                      className="fw-bold mb-1"
-                      style={{ color: GOLD }}
-                    >
-                      9+
-                    </h5>
-
-                    <small className="text-muted">
-                      Plot Configurations
-                    </small>
-                  </div>
-                </div>
-
-                <div className="col-6 col-lg-3">
-                  <div className="quick-stat-item">
-                    <h5
-                      className="fw-bold mb-1"
-                      style={{ color: GOLD }}
-                    >
-                      Lucknow
-                    </h5>
-
-                    <small className="text-muted">
-                      Uttar Pradesh
-                    </small>
-                  </div>
-                </div>
-
               </div>
+
+              <div className="col-12 col-sm-4">
+                <div className="quick-stat-card">
+                  <div className="quick-stat-icon-wrap">
+                    <FaHouse />
+                  </div>
+                  <h5 className="quick-stat-title">
+                    Residential
+                  </h5>
+                  <small className="quick-stat-subtitle">
+                    Development
+                  </small>
+                </div>
+              </div>
+
+              <div className="col-12 col-sm-4">
+                <div className="quick-stat-card">
+                  <div className="quick-stat-icon-wrap">
+                    <FaLocationDot />
+                  </div>
+                  <h5 className="quick-stat-title">
+                    Lucknow
+                  </h5>
+                  <small className="quick-stat-subtitle">
+                    Uttar Pradesh
+                  </small>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -1178,7 +1199,7 @@ const Project = () => {
 
               <div className="col-lg-8">
                 <h2 className="fw-bold mb-2 text-white">
-                  Find Your Perfect Plot at{" "}
+                  Your Dream Home Starts Here at{" "}
                   <span style={{ color: GOLD }}>
                     Ramayana City
                   </span>

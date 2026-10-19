@@ -26,9 +26,9 @@ import {
 import heroImage from "../assets/RealGate3.png";
 import grandEntranceImg from "../assets/RealGate3.png";
 import greenBeltImg from "../assets/GreenArea.PNG";
-import greenBeltImg2 from "../assets/green-belt.png";
-import highwayImg from "../assets/highway.jpg";
-import purvanchalImg from "../assets/Why3.png";
+import greenBeltImg2 from "../assets/Bespoke Residential.jpg";
+import highwayImg from "../assets/Conectivity.webp";
+import purvanchalImg from "../assets/investment.jpg";
 import sportsImg from "../assets/Sports.PNG";
 import kidsZoneImg from "../assets/KidsPlayZones.png";
 import meditationImg from "../assets/Metitation.PNG";
@@ -190,7 +190,7 @@ const WhyChoose = () => {
       icon: <FaLocationDot />,
       title: "Strategic Location & Seamless Connectivity",
       image: highwayImg,
-      text: "Strategically positioned on NH-56B (Mohanlalganjâ€“Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agraâ€“Lucknow Expressway and Purvanchal Expressway.",
+      text: "Strategically positioned on NH-56B (Mohanlalganj Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agraâ€“Lucknow Expressway and Purvanchal Expressway.",
       tags: ["NH-56B Link", "Expressways"],
       accent: "#ff8066",
     },
@@ -697,20 +697,42 @@ const WhyChoose = () => {
         <div className="container py-2">
           <div className="row justify-content-center text-center mb-4">
             <div className="col-lg-9">
-              <span
-                className="cursive-text"
-                style={{
-                  color: GOLD,
-                  fontFamily: CURSIVE,
-                  fontSize: "clamp(26px, 3.2vw, 36px)",
-                  fontWeight: 400,
-                  letterSpacing: "0.5px",
-                  display: "inline-block",
-                  lineHeight: 1.1,
-                }}
-              >
-                Amenities
-              </span>
+              <div className="d-inline-flex align-items-center justify-content-center gap-2 mb-2">
+                <span
+                  style={{
+                    width: "32px",
+                    height: "1.5px",
+                    background: `linear-gradient(90deg, transparent, ${GOLD})`,
+                  }}
+                />
+
+                <span
+                  className="cursive-text px-3 py-1"
+                  style={{
+                    color: "#b08d38",
+                    backgroundColor: "rgba(208, 177, 91, 0.12)",
+                    border: "1px solid rgba(208, 177, 91, 0.35)",
+                    borderRadius: "30px",
+                    fontFamily: CURSIVE,
+                    fontSize: "clamp(28px, 3.4vw, 38px)",
+                    fontWeight: 500,
+                    letterSpacing: "0.8px",
+                    display: "inline-block",
+                    lineHeight: 1.2,
+                    boxShadow: "0 2px 10px rgba(208, 177, 91, 0.12)",
+                  }}
+                >
+                  Amenities
+                </span>
+
+                <span
+                  style={{
+                    width: "32px",
+                    height: "1.5px",
+                    background: `linear-gradient(90deg, ${GOLD}, transparent)`,
+                  }}
+                />
+              </div>
 
               <h2
                 className="fw-bold mt-2 mb-3"

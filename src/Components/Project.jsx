@@ -376,6 +376,69 @@ const Project = () => {
           }
 
           /* =========================================
+             QUICK STATS (MINIMAL COMPACT CARDS)
+          ========================================= */
+
+          .quick-stat-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid rgba(208, 177, 91, 0.22);
+            border-top: 3px solid #d0b15b;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.25s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .quick-stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(208, 177, 91, 0.16);
+            border-color: rgba(208, 177, 91, 0.45);
+          }
+
+          .quick-stat-icon-wrap {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(208, 177, 91, 0.1);
+            color: #d0b15b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-bottom: 6px;
+            transition: all 0.25s ease;
+          }
+
+          .quick-stat-card:hover .quick-stat-icon-wrap {
+            background: #d0b15b;
+            color: #ffffff;
+            transform: scale(1.05);
+          }
+
+          .quick-stat-title {
+            color: #d0b15b;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            letter-spacing: 0.2px;
+            line-height: 1.2;
+          }
+
+          .quick-stat-subtitle {
+            color: #6c757d;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+          }
+
+          /* =========================================
              MOBILE
           ========================================= */
 
@@ -458,6 +521,10 @@ const Project = () => {
               height: 46px;
               min-width: 46px;
               font-size: 18px;
+            }
+
+            .quick-stat-card {
+              padding: 10px 8px;
             }
           }
             .project-cta {
@@ -694,82 +761,62 @@ const Project = () => {
   className="project-section"
   style={{
     backgroundColor: WHITE,
-    marginTop: "-45px",
+    marginTop: "-25px",
     position: "relative",
     zIndex: 3,
+    paddingTop: "24px",
+    paddingBottom: "24px",
   }}
 >
   <div className="container">
-
     <div
-      className="bg-white rounded-3 shadow"
-      style={{
-        borderTop: `3px solid ${GOLD}`,
-        padding: "42px 30px",
-        minHeight: "135px",
-        display: "flex",
-        alignItems: "center",
-      }}
+      className="row g-2 g-md-3 justify-content-center mx-auto"
+      style={{ maxWidth: "680px" }}
     >
 
-      <div className="row g-4 text-center w-100">
-
-        <div className="col-6 col-lg-3">
-          <h5
-            className="fw-bold mb-2"
-            style={{ color: GOLD }}
-          >
+      <div className="col-12 col-sm-4">
+        <div className="quick-stat-card">
+          <div className="quick-stat-icon-wrap">
+            <FaCity />
+          </div>
+          <h5 className="quick-stat-title">
             Ramayana City
           </h5>
-
-          <small className="text-muted">
+          <small className="quick-stat-subtitle">
             Project
           </small>
         </div>
+      </div>
 
-        <div className="col-6 col-lg-3">
-          <h5
-            className="fw-bold mb-2"
-            style={{ color: GOLD }}
-          >
+      <div className="col-12 col-sm-4">
+        <div className="quick-stat-card">
+          <div className="quick-stat-icon-wrap">
+            <FaHouse />
+          </div>
+          <h5 className="quick-stat-title">
             Residential
           </h5>
-
-          <small className="text-muted">
+          <small className="quick-stat-subtitle">
             Development
           </small>
         </div>
+      </div>
 
-        <div className="col-6 col-lg-3">
-          <h5
-            className="fw-bold mb-2"
-            style={{ color: GOLD }}
-          >
-            9+
-          </h5>
-
-          <small className="text-muted">
-            Plot Configurations
-          </small>
-        </div>
-
-        <div className="col-6 col-lg-3">
-          <h5
-            className="fw-bold mb-2"
-            style={{ color: GOLD }}
-          >
+      <div className="col-12 col-sm-4">
+        <div className="quick-stat-card">
+          <div className="quick-stat-icon-wrap">
+            <FaLocationDot />
+          </div>
+          <h5 className="quick-stat-title">
             Lucknow
           </h5>
-
-          <small className="text-muted">
+          <small className="quick-stat-subtitle">
             Uttar Pradesh
           </small>
         </div>
-
       </div>
 
     </div>
-
   </div>
 </section>
 

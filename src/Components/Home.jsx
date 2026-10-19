@@ -630,11 +630,6 @@ const Home = () => {
       icon: <FaLocationDot />,
       title: "Prime Location Connectivity",
        },
-    {
-      num: "09",
-      icon: <FaShieldHalved />,
-      title: "24 X 7 Security and Safety",
-        },
   ];
 
   // =====================================================
@@ -791,66 +786,72 @@ const Home = () => {
         }
 
         /* =====================================================
-            FACILITY CARD STYLES
+            FACILITY CARD STYLES (MINIMAL, CENTERED, 4 PER ROW)
         ===================================================== */
         .facility-card {
-          background: #181818;
-          border-radius: 14px;
-          padding: 20px 18px;
+          background: rgba(255, 255, 255, 0.025);
+          border-radius: 12px;
+          padding: 22px 14px 18px;
           height: 100%;
-          border: 1px solid rgba(208, 177, 91, 0.22);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-          transition: all 0.35s ease;
+          border: 1px solid rgba(208, 177, 91, 0.16);
+          box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
           display: flex;
-          align-items: flex-start;
-          gap: 16px;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 12px;
           position: relative;
         }
         .facility-card:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           border-color: #D0B15B;
-          box-shadow: 0 14px 35px rgba(208, 177, 91, 0.15);
-          background: #1e1e1e;
+          box-shadow: 0 10px 28px rgba(208, 177, 91, 0.12);
+          background: rgba(208, 177, 91, 0.05);
         }
         .facility-icon-wrapper {
           width: 44px;
           height: 44px;
           min-width: 44px;
-          border-radius: 12px;
-          background: rgba(208, 177, 91, 0.12);
-          border: 1px solid rgba(208, 177, 91, 0.3);
+          border-radius: 50%;
+          background: rgba(208, 177, 91, 0.1);
+          border: 1px solid rgba(208, 177, 91, 0.28);
           display: flex;
           align-items: center;
           justify-content: center;
           color: #D0B15B;
-          font-size: 20px;
-          transition: all 0.35s ease;
+          font-size: 19px;
+          transition: all 0.3s ease;
+          margin-bottom: 2px;
         }
         .facility-card:hover .facility-icon-wrapper {
           background: #D0B15B;
           color: #111111;
           border-color: #D0B15B;
-          transform: scale(1.06);
+          transform: scale(1.08);
         }
         .facility-card-badge {
           position: absolute;
-          top: 12px;
-          right: 14px;
-          color: rgba(208, 177, 91, 0.6);
-          font-size: 11px;
+          top: 8px;
+          right: 10px;
+          color: rgba(208, 177, 91, 0.45);
+          font-size: 10px;
           font-weight: 700;
-          letter-spacing: 1px;
+          letter-spacing: 0.5px;
         }
         .facility-card-content {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          text-align: center;
           gap: 4px;
           flex-grow: 1;
+          width: 100%;
         }
         .facility-card-title {
           margin: 0;
-          font-size: 15px;
-          font-weight: 700;
+          font-size: 13px;
+          font-weight: 600;
           color: #ffffff;
           line-height: 1.35;
           transition: color 0.3s ease;
@@ -859,9 +860,9 @@ const Home = () => {
           color: #D0B15B;
         }
         .facility-card-text {
-          font-size: 12px;
-          line-height: 1.55;
-          color: rgba(255, 255, 255, 0.65);
+          font-size: 11px;
+          line-height: 1.45;
+          color: rgba(255, 255, 255, 0.6);
           margin: 0;
         }
         .facilitySwiper .swiper-pagination-bullet {
@@ -1727,28 +1728,32 @@ const Home = () => {
             description="A master-planned township equipped with modern underground utilities, sustainable eco-systems, and round-the-clock safety."
           />
 
-          {/* DESKTOP & TABLET: 3 CARDS PER LINE (3 IN ROW 1, 3 IN ROW 2, 3 IN ROW 3) */}
-          <div className="row g-3 mt-2 d-none d-md-flex">
+          {/* DESKTOP & TABLET: 4 CARDS PER LINE (4 IN ROW 1, 4 IN ROW 2) */}
+          <div className="row g-3 mt-2 d-none d-md-flex justify-content-center">
             {facilities.map((item) => (
-              <div className="col-md-4 col-lg-4" key={item.num}>
+              <div className="col-6 col-md-3 col-lg-3" key={item.num}>
                 <div className="facility-card">
+                  <span className="facility-card-badge">{item.num}</span>
                   <div className="facility-icon-wrapper">{item.icon}</div>
                   <div className="facility-card-content">
                     <h3 className="facility-card-title">{item.title}</h3>
-                    <p className="facility-card-text">{item.text}</p>
+                    {item.text && <p className="facility-card-text">{item.text}</p>}
                   </div>
-                  <span className="facility-card-badge">{item.num}</span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* MOBILE: 1 CARD AT A TIME AUTO-SLIDING */}
+          {/* MOBILE: AUTO-SLIDING COMPACT CARDS */}
           <div className="d-block d-md-none mt-3">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              slidesPerView={1}
-              spaceBetween={16}
+              slidesPerView={1.5}
+              spaceBetween={12}
+              breakpoints={{
+                0: { slidesPerView: 1.3, spaceBetween: 10 },
+                420: { slidesPerView: 2, spaceBetween: 12 },
+              }}
               loop={true}
               grabCursor={true}
               autoplay={{
@@ -1762,12 +1767,12 @@ const Home = () => {
               {facilities.map((item) => (
                 <SwiperSlide key={item.num} className="h-auto">
                   <div className="facility-card">
+                    <span className="facility-card-badge">{item.num}</span>
                     <div className="facility-icon-wrapper">{item.icon}</div>
                     <div className="facility-card-content">
                       <h3 className="facility-card-title">{item.title}</h3>
-                      <p className="facility-card-text">{item.text}</p>
+                      {item.text && <p className="facility-card-text">{item.text}</p>}
                     </div>
-                    <span className="facility-card-badge">{item.num}</span>
                   </div>
                 </SwiperSlide>
               ))}
