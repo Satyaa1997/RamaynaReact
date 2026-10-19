@@ -16,7 +16,7 @@ import {
 // =====================================================
 
 import heroImage from "../assets/Ramayana_Revised_view(6) (1).png";
-import siteVisitImage from "../assets/Ramayana_Revised_view(10) (1).png";
+import siteVisitImage from "../assets/Project.jpg";
 
 const Contact = () => {
   const gold = "#D0B15B";

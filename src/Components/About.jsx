@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import {
   FaLocationDot,
@@ -12,15 +12,20 @@ import {
   FaCar,
   FaCity,
   FaArrowRight,
+  FaExpand,
+  FaXmark,
+  FaVolumeHigh,
+  FaVolumeXmark,
 } from "react-icons/fa6";
 
 // =====================================================
-// IMAGE IMPORTS
+// IMAGE & VIDEO IMPORTS
 // =====================================================
 
 import heroImage from "../assets/RealGate.png";
 import overviewImage from "../assets/RealGate.png";
-import masterPlanImage from "../assets/Ramayana_Revised_view(10) (1).png";
+import masterPlanImage from "../assets/planedDev.jpg";
+import masterPlanVideo from "../assets/ramayana edit- (1).mp4";
 
 // =====================================================
 // DECORATIVE GEOMETRIC BACKGROUND
@@ -132,6 +137,58 @@ const Project = () => {
   const DARK = "#171717";
   const WHITE = "#ffffff";
   const CURSIVE = "'Great Vibes', 'Brush Script MT', 'Segoe Script', cursive";
+
+  // Full Screen Video State (Video with audio only in full screen)
+  const [isFullScreenVideo, setIsFullScreenVideo] = useState(false);
+  const [isFullViewMuted, setIsFullViewMuted] = useState(false);
+  const fullVideoRef = useRef(null);
+  const previewVideoRef = useRef(null);
+
+  const handleOpenFullScreen = () => {
+    setIsFullScreenVideo(true);
+    setIsFullViewMuted(false);
+  };
+
+  const handleCloseFullScreen = () => {
+    setIsFullScreenVideo(false);
+    if (fullVideoRef.current) {
+      fullVideoRef.current.pause();
+    }
+  };
+
+  const toggleFullViewMute = (e) => {
+    e.stopPropagation();
+    if (fullVideoRef.current) {
+      fullVideoRef.current.muted = !isFullViewMuted;
+    }
+    setIsFullViewMuted((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && isFullScreenVideo) {
+        handleCloseFullScreen();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isFullScreenVideo]);
+
+  useEffect(() => {
+    if (isFullScreenVideo && fullVideoRef.current) {
+      if (previewVideoRef.current) {
+        fullVideoRef.current.currentTime = previewVideoRef.current.currentTime;
+      }
+      fullVideoRef.current.muted = isFullViewMuted;
+      fullVideoRef.current.play().catch(() => {
+        if (fullVideoRef.current) {
+          fullVideoRef.current.muted = true;
+          setIsFullViewMuted(true);
+          fullVideoRef.current.play().catch(() => {});
+        }
+      });
+    }
+  }, [isFullScreenVideo]);
 
   // =====================================================
   // PROJECT IMAGES
@@ -356,6 +413,25 @@ const Project = () => {
             display: block;
             object-fit: contain;
             background: #ffffff;
+          }
+
+          .master-plan-video-box {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+          }
+
+          .master-plan-video-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(208, 177, 91, 0.25) !important;
+            border-color: rgba(208, 177, 91, 0.6) !important;
+          }
+
+          .master-plan-video-overlay {
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+          }
+
+          .master-plan-video-box:hover .master-plan-video-overlay {
+            opacity: 1;
           }
 
           /* =========================================
@@ -1104,19 +1180,90 @@ const Project = () => {
 
               <div className="col-lg-6">
                 <div
-                  className="rounded-4 overflow-hidden"
+                  className="rounded-4 overflow-hidden position-relative shadow-lg master-plan-video-box"
                   style={{
-                    backgroundColor: "#fff",
+                    backgroundColor: "#000",
+                    border: "1px solid rgba(208, 177, 91, 0.35)",
+                    cursor: "pointer",
+                    position: "relative",
                   }}
+                  onClick={handleOpenFullScreen}
+                  title="Click to view in Full Screen with audio"
                 >
-                  <img
-                    src={PROJECT_IMAGES.masterPlan}
-                    alt="Ramayana City Master Plan"
-                    className="master-plan-image img-fluid w-100"
+                  {/* In-page Video Preview (Strictly Muted: only full view par volume aaye) */}
+                  <video
+                    ref={previewVideoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-100 d-block"
                     style={{
-                      maxHeight: "480px",
+                      maxHeight: "460px",
+                      objectFit: "cover",
+                      backgroundColor: "#000",
                     }}
-                  />
+                  >
+                    <source src={masterPlanVideo} type="video/mp4" />
+                  </video>
+
+                  {/* Elegant Overlay */}
+                  <div
+                    className="master-plan-video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-between p-3"
+                    style={{
+                      background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 40%, rgba(0,0,0,0.65) 100%)",
+                      pointerEvents: "none",
+                    }}
+                  >
+                    {/* Top Tag & Expand Icon */}
+                    <div className="d-flex justify-content-between align-items-center">
+                      <span
+                        className="badge px-3 py-1.5 fw-semibold"
+                        style={{
+                          background: "rgba(0, 0, 0, 0.7)",
+                          backdropFilter: "blur(4px)",
+                          color: GOLD,
+                          border: `1px solid rgba(208, 177, 91, 0.4)`,
+                          fontSize: "11px",
+                          letterSpacing: "0.5px",
+                        }}
+                      >
+                        ● Master Plan Video
+                      </span>
+
+                      <div
+                        className="d-flex align-items-center justify-content-center rounded-circle"
+                        style={{
+                          width: "38px",
+                          height: "38px",
+                          background: "rgba(0, 0, 0, 0.7)",
+                          backdropFilter: "blur(4px)",
+                          color: "#ffffff",
+                          border: `1px solid rgba(208, 177, 91, 0.4)`,
+                          fontSize: "15px",
+                          boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                        }}
+                      >
+                        <FaExpand />
+                      </div>
+                    </div>
+
+                    {/* Bottom Prompt Button */}
+                    <div className="text-center">
+                      <span
+                        className="btn btn-sm px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2"
+                        style={{
+                          background: GOLD,
+                          color: "#111",
+                          borderRadius: "30px",
+                          fontSize: "12px",
+                          boxShadow: "0 4px 15px rgba(208, 177, 91, 0.4)",
+                        }}
+                      >
+                        <FaExpand size={11} /> Click to View Full Screen
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1230,6 +1377,148 @@ const Project = () => {
           </div>
         </section>
       </div>
+
+      {/* =====================================================
+          FULLSCREEN VIDEO MODAL (ADAPTS ACCORDING TO DEVICE WITH VOLUME CONTROLS)
+      ===================================================== */}
+      {isFullScreenVideo && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.95)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            zIndex: 999999,
+            padding: "16px",
+          }}
+          onClick={handleCloseFullScreen}
+        >
+          {/* Top Bar: Title & Controls */}
+          <div
+            className="w-100 position-absolute top-0 start-0 d-flex justify-content-between align-items-center px-3 px-md-4 py-3"
+            style={{
+              zIndex: 1000000,
+              background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, transparent 100%)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Title */}
+            <div className="d-flex align-items-center gap-2">
+              <span
+                style={{
+                  color: GOLD,
+                  fontWeight: 700,
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                }}
+              >
+                RAMAYANA CITY — MASTER PLAN
+              </span>
+            </div>
+
+            {/* Right Buttons: Volume Toggle + Close */}
+            <div className="d-flex align-items-center gap-2">
+              {/* Volume On/Off Button */}
+              <button
+                type="button"
+                className="btn d-flex align-items-center gap-2 rounded-pill fw-semibold"
+                style={{
+                  backgroundColor: isFullViewMuted
+                    ? "rgba(255, 255, 255, 0.15)"
+                    : GOLD,
+                  color: isFullViewMuted ? "#ffffff" : "#111111",
+                  border: isFullViewMuted
+                    ? "1px solid rgba(255, 255, 255, 0.3)"
+                    : `1px solid ${GOLD}`,
+                  fontSize: "13px",
+                  padding: "7px 16px",
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                  boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+                }}
+                onClick={toggleFullViewMute}
+                title={isFullViewMuted ? "Turn Sound ON" : "Turn Sound OFF"}
+              >
+                {isFullViewMuted ? (
+                  <>
+                    <FaVolumeXmark size={16} /> Volume Muted
+                  </>
+                ) : (
+                  <>
+                    <FaVolumeHigh size={16} /> Volume ON
+                  </>
+                )}
+              </button>
+
+              {/* Close Button */}
+              <button
+                type="button"
+                className="btn rounded-circle d-flex align-items-center justify-content-center text-white"
+                style={{
+                  width: "42px",
+                  height: "42px",
+                  backgroundColor: "rgba(255, 255, 255, 0.15)",
+                  border: "1px solid rgba(255, 255, 255, 0.3)",
+                  fontSize: "20px",
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                }}
+                onClick={handleCloseFullScreen}
+                aria-label="Close Fullscreen"
+                title="Close (Esc)"
+              >
+                <FaXmark />
+              </button>
+            </div>
+          </div>
+
+          {/* Video Container (Responsive, according to device) */}
+          <div
+            className="position-relative d-flex align-items-center justify-content-center w-100"
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              height: "100%",
+              paddingTop: "60px",
+              paddingBottom: "50px",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              ref={fullVideoRef}
+              autoPlay
+              playsInline
+              loop
+              controls
+              className="rounded-3 shadow-lg"
+              style={{
+                maxWidth: "96vw",
+                maxHeight: "84vh",
+                width: "auto",
+                height: "auto",
+                objectFit: "contain",
+                backgroundColor: "#000",
+              }}
+            >
+              <source src={masterPlanVideo} type="video/mp4" />
+            </video>
+          </div>
+
+          {/* Bottom Bar Helper */}
+          <div
+            className="w-100 position-absolute bottom-0 start-0 d-flex justify-content-center align-items-center py-2"
+            style={{
+              zIndex: 1000000,
+              background: "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <small className="text-white-50" style={{ fontSize: "12px" }}>
+              Press <kbd style={{ background: "rgba(255,255,255,0.2)", padding: "2px 6px", borderRadius: "4px" }}>ESC</kbd> or click outside to exit
+            </small>
+          </div>
+        </div>
+      )}
     </>
   );
 };

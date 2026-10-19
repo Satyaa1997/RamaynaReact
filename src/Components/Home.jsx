@@ -21,7 +21,7 @@ import {
 // =====================================================
 // ASSETS
 // =====================================================
-import heroVideo from "../assets/video.mp4"; 
+import heroVideo from "../assets/ramayana edit- (1).mp4"; 
 import roadImage from "../assets/road.jpg";
 import aboutImage2 from "../assets/Modern.jpg";
 import aboutImage from "../assets/security.jpg";
@@ -887,6 +887,13 @@ const Home = () => {
           display: block !important;
         }
 
+        .home-hero-video {
+          filter: none !important;
+          -webkit-filter: none !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+        }
+
         /* =====================================================
             MOBILE
         ===================================================== */
@@ -901,6 +908,8 @@ const Home = () => {
             object-fit: contain !important;
             object-position: center center;
             background: #111111;
+            filter: none !important;
+            -webkit-filter: none !important;
           }
 
           .home-hero-content {
@@ -1080,19 +1089,11 @@ const Home = () => {
             objectFit: "cover",
             position: "absolute",
             inset: 0,
+            filter: "none",
           }}
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,.20) 20%, rgba(0,0,0,.75) 100%)",
-          }}
-        />
 
         <div
           className="container h-100 position-relative d-flex align-items-end pb-5 home-hero-content"
@@ -1115,6 +1116,7 @@ const Home = () => {
                 fontSize: "10px",
                 fontWeight: 700,
                 textTransform: "uppercase",
+                textShadow: "0 1px 6px rgba(0,0,0,0.9)",
               }}
             >
               <span
@@ -1122,6 +1124,7 @@ const Home = () => {
                   width: "25px",
                   height: "1px",
                   background: GOLD,
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.8)",
                 }}
               />
               Premium Residential Township · Lucknow
@@ -1132,6 +1135,7 @@ const Home = () => {
               style={{
                 fontSize: "clamp(28px, 4vw, 48px)",
                 lineHeight: 1.1,
+                textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.8)",
               }}
             >
               Welcome to <span style={{ color: GOLD }}>Ramayana City</span>
@@ -1141,7 +1145,8 @@ const Home = () => {
               className="text-white mb-3"
               style={{
                 fontSize: "clamp(13px, 1.5vw, 16px)",
-                opacity: 0.85,
+                opacity: 0.95,
+                textShadow: "0 2px 8px rgba(0,0,0,0.9)",
               }}
             >
               Where blessing build Every Corner.

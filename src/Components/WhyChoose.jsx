@@ -288,7 +288,7 @@ const WhyChoose = () => {
     "Nearby residential areas",
     "Daily convenience facilities",
     "Educational institutions",
-    "Healthcare facilities",
+    "Healthcare facilities(SGPGI,Ayush Medicl)",
     "Markets and commercial areas",
   ];
 
@@ -1033,7 +1033,7 @@ const WhyChoose = () => {
                   fontSize: "13px",
                 }}
               >
-                Know More About Location â†’
+                Know More About Location
               </Link>
             </div>
 

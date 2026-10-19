@@ -6,17 +6,17 @@ import React, { useEffect, useState } from "react";
 // =====================================================
 
 import gallerydp from "../assets/gallerydp.png";
-import projectView from "../assets/Ramayana_city (4).png";
+import projectView from "../assets/Project.jpg";
 import entrance from "../assets/RealGate.png";
 import surroundings from "../assets/surrounding.png";
 import security from "../assets/security.jpg";
-import projectMap from "../assets/project-map.jpg";
+import projectMap from "../assets/planedDev.jpg";
 import gallery2 from "../assets/green-township.jpg";
-import highway from "../assets/highway.jpg";
+import highway from "../assets/locat.png";
 import Metitation from "../assets/Metitation.PNG";
 import GreenArea from "../assets/GreenArea.PNG";
 import Aminities from "../assets/Aminities.PNG";
-import Temple from "../assets/mandir4.png";
+import Temple from "../assets/temple.jpg";
 
 // =====================================================
 // GALLERY DATA
