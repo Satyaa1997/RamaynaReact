@@ -635,24 +635,13 @@ const WhyChoose = () => {
             className="row h-100 align-items-start justify-content-center text-center why-choose-hero-content"
           >
             <div className="col-12 col-lg-8">
-              {/* LABEL */}
-              <span
-                className="d-inline-block px-2 py-1 rounded-pill fw-semibold mb-2"
-                style={{
-                  backgroundColor: GOLD,
-                  color: "#ffffff",
-                  fontSize: "10px",
-                  letterSpacing: "1.2px",
-                }}
-              >
-                WHY RAMAYANA CITY
-              </span>
+             
 
               {/* HEADING */}
               <h1
                 className="fw-bold text-white mb-2 mx-auto"
                 style={{
-                  fontSize: "clamp(24px, 3.5vw, 38px)",
+                  fontSize: "clamp(54px, 3.5vw, 38px)",
                   lineHeight: "1.2",
                   maxWidth: "600px",
                   textShadow: "0 2px 6px rgba(0,0,0,0.5)",

@@ -27,57 +27,68 @@ const Contact = () => {
     <>
       {/* ================= HERO SECTION ================= */}
       <section
-        className="position-relative d-flex align-items-center justify-content-center text-center"
+        className="position-relative d-flex align-items-center justify-content-center text-center overflow-hidden"
         style={{
           minHeight: "380px",
           marginTop: "70px",
-          backgroundImage: `linear-gradient(
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)
-  ), url("${heroImage}")`,
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container py-4">
+        {/* Full Hero Blurred Background Image */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url("${heroImage}")`,
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            filter: "blur(1px)",
+            transform: "scale(1.08)",
+            zIndex: 0,
+          }}
+        />
+
+        {/* Full Hero Dark & Backdrop Tint Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.45)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            zIndex: 1,
+          }}
+        />
+
+        {/* Content Sitting Directly on the Blurred Hero */}
+        <div className="container py-4 position-relative" style={{ zIndex: 2 }}>
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <div
-                className="p-3 p-md-4"
+              <h1
+                className="text-white fw-bold mt-2 mb-2"
                 style={{
-                  background: "rgba(20, 20, 20, 0.25)",
-                  backdropFilter: "blur(4px)",
-                  WebkitBackdropFilter: "blur(4px)",
-                  borderRadius: "10px",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.2)",
+                  fontSize: "clamp(28px, 4vw, 48px)",
+                  lineHeight: "1.1",
+                  textShadow: "0 2px 10px rgba(0,0,0,0.5)",
                 }}
               >
-                <h1
-                  className="text-white fw-bold mt-2 mb-2"
-                  style={{
-                    fontSize: "clamp(28px, 4vw, 48px)",
-                    lineHeight: "1.1",
-                  }}
-                >
-                  Connect With Ramayana City
-                </h1>
+                Connect With <span style={{ color: gold }}>Ramayana City</span>
+              </h1>
 
-                <p
-                  className="text-white mb-0 mx-auto"
-                  style={{
-                    maxWidth: "550px",
-                    fontSize: "14px",
-                    lineHeight: "1.6",
-                    opacity: 0.95,
-                  }}
-                >
-                  We are always at your service. Choose your preferred
-                  way to get in touch with our sales team and spatial
-                  consultants.
-                </p>
-              </div>
+              <p
+                className="text-white mb-0 mx-auto"
+                style={{
+                  maxWidth: "580px",
+                  fontSize: "14px",
+                  lineHeight: "1.6",
+                  opacity: 0.95,
+                  textShadow: "0 1px 6px rgba(0,0,0,0.5)",
+                }}
+              >
+                We are always at your service. Choose your preferred
+                way to get in touch with our sales team and spatial
+                consultants.
+              </p>
             </div>
           </div>
         </div>
