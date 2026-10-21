@@ -1,7 +1,7 @@
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import ScrollToTop from "./Components/ScrollToTop";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import About from "./Components/About";
@@ -14,14 +14,16 @@ import FloatingCallButton from "./Components/FloatingCallButton";
 const App = () => {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/whychoose" element={<WhyChoose/>} />
-        <Route path="/gallery" element={<Gallery/>} />
-         <Route path="/contact" element={<Contact/>} />
+        <Route path="/whychoose" element={<WhyChoose />} />
+        <Route path="/why-choose" element={<WhyChoose />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />
@@ -31,4 +33,3 @@ const App = () => {
 };
 
 export default App;
-

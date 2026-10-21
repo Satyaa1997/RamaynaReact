@@ -4,6 +4,9 @@ import logo from "../assets/logo1.png";
 import reraImage from "../assets/RERA Ramayana.png";
 
 const Footer = () => {
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       {/* ================= PROFESSIONAL FOOTER CSS ================= */}
@@ -274,7 +277,7 @@ const Footer = () => {
           <div className="row g-4">
             {/* ================= BRAND ================= */}
             <div className="col-12 col-lg-4">
-              <Link to="/" className="d-inline-block mb-2">
+              <Link to="/" onClick={handleLinkClick} className="d-inline-block mb-2">
                 <img
                   src={logo}
                   alt="Ramayana City Logo"
@@ -342,6 +345,7 @@ const Footer = () => {
                   <li className="mb-1" key={idx}>
                     <Link
                       to={link.to}
+                      onClick={handleLinkClick}
                       className="footer-link text-decoration-none d-inline-flex align-items-center"
                     >
                       <i className="footer-chevron bi bi-chevron-right me-2"></i>
@@ -366,6 +370,7 @@ const Footer = () => {
                   <li className="mb-1" key={idx}>
                     <Link
                       to={link.to}
+                      onClick={handleLinkClick}
                       className="footer-link text-decoration-none d-inline-flex align-items-center"
                     >
                       <i className="footer-chevron bi bi-chevron-right me-2"></i>
