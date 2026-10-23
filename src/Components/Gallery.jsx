@@ -15,7 +15,7 @@ import gallery2 from "../assets/green-township.jpg";
 import highway from "../assets/locat.png";
 import Metitation from "../assets/Metitation.PNG";
 import GreenArea from "../assets/GreenArea.PNG";
-import Aminities from "../assets/Aminities.PNG";
+import Aminities from "../assets/Aminities.png";
 import Temple from "../assets/temple.jpg";
 
 // =====================================================

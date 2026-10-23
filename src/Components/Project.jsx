@@ -23,7 +23,7 @@ import {
 
 import heroImage from "../assets/Ramayana_city (3).png";
 import overviewImage from "../assets/Ramayana_city (3).png";
-import masterPlanImage from "../assets/project-map.jpg";
+import masterPlanImage from "../assets/planedDev.jpg";
 import masterPlanVideo from "../assets/ramayana edit- (1).mp4";
 
 // =====================================================
