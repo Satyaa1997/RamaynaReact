@@ -363,7 +363,7 @@ const Footer = () => {
                 {[
                   { name: "Privacy Policy", to: "/privacypolicy" },
                   { name: "Terms & Conditions", to: "/terms" },
-                  { name: "Disclaimer", to: "/disclaimer" },
+                  { name: "Disclaimer", to: "/desclam" },
                   { name: "RERA Details", to: "/reradetil" },
                 ].map((link, idx) => (
                   <li className="mb-1" key={idx}>
