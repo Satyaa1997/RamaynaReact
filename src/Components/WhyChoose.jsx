@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -33,7 +33,7 @@ import sportsImg from "../assets/Sports.PNG";
 import kidsZoneImg from "../assets/KidsPlayZones.png";
 import meditationImg from "../assets/Metitation.PNG";
 import evChargingImg from "../assets/EV Charging.PNG";
-import wellnessImg from "../assets/Aminities.PNG";
+import wellnessImg from "../assets/Aminities.png";
 
 // =====================================================
 // DECORATIVE GEOMETRIC BACKGROUND
@@ -190,7 +190,7 @@ const WhyChoose = () => {
       icon: <FaLocationDot />,
       title: "Strategic Location & Seamless Connectivity",
       image: highwayImg,
-      text: "Strategically positioned on NH-56B (Mohanlalganj Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the Agraâ€“Lucknow Expressway and Purvanchal Expressway.",
+      text: "Strategically positioned on NH-56B (Mohanlalganj Bani Road), with convenient connectivity to Rae Bareli Road, Kanpur Road, and the Outer Ring Road. Upcoming arterial links further enhance accessibility, offering seamless connectivity to both the AgraÃ¢â‚¬â€œLucknow Expressway and Purvanchal Expressway.",
       tags: ["NH-56B Link", "Expressways"],
       accent: "#ff8066",
     },
@@ -1454,7 +1454,7 @@ const WhyChoose = () => {
                   fontSize: "13px",
                 }}
               >
-                Enquire Now →
+                Enquire Now â†’
               </Link>
             </div>
           </div>
@@ -1551,4 +1551,5 @@ const WhyChoose = () => {
 };
 
 export default WhyChoose;
+
 
