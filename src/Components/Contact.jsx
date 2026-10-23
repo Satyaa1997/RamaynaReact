@@ -263,7 +263,7 @@ const Contact = () => {
                     fontSize: "12px",
                   }}
                 >
-                  NH-56B, Khatola Village,
+                  NH-56B, Khatola,
                   <br />
                   Sarojini Nagar, Lucknow, U.P.
                 </p>
@@ -472,39 +472,6 @@ const Contact = () => {
                       style={{ fontSize: "12px" }}
                     >
                       Monday – Sunday: 9:00 AM – 7:00 PM (365 Days)
-                    </p>
-                  </div>
-                </div>
-
-                {/* PICKUP */}
-                <div className="d-flex align-items-center gap-3">
-                  <div
-                    className="flex-shrink-0 d-flex align-items-center justify-content-center"
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "50%",
-                      backgroundColor: "#ffffff",
-                      color: gold,
-                      fontSize: "14px",
-                    }}
-                  >
-                    <FaCar />
-                  </div>
-
-                  <div>
-                    <h6
-                      className="fw-bold mb-0"
-                      style={{ fontSize: "14px" }}
-                    >
-                      Complimentary Site Visit
-                    </h6>
-
-                    <p
-                      className="text-secondary mb-0"
-                      style={{ fontSize: "12px" }}
-                    >
-                      Free pick-and-drop service available across Lucknow.
                     </p>
                   </div>
                 </div>
@@ -834,7 +801,7 @@ const Contact = () => {
               className="text-secondary mb-0"
               style={{ fontSize: "13px" }}
             >
-              NH-56B, Khatola Village, Sarojini Nagar, Lucknow, U.P.
+              NH-56B, Khatola, Sarojini Nagar, Lucknow, U.P.
             </p>
           </div>
 

@@ -1316,7 +1316,7 @@ const Home = () => {
               >
                 Ramayana City is a premier gated township created for modern
                 living while remaining rooted in timeless spiritual values.
-                Located on NH-56B in Khatola Village, Sarojini Nagar, Lucknow,
+                Located on NH-56B in Khatola, Sarojini Nagar, Lucknow,
                 the township brings together modern connectivity and peaceful
                 residential living.
               </p>

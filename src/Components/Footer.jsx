@@ -408,7 +408,7 @@ const Footer = () => {
                 <div className="footer-contact-item d-flex align-items-start gap-2">
                   <i className="footer-contact-icon bi bi-geo-alt-fill mt-1 flex-shrink-0"></i>
                   <span>
-                    <strong>Site Address:</strong> NH-56B, Khatola Village,
+                    <strong>Site Address:</strong> NH-56B, Khatola,
                     Sarojini Nagar, Lucknow, U.P.
                   </span>
                 </div>
