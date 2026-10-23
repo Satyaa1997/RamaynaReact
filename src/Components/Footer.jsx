@@ -361,11 +361,10 @@ const Footer = () => {
               <h6 className="text-uppercase mb-3">Legal & Docs</h6>
               <ul className="list-unstyled mb-0">
                 {[
-                  { name: "Privacy Policy", to: "/privacy-policy" },
-                  { name: "Terms & Conditions", to: "/terms-conditions" },
+                  { name: "Privacy Policy", to: "/privacypolicy" },
+                  { name: "Terms & Conditions", to: "/terms" },
                   { name: "Disclaimer", to: "/disclaimer" },
-                  { name: "Sitemap", to: "/sitemap" },
-                  { name: "RERA Details", to: "/rera" },
+                  { name: "RERA Details", to: "/reradetil" },
                 ].map((link, idx) => (
                   <li className="mb-1" key={idx}>
                     <Link
@@ -424,7 +423,7 @@ const Footer = () => {
                 <div className="footer-contact-item d-flex align-items-start gap-2">
                   <i className="footer-contact-icon bi bi-clock-fill mt-1"></i>
                   <span>
-                    <strong>Working Hours:</strong> Mon–Sat : 9:00 AM – 7:00 PM
+                    <strong>Working Hours:</strong> Mon–Sat : 10:00 AM – 7:00 PM
                   </span>
                 </div>
               </div>
@@ -462,7 +461,7 @@ const Footer = () => {
                       <strong>Account No.:</strong>0294002900000288
                     </div>
                     <div>
-                      <strong>A/c Name:</strong> Dishadeep Developers Pvt. Ltd. collection a/c for Ramayana city
+                      <strong>A/c Name:</strong> Dishadeep Developers Pvt Ltd collection ac for Ramayana city
                     </div>
                     <div>
                       <strong>Bank Name:</strong> PNB, Hazratganj, Lucknow

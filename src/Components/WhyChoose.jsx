@@ -288,7 +288,7 @@ const WhyChoose = () => {
     "Nearby residential areas",
     "Daily convenience facilities",
     "Educational institutions",
-    "Healthcare facilities(SGPGI,Ayush Medicl)",
+    "Healthcare facilities(SGPGI, Institute of Ayush Medical Science & Hospital)",
     "Markets and commercial areas",
   ];
 

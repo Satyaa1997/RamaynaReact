@@ -14,7 +14,7 @@ import {
   FaRoad,
   FaTrashCan,
   FaLocationDot,
-  FaShieldHalved,
+
 } from "react-icons/fa6";
 
 

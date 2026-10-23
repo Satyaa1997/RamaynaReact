@@ -1,4 +1,3 @@
-
 :root {
   --bs-body-font-family: Helvetica, Arial, sans-serif !important;
   --bs-font-sans-serif: Helvetica, Arial, sans-serif !important;
@@ -53,18 +52,6 @@ textarea {
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
   font-family: bootstrap-icons !important;
-}
-
-.fa,
-.fas,
-.far,
-.fab,
-.fa-solid,
-.fa-regular,
-.fa-brands,
-[class^="fa-"],
-[class*=" fa-"] {
-  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome !important;
 }
 
 /* Cursive letter styling */

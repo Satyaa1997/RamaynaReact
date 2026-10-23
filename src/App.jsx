@@ -10,6 +10,10 @@ import Gallery from "./Components/Gallery";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import FloatingCallButton from "./Components/FloatingCallButton";
+import PrivacyPolicy from "./Components/PrivacyPolicy";
+import TermsConditions from "./Components/TermsConditions";
+import Disclaimer from "./Components/Disclaimer";
+import ReraDetails from "./Components/ReraDetails";
 
 const App = () => {
   return (
@@ -24,6 +28,10 @@ const App = () => {
         <Route path="/why-choose" element={<WhyChoose />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />}/>
+        <Route path="/terms" element={< TermsConditions/>}/>
+        <Route path="/desclam" element={< Disclaimer/>}/>
+        <Route path="/reradetil" element={<ReraDetails/>} />
       </Routes>
 
       <Footer />

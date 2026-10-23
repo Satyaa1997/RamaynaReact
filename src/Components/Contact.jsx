@@ -6,7 +6,7 @@ import {
   FaMapMarkerAlt,
   FaHome,
   FaClock,
-  FaCar,
+
   FaCheckCircle,
   FaArrowRight,
 } from "react-icons/fa";
